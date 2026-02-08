@@ -5,6 +5,17 @@
     <title>Content Manager</title>
   </head>
   <body>
+    <!-- Load Netlify CMS -->
     <script src="https://unpkg.com/netlify-cms@latest/dist/netlify-cms.js"></script>
+
+    <!-- Initialize Netlify CMS -->
+    <script>
+      // Tell CMS to use your config.yml
+      window.CMS_MANUAL_INIT = true;
+
+      CMS.init({
+        config: '/admin/config.yml'
+      });
+    </script>
   </body>
 </html>
