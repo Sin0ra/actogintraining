@@ -1,0 +1,40 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - label: "Home"
+        name: "home"
+        file: "content/home.json"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "Primary Button", name: "heroPrimaryBtn", widget: "string" }
+          - { label: "Secondary Button", name: "heroSecondaryBtn", widget: "string" }
+
+      - label: "About"
+        name: "about"
+        file: "content/about.json"
+        fields:
+          - { label: "About Title", name: "aboutTitle", widget: "string" }
+          - { label: "About Text", name: "aboutText", widget: "text" }
+
+      - label: "Courses"
+        name: "courses"
+        file: "content/courses.json"
+        fields:
+          - { label: "Courses Title", name: "coursesTitle", widget: "string" }
+          - { label: "Courses Intro", name: "coursesIntro", widget: "text" }
+
+      - label: "Enrollment"
+        name: "enrolment"
+        file: "content/enrolment.json"
+        fields:
+          - { label: "Enrollment Title", name: "enrolmentTitle", widget: "string" }
+          - { label: "Enrollment Intro", name: "enrolmentIntro", widget: "text" }
