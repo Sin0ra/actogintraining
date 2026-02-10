@@ -1,14 +1,22 @@
 {
-  "heroSecondaryBtn": "Call Us",
-  "service1Desc": "Upskill with our comprehensive training programs from basic to advanced levels.",
-  "service2Desc": "Bridge the gap between your existing skills and industry requirements.",
-  "servicesIntro": "We provide a clear path for artisans to get qualified and advance their careers.",
-  "service3Desc": "Get recognized for your skills with our official assessment and testing services.",
-  "heroSubtitle": "Train. Test. Qualify. Actogin is your trusted partner in technical skills development and trade testing.",
-  "heroPrimaryBtn": "Enroll Now",
-  "servicesTitle": "Our Core Services",
-  "service3Title": "ARPL & Trade Testing",
-  "service2Title": "Gap Training",
-  "service1Title": "Skills Development",
-  "heroTitle": "YOUR PATHWAY TO TRADE CERTIFICATION"
+  "hero_title": "YOUR PATHWAY TO TRADE CERTIFICATION",
+  "hero_text": "Train. Test. Qualify. Actogin is your partner in technical skills development and trade testing.",
+
+  "services": [
+    {
+      "title": "ARPL & Trade Testing",
+      "text": "Get recognized for your skills with official assessment and testing."
+    },
+    {
+      "title": "Skills Development",
+      "text": "Comprehensive training programs from basic to advanced."
+    },
+    {
+      "title": "Gap Training",
+      "text": "Close the gap between your experience and certification."
+    }
+  ],
+
+  "cta_title": "Ready to Start Your Career?",
+  "cta_text": "Whether you're starting fresh or advancing your skills, we have a program for you."
 }

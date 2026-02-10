@@ -1,13 +1,10 @@
 {
-  "arplTitle": "ARPL & Trade Testing",
-  "arplIntro": "Our ARPL process recognizes prior learning and workplace experience.",
-
-  "step1Title": "Skills Assessment",
-  "step1Desc": "Evaluate your existing skills against industry standards.",
-
-  "step2Title": "Gap Training",
-  "step2Desc": "Address identified gaps through focused training.",
-
-  "step3Title": "Trade Test",
-  "step3Desc": "Complete the final trade test to become certified."
+  "title": "ARPL & Trade Testing",
+  "description": "We assess and recognize prior learning to help artisans qualify faster.",
+  "steps": [
+    "Application & Screening",
+    "Practical Assessment",
+    "Gap Training",
+    "Trade Test"
+  ]
 }

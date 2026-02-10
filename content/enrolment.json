@@ -1,7 +1,9 @@
 {
-  "enrolmentTitle": "Enrollment",
-  "enrolmentIntro": "Start your journey toward trade certification by enrolling with us today.",
-
-  "formTitle": "Enrollment Form",
-  "submitBtn": "Submit Application"
+  "title": "Student Enrolment",
+  "instructions": "Complete the enrolment form and submit required documents.",
+  "requirements": [
+    "Certified ID copy",
+    "Previous qualifications",
+    "Proof of experience"
+  ]
 }
