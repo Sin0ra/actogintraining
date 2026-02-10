@@ -1,3 +1,13 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+media_library:
+  name: uploadcare
+
 collections:
   - name: "pages"
     label: "Pages"
@@ -6,17 +16,22 @@ collections:
       - label: "Home Page"
         name: "home"
         file: "content/home.json"
+        format: "json"
         fields:
           - { label: "Title", name: "title", widget: "string" }
 
       - label: "About Page"
         name: "about"
         file: "content/about.json"
+        format: "json"
         fields:
           - { label: "Title", name: "title", widget: "string" }
 
       - label: "Contact Page"
         name: "contact"
         file: "content/contact.json"
+        format: "json"
         fields:
           - { label: "Email", name: "email", widget: "string" }
+
+
