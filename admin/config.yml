@@ -1,100 +1,45 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: YOUR_GITHUB_USERNAME/YOUR_REPO_NAME
   branch: main
 
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
 collections:
-  - name: "home"
-    label: "Home Page"
+  - name: "pages"
+    label: "Pages"
     files:
-      - name: "home"
-        label: "Home Content"
+
+      - label: "Home Page"
+        name: "home"
         file: "content/home.json"
-        format: "json"
         fields:
-          - { label: "Hero Title", name: "hero_title", widget: "string" }
-          - { label: "Hero Text", name: "hero_text", widget: "text" }
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Subtitle", name: "subtitle", widget: "string" }
+
+      - label: "About Page"
+        name: "about"
+        file: "content/about.json"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Description", name: "description", widget: "text" }
+
+      - label: "Services Page"
+        name: "services"
+        file: "content/services.json"
+        fields:
           - label: "Services"
             name: "services"
             widget: "list"
             fields:
-              - { label: "Title", name: "title", widget: "string" }
-              - { label: "Text", name: "text", widget: "text" }
-          - { label: "CTA Title", name: "cta_title", widget: "string" }
-          - { label: "CTA Text", name: "cta_text", widget: "text" }
+              - { label: "Service Name", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
 
-  - name: "about"
-    label: "About Page"
-    files:
-      - name: "about"
-        file: "content/about.json"
-        format: "json"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Intro", name: "intro", widget: "text" }
-          - { label: "Mission", name: "mission", widget: "text" }
-          - { label: "Vision", name: "vision", widget: "text" }
-
-  - name: "courses"
-    label: "Courses"
-    files:
-      - name: "courses"
-        file: "content/courses.json"
-        format: "json"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - label: "Courses List"
-            name: "courses"
-            widget: "list"
-
-  - name: "arpl"
-    label: "ARPL & Trade Testing"
-    files:
-      - name: "arpl"
-        file: "content/arpl.json"
-        format: "json"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Description", name: "description", widget: "text" }
-          - label: "Steps"
-            name: "steps"
-            widget: "list"
-
-  - name: "why"
-    label: "Why Choose Us"
-    files:
-      - name: "why"
-        file: "content/why.json"
-        format: "json"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - label: "Reasons"
-            name: "reasons"
-            widget: "list"
-
-  - name: "enrolment"
-    label: "Enrolment"
-    files:
-      - name: "enrolment"
-        file: "content/enrolment.json"
-        format: "json"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Instructions", name: "instructions", widget: "text" }
-          - label: "Requirements"
-            name: "requirements"
-            widget: "list"
-
-  - name: "contact"
-    label: "Contact"
-    files:
-      - name: "contact"
+      - label: "Contact Page"
+        name: "contact"
         file: "content/contact.json"
-        format: "json"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
           - { label: "Address", name: "address", widget: "string" }
           - { label: "Phone", name: "phone", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
