@@ -1,7 +1,10 @@
 {
-  "hero_title": "YOUR PATHWAY TO TRADE CERTIFICATION",
-  "hero_text": "Train. Test. Qualify. Actogin is your partner in technical skills development and trade testing.",
-  "services": [
+  {
+  "title": "Actogin Training",
+  "hero_heading": "YOUR PATHWAY TO TRADE CERTIFICATION",
+  "hero_text": "Train. Test. Qualify. Actogin is your partner in technical skills development and trade testing."
+}
+ [
     {
       "title": "ARPL & Trade Testing",
       "text": "Get recognized for your skills with official assessment and testing."
