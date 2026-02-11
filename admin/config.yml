@@ -5,20 +5,18 @@ backend:
 media_folder: "assets/uploads"
 public_folder: "/assets/uploads"
 
-media_library:
-  name: uploadcare
-
 collections:
   - name: "pages"
     label: "Pages"
     files:
-
       - label: "Home Page"
         name: "home"
         file: "content/home.json"
         format: "json"
         fields:
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Hero Heading", name: "hero_heading", widget: "string" }
+          - { label: "Hero Text", name: "hero_text", widget: "text" }
 
       - label: "About Page"
         name: "about"
@@ -26,12 +24,45 @@ collections:
         format: "json"
         fields:
           - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "content", widget: "text" }
+
+      - label: "Courses Page"
+        name: "courses"
+        file: "content/courses.json"
+        format: "json"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "content", widget: "text" }
+
+      - label: "ARPL Page"
+        name: "arpl"
+        file: "content/arpl.json"
+        format: "json"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "content", widget: "text" }
+
+      - label: "Why Choose Us"
+        name: "why"
+        file: "content/why.json"
+        format: "json"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "content", widget: "text" }
+
+      - label: "Enrolment Page"
+        name: "enrolment"
+        file: "content/enrolment.json"
+        format: "json"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "content", widget: "text" }
 
       - label: "Contact Page"
         name: "contact"
         file: "content/contact.json"
         format: "json"
         fields:
-          - { label: "Email", name: "email", widget: "string" }
-
-
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Address", name: "address", widget: "text" }
+          - { label: "Phone", name: "phone", widget: "string" }
