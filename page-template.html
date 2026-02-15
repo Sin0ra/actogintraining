@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Dynamic page title from CMS -->
+  <title id="title">Page</title>
+
+  <!-- Your main website styling (VERY IMPORTANT) -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <!-- Optional: fonts if used on homepage -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ===== GLOBAL HEADER (COPY EXACTLY FROM index.html) ===== -->
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="logo">Your Logo</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="arpl.html">ARPL</a></li>
+        <li><a href="enrolment.html">Enrolment</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== PAGE HERO / BANNER ===== -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 id="page_heading"></h1>
+      <p id="page_subheading"></p>
+    </div>
+  </section>
+
+  <!-- ===== MAIN CONTENT (CMS CONTROLLED) ===== -->
+  <main class="container">
+    <section class="content-section">
+      <p id="content_1"></p>
+      <p id="content_2"></p>
+      <p id="content_3"></p>
+    </section>
+  </main>
+
+  <!-- ===== GLOBAL FOOTER (COPY FROM index.html) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Your Company. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ===== CMS CONTENT LOADER (DO NOT REMOVE) ===== -->
+  <script src="assets/js/content-loader.js"></script>
+  <script>
+    // This line will be changed per page
+    loadContent("content/PAGE.json");
+  </script>
+
+</body>
+</html>
