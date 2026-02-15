@@ -10,21 +10,19 @@ collections:
     label: "Website Pages"
     files:
 
-   # HOME PAGE (USER FRIENDLY)
+# HOME PAGE
 - label: "Home Page"
   name: "home"
   file: "content/home.json"
   fields:
-    - { label: "Browser Page Title (Top Tab)", name: "title", widget: "string" }
+    - { label: "Page Title", name: "title", widget: "string" }
+    - { label: "Hero Heading", name: "hero_heading", widget: "string" }
+    - { label: "Hero Subheading", name: "hero_subheading", widget: "text" }
+    - { label: "Section 1 Heading", name: "section1_heading", widget: "string" }
+    - { label: "Section 1 Text", name: "section1_text", widget: "text" }
+    - { label: "Section 2 Heading", name: "section2_heading", widget: "string" }
+    - { label: "Section 2 Text", name: "section2_text", widget: "text" }
 
-    - { label: "Main Banner Title (Big text at the top)", name: "hero_heading", widget: "string" }
-    - { label: "Main Banner Description (Text under the main title)", name: "hero_subheading", widget: "text" }
-
-    - { label: "Services Section Title", name: "section1_heading", widget: "string" }
-    - { label: "Services Section Description", name: "section1_text", widget: "text" }
-
-    - { label: "Why Choose Us Title", name: "section2_heading", widget: "string" }
-    - { label: "Why Choose Us Description", name: "section2_text", widget: "text" }
 
 
       # ABOUT PAGE (FULLY EDITABLE)
@@ -79,5 +77,6 @@ collections:
           - { label: "Phone Number", name: "phone", widget: "string" }
           - { label: "Email Address", name: "email", widget: "string" }
           - { label: "Contact Description", name: "contact_description", widget: "text" }
+
 
 
