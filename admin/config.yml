@@ -2,67 +2,77 @@ backend:
   name: git-gateway
   branch: main
 
-media_folder: "assets/uploads"
-public_folder: "/assets/uploads"
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
 
 collections:
   - name: "pages"
-    label: "Pages"
+    label: "Website Pages"
     files:
+
+      # HOME PAGE
       - label: "Home Page"
         name: "home"
         file: "content/home.json"
-        format: "json"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Page Title", name: "title", widget: "string" }
           - { label: "Hero Heading", name: "hero_heading", widget: "string" }
-          - { label: "Hero Text", name: "hero_text", widget: "text" }
+          - { label: "Hero Subheading", name: "hero_subheading", widget: "text" }
+          - { label: "Section 1 Heading", name: "section1_heading", widget: "string" }
+          - { label: "Section 1 Text", name: "section1_text", widget: "text" }
+          - { label: "Section 2 Heading", name: "section2_heading", widget: "string" }
+          - { label: "Section 2 Text", name: "section2_text", widget: "text" }
 
+      # ABOUT PAGE (FULLY EDITABLE)
       - label: "About Page"
         name: "about"
         file: "content/about.json"
-        format: "json"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Content", name: "content", widget: "text" }
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "About Heading", name: "about_heading", widget: "string" }
+          - { label: "About Introduction", name: "about_intro", widget: "text" }
+          - { label: "Mission Heading", name: "mission_heading", widget: "string" }
+          - { label: "Mission Text", name: "mission_text", widget: "text" }
+          - { label: "Vision Heading", name: "vision_heading", widget: "string" }
+          - { label: "Vision Text", name: "vision_text", widget: "text" }
 
+      # COURSES PAGE
       - label: "Courses Page"
         name: "courses"
         file: "content/courses.json"
-        format: "json"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Content", name: "content", widget: "text" }
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Courses Heading", name: "courses_heading", widget: "string" }
+          - { label: "Courses Description", name: "courses_description", widget: "text" }
+          - { label: "Course List Content", name: "courses_content", widget: "markdown" }
 
+      # ARPL PAGE
       - label: "ARPL Page"
         name: "arpl"
         file: "content/arpl.json"
-        format: "json"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Content", name: "content", widget: "text" }
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "ARPL Heading", name: "arpl_heading", widget: "string" }
+          - { label: "ARPL Description", name: "arpl_description", widget: "text" }
 
-      - label: "Why Choose Us"
-        name: "why"
-        file: "content/why.json"
-        format: "json"
-        fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Content", name: "content", widget: "text" }
-
+      # ENROLMENT PAGE
       - label: "Enrolment Page"
         name: "enrolment"
         file: "content/enrolment.json"
-        format: "json"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
-          - { label: "Content", name: "content", widget: "text" }
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Enrolment Heading", name: "enrolment_heading", widget: "string" }
+          - { label: "Enrolment Information", name: "enrolment_info", widget: "markdown" }
 
+      # CONTACT PAGE
       - label: "Contact Page"
         name: "contact"
         file: "content/contact.json"
-        format: "json"
         fields:
-          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Contact Heading", name: "contact_heading", widget: "string" }
           - { label: "Address", name: "address", widget: "text" }
-          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Phone Number", name: "phone", widget: "string" }
+          - { label: "Email Address", name: "email", widget: "string" }
+          - { label: "Contact Description", name: "contact_description", widget: "text" }
+
