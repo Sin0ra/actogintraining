@@ -1,10 +1,23 @@
 {
   "title": "Actogin Training",
-  "hero_text": "Actogin Training  Website",
-  "hero_heading": "Actogin Training Website",
-  "hero_subheading": "Our Services Under Sino",
-  "section1_heading": "Our Services Under Sino",
-  "section1_text": "Our Services Under Sino",
-  "section2_heading": "Our Services Under Sino",
-  "section2_text": "Our Services Under Sino"
+  "heading": "Professional Trade Certification & Skills Development",
+  "content": "Helping artisans gain recognition, certification, and career growth.",
+
+  "services_title": "Our Core Services",
+  "services_subtitle": "We provide a clear path for artisans to get qualified and advance their careers.",
+
+  "services": [
+    {
+      "title": "ARPL & Trade Testing",
+      "description": "Get recognized for your skills with official assessment and testing."
+    },
+    {
+      "title": "Skills Development",
+      "description": "Comprehensive training programs from basic to advanced levels."
+    },
+    {
+      "title": "Gap Training",
+      "description": "Close the gap between knowledge and certification requirements."
+    }
+  ]
 }
