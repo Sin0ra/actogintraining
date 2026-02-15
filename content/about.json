@@ -1,10 +1,9 @@
 {
-  "title": "About us",
-  "about_heading": "",
-  "about_intro": "",
-  "mission_heading": "",
-  "mission_text": "",
-  "vision_heading": "",
-  "vision_text": "",
-  "content": "Know More about us and our training"
+  "title": "About",
+  "about_heading": "About Us",
+  "about_intro": "We are a leading training academy.",
+  "mission_heading": "Our Mission",
+  "mission_text": "To provide quality education.",
+  "vision_heading": "Our Vision",
+  "vision_text": "To be the best training provider."
 }
