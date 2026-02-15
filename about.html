@@ -4,18 +4,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title id="title">About Us</title>
+
+  <!-- SAME CSS AS HOMEPAGE -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-  <h1 id="about_heading"></h1>
-  <p id="about_intro"></p>
+  <!-- ===== HEADER (COPY FROM index.html IF YOU HAVE ONE) ===== -->
+  <header class="site-header">
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="courses.html">Courses</a>
+      <a href="arpl.html">ARPL</a>
+      <a href="enrolment.html">Enrolment</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
-  <h2 id="mission_heading"></h2>
-  <p id="mission_text"></p>
+  <!-- HERO / PAGE TITLE -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 id="about_heading"></h1>
+      <p id="about_intro"></p>
+    </div>
+  </section>
 
-  <h2 id="vision_heading"></h2>
-  <p id="vision_text"></p>
+  <!-- MAIN CONTENT -->
+  <main class="container">
+    <section class="content-section">
+      <h2 id="mission_heading"></h2>
+      <p id="mission_text"></p>
 
+      <h2 id="vision_heading"></h2>
+      <p id="vision_text"></p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>© 2026 All Rights Reserved</p>
+  </footer>
+
+  <!-- CMS LOADER (CRITICAL) -->
   <script src="assets/js/content-loader.js"></script>
   <script>
     loadContent("content/about.json");
