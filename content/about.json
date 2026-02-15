@@ -1,10 +1,11 @@
 {
-  "title": "About",
-  "about_heading": "About Us",
-  "about_intro": "We are a leading training academy.",
+  "title": "About Actogin Training",
+  "heading": "About Actogin Training",
+  "intro": "Empowering artisans through recognized certification and skills development.",
+
   "mission_heading": "Our Mission",
-  "mission_text": "To provide quality education.",
-  "vision_heading": "Our Vision is Our thing",
-  "vision_text": "To be the best training provider.",
-  "content": "We contributr"
+  "mission_text": "To provide high-quality training and assessment services that empower individuals to achieve nationally recognized trade qualifications.",
+
+  "vision_heading": "Our Vision",
+  "vision_text": "To become a leading accredited training and assessment centre in South Africa."
 }
