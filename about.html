@@ -291,8 +291,7 @@
     }
 
   </style>
-</head>
-<body>
+
 
 <!-- Navbar -->
 <!-- Navbar -->
@@ -359,24 +358,23 @@
     </nav>
   </header>
 
-  <!-- HERO / PAGE TITLE -->
-  <section class="page-hero">
-    <div class="container">
-      <h1 id="about_heading"></h1>
-      <p id="about_intro"></p>
-    </div>
-  </section>
+  <!-- HERO -->
+<section class="hero mt-5">
+  <div class="container text-center">
+    <h1 data-cms="heading"></h1>
+    <p data-cms="intro"></p>
+  </div>
+</section>
 
   <!-- MAIN CONTENT -->
-  <main class="container">
-    <section class="content-section">
-      <h2 id="mission_heading"></h2>
-      <p id="mission_text"></p>
-
-      <h2 id="vision_heading"></h2>
-      <p id="vision_text"></p>
-    </section>
-  </main>
+<main class="container">
+  <section class="content-section">
+    <h2 data-cms="mission_heading"></h2>
+    <div data-cms="mission_text"></div>
+    <h2 data-cms="vision_heading"></h2>
+    <div data-cms="vision_text"></div>
+  </section>
+</main>
 
  <!-- Footer -->
 <footer>
@@ -410,13 +408,21 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <!-- CMS LOADER (CRITICAL) -->
-  <script src="assets/js/content-loader.js"></script>
+  <script src="assets/js/cms-loader.js"></script>
   <script>
     loadContent("content/about.json");
   </script>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="/assets/js/cms-loader.js"></script>
+
+<script>
+  loadPage("about");
+</script>
 </body>
 </html>
+
 
 
 
