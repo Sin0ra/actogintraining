@@ -9,93 +9,66 @@ collections:
   - name: "pages"
     label: "Website Pages"
     files:
-      - label: "Home Page Content"
-        name: "home"
-        file: "content/home.json"
+
+      - label: "Home Page"
+        name: "index"
+        file: "content/pages/index.json"
         fields:
-          - label: "Browser Tab Title"
-            name: "title"
-            widget: "string"
-            hint: "This appears on the top browser tab"
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Main Heading", name: "heading", widget: "string" }
+          - { label: "Main Content", name: "content", widget: "markdown" }
 
-          - label: "Top Banner Title (Big text at the top of the homepage)"
-            name: "hero_heading"
-            widget: "string"
-
-          - label: "Top Banner Description (Text under the main banner)"
-            name: "hero_subheading"
-            widget: "text"
-
-          - label: "Services Section Title"
-            name: "section1_heading"
-            widget: "string"
-
-          - label: "Services Section Description"
-            name: "section1_text"
-            widget: "text"
-
-          - label: "Why Choose Us Title"
-            name: "section2_heading"
-            widget: "string"
-
-          - label: "Why Choose Us Description"
-            name: "section2_text"
-            widget: "text"
-      
-      # ABOUT PAGE (FULLY EDITABLE)
       - label: "About Page"
         name: "about"
-        file: "content/about.json"
+        file: "content/pages/about.json"
         fields:
           - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "About Heading", name: "about_heading", widget: "string" }
-          - { label: "About Introduction", name: "about_intro", widget: "text" }
-          - { label: "Mission Heading", name: "mission_heading", widget: "string" }
-          - { label: "Mission Text", name: "mission_text", widget: "text" }
-          - { label: "Vision Heading", name: "vision_heading", widget: "string" }
-          - { label: "Vision Text", name: "vision_text", widget: "text" }
+          - { label: "Main Heading", name: "heading", widget: "string" }
+          - { label: "Main Content", name: "content", widget: "markdown" }
 
-      # COURSES PAGE
-      - label: "Courses Page"
-        name: "courses"
-        file: "content/courses.json"
-        fields:
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Courses Heading", name: "courses_heading", widget: "string" }
-          - { label: "Courses Description", name: "courses_description", widget: "text" }
-          - { label: "Course List Content", name: "courses_content", widget: "markdown" }
-
-      # ARPL PAGE
       - label: "ARPL Page"
         name: "arpl"
-        file: "content/arpl.json"
+        file: "content/pages/arpl.json"
         fields:
           - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "ARPL Heading", name: "arpl_heading", widget: "string" }
-          - { label: "ARPL Description", name: "arpl_description", widget: "text" }
+          - { label: "Main Heading", name: "heading", widget: "string" }
+          - { label: "Main Content", name: "content", widget: "markdown" }
 
-      # ENROLMENT PAGE
-      - label: "Enrolment Page"
-        name: "enrolment"
-        file: "content/enrolment.json"
+      - label: "Why Choose Us Page"
+        name: "choosing"
+        file: "content/pages/choosing.json"
         fields:
           - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Enrolment Heading", name: "enrolment_heading", widget: "string" }
-          - { label: "Enrolment Information", name: "enrolment_info", widget: "markdown" }
+          - { label: "Main Heading", name: "heading", widget: "string" }
+          - { label: "Main Content", name: "content", widget: "markdown" }
 
-      # CONTACT PAGE
+      - label: "Courses Page"
+        name: "courses"
+        file: "content/pages/courses.json"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Main Heading", name: "heading", widget: "string" }
+          - label: "Courses"
+            name: "courses"
+            widget: "list"
+            fields:
+              - { label: "Course Name", name: "name", widget: "string" }
+              - { label: "Duration", name: "duration", widget: "string" }
+              - { label: "Price", name: "price", widget: "string" }
+
       - label: "Contact Page"
         name: "contact"
-        file: "content/contact.json"
+        file: "content/pages/contact.json"
         fields:
           - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Contact Heading", name: "contact_heading", widget: "string" }
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
           - { label: "Address", name: "address", widget: "text" }
-          - { label: "Phone Number", name: "phone", widget: "string" }
-          - { label: "Email Address", name: "email", widget: "string" }
-          - { label: "Contact Description", name: "contact_description", widget: "text" }
 
-
-
-
-
+      - label: "Enrolment Page"
+        name: "enrolment"
+        file: "content/pages/enrolment.json"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Main Heading", name: "heading", widget: "string" }
+          - { label: "Instructions", name: "content", widget: "markdown" }
