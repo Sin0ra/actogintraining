@@ -34,4 +34,16 @@ async function loadPage(pageName) {
   } catch (err) {
     console.error("CMS Load Error:", err);
   }
+
+}
+if (data.courses && document.getElementById("courses-container")) {
+  const container = document.getElementById("courses-container");
+  container.innerHTML = data.courses.map(course => `
+    <div class="col-md-4">
+      <div class="card p-4 shadow-sm">
+        <h5>${course.title}</h5>
+        <p>${course.description}</p>
+      </div>
+    </div>
+  `).join('');
 }
