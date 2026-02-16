@@ -1,7 +1,7 @@
 {
   "title": "Actogin Training",
   "heading": "Professional Trade Certification & Skills Development",
-  "content": "Helping artisans gain recognition, certification, and career growth.",
+  "intro": "Helping artisans gain recognition, certification, and career growth.",
 
   "services_title": "Our Core Services",
   "services_subtitle": "We provide a clear path for artisans to get qualified and advance their careers.",
@@ -19,5 +19,33 @@
       "title": "Gap Training",
       "description": "Close the gap between knowledge and certification requirements."
     }
-  ]
+  ],
+
+  "why_title": "Why Train With Actogin?",
+  "why_intro": "We are committed to providing the highest quality training and assessment to help you succeed in your trade.",
+
+  "why_features": [
+    {
+      "icon": "bi-people",
+      "title": "Expert Instructors",
+      "description": "Learn from seasoned industry professionals with years of hands-on experience."
+    },
+    {
+      "icon": "bi-building",
+      "title": "Modern Facilities",
+      "description": "Train in a state-of-the-art workshop equipped with the latest tools and technology."
+    },
+    {
+      "icon": "bi-award",
+      "title": "Certified Programs",
+      "description": "Gain nationally recognized qualifications that open doors to new career opportunities."
+    }
+  ],
+
+  "cta_title": "Ready to Start Your Career?",
+  "cta_text": "Whether you're starting fresh, seeking certification, or advancing your skills, we have a program for you.",
+  "cta_btn1_text": "Enroll Now",
+  "cta_btn1_link": "enrolment.html",
+  "cta_btn2_text": "Contact Us",
+  "cta_btn2_link": "contact.html"
 }
