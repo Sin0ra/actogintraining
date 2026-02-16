@@ -1,10 +1,7 @@
 {
   "title": "ARPL & Trade Testing",
-  "description": "We assess and recognize prior learning to help artisans qualify faster.",
-  "steps": [
-    "Application & Screening",
-    "Practical Assessment",
-    "Gap Training",
-    "Trade Test"
-  ]
+  "heading": "ARPL & Trade Testing",
+  "intro": "Recognition of Prior Learning and official trade testing services.",
+  "content": "Full explanation of ARPL process here..."
 }
+
