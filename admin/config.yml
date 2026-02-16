@@ -9,7 +9,6 @@ collections:
   - name: "pages"
     label: "Website Pages"
     files:
-
       - label: "Home Page"
         name: "index"
         file: "content/pages/index.json"
@@ -17,6 +16,29 @@ collections:
           - { label: "Page Title", name: "title", widget: "string" }
           - { label: "Main Heading", name: "heading", widget: "string" }
           - { label: "Main Content", name: "content", widget: "markdown" }
+
+          # CTA BUTTON LINK
+          - { label: "CTA Link", name: "cta_link", widget: "string", required: false }
+
+          # SERVICES SECTION
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Service Title", name: "title", widget: "string" }
+              - { label: "Service Description", name: "description", widget: "text" }
+
+          # WHY FEATURES SECTION
+          - label: "Why Features"
+            name: "why_features"
+            widget: "list"
+            required: false
+            fields:
+              - { label: "Icon (Bootstrap icon class)", name: "icon", widget: "string" }
+              - { label: "Feature Title", name: "title", widget: "string" }
+              - { label: "Feature Description", name: "description", widget: "text" }
+
 
       - label: "About Page"
         name: "about"
@@ -72,3 +94,4 @@ collections:
           - { label: "Page Title", name: "title", widget: "string" }
           - { label: "Main Heading", name: "heading", widget: "string" }
           - { label: "Instructions", name: "content", widget: "markdown" }
+
