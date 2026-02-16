@@ -1,10 +1,15 @@
 {
-  "title": "Courses & Programs",
+  "title": "Our Courses",
+  "heading": "Our Training Courses",
+  "intro": "Explore our available programs.",
   "courses": [
-    "Electrical Trade",
-    "Plumbing Trade",
-    "Boilermaking",
-    "Fitting & Turning",
-    "Welding"
+    {
+      "title": "Electrical Trade",
+      "description": "Full qualification training."
+    },
+    {
+      "title": "Plumbing",
+      "description": "Certified plumbing training."
+    }
   ]
 }
