@@ -1,0 +1,11 @@
+{
+  "courses": [
+    {
+      "name": "Tech",
+      "duration": "1 year",
+      "price": "2500"
+    }
+  ],
+  "title": "Courses",
+  "heading": "Courses"
+}
