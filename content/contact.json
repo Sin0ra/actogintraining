@@ -1,5 +1,9 @@
 {
   "title": "Contact Us",
   "heading": "Contact Actogin Training",
-  "intro": "Get in touch with our team today."
+  "intro": "We’re here to help you start your certification journey.",
+
+  "address": "123 Main Street, Johannesburg, South Africa",
+  "phone": "+27 12 345 6789",
+  "email": "info@actogintraining.co.za"
 }
