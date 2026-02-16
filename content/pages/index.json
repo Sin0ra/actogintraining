@@ -1,5 +1,12 @@
 {
   "title": "Actongin Training",
   "heading": "Train with Us",
-  "content": "F﻿un fvge"
+  "content": "F﻿un fvge",
+  "services": [
+    {
+      "title": "Electronic",
+      "description": "Electronic"
+    }
+  ],
+  "why_features": []
 }
