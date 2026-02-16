@@ -1,9 +1,6 @@
 {
-  "title": "Student Enrolment",
-  "instructions": "Complete the enrolment form and submit required documents.",
-  "requirements": [
-    "Certified ID copy",
-    "Previous qualifications",
-    "Proof of experience"
-  ]
+  "title": "Enrolment",
+  "heading": "Start Your Enrolment",
+  "intro": "Begin your journey today.",
+  "content": "Enrolment steps explained here..."
 }
