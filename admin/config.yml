@@ -13,81 +13,138 @@ collections:
         name: "index"
         file: "content/pages/index.json"
         fields:
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Main Heading", name: "heading", widget: "string" }
-          - { label: "Main Content", name: "content", widget: "markdown" }
-          - { label: "CTA Link", name: "cta_link", widget: "string", required: false }
-
+          - label: "Page Title"
+            name: "title"
+            widget: "string"
+          - label: "Main Heading"
+            name: "heading"
+            widget: "string"
+          - label: "Main Content"
+            name: "content"
+            widget: "markdown"
+          - label: "CTA Link"
+            name: "cta_link"
+            widget: "string"
+            required: false
           - label: "Services"
             name: "services"
             widget: "list"
             required: false
             fields:
-              - { label: "Service Title", name: "title", widget: "string" }
-              - { label: "Service Description", name: "description", widget: "text" }
-
+              - label: "Service Title"
+                name: "title"
+                widget: "string"
+              - label: "Service Description"
+                name: "description"
+                widget: "text"
           - label: "Why Features"
             name: "why_features"
             widget: "list"
             required: false
             fields:
-              - { label: "Icon (Bootstrap icon class)", name: "icon", widget: "string" }
-              - { label: "Feature Title", name: "title", widget: "string" }
-              - { label: "Feature Description", name: "description", widget: "text" }
+              - label: "Icon (Bootstrap icon class)"
+                name: "icon"
+                widget: "string"
+              - label: "Feature Title"
+                name: "title"
+                widget: "string"
+              - label: "Feature Description"
+                name: "description"
+                widget: "text"
 
       - label: "About Page"
         name: "about"
         file: "content/pages/about.json"
         fields:
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Main Heading", name: "heading", widget: "string" }
-          - { label: "Main Content", name: "content", widget: "text" }
+          - label: "Page Title"
+            name: "title"
+            widget: "string"
+          - label: "Main Heading"
+            name: "heading"
+            widget: "string"
+          - label: "Main Content"
+            name: "content"
+            widget: "text"
 
       - label: "ARPL Page"
         name: "arpl"
         file: "content/pages/arpl.json"
         fields:
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Main Heading", name: "heading", widget: "string" }
-          - { label: "Main Content", name: "content", widget: "markdown" }
+          - label: "Page Title"
+            name: "title"
+            widget: "string"
+          - label: "Main Heading"
+            name: "heading"
+            widget: "string"
+          - label: "Main Content"
+            name: "content"
+            widget: "markdown"
 
       - label: "Why Choose Us Page"
         name: "choosing"
         file: "content/pages/choosing.json"
         fields:
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Main Heading", name: "heading", widget: "string" }
-          - { label: "Main Content", name: "content", widget: "markdown" }
+          - label: "Page Title"
+            name: "title"
+            widget: "string"
+          - label: "Main Heading"
+            name: "heading"
+            widget: "string"
+          - label: "Main Content"
+            name: "content"
+            widget: "markdown"
 
       - label: "Courses Page"
         name: "courses"
         file: "content/pages/courses.json"
         fields:
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Main Heading", name: "heading", widget: "string" }
+          - label: "Page Title"
+            name: "title"
+            widget: "string"
+          - label: "Main Heading"
+            name: "heading"
+            widget: "string"
           - label: "Courses"
             name: "courses"
             widget: "list"
             fields:
-              - { label: "Course Name", name: "name", widget: "string" }
-              - { label: "Duration", name: "duration", widget: "string" }
-              - { label: "Price", name: "price", widget: "string" }
+              - label: "Course Name"
+                name: "name"
+                widget: "string"
+              - label: "Duration"
+                name: "duration"
+                widget: "string"
+              - label: "Price"
+                name: "price"
+                widget: "string"
 
       - label: "Contact Page"
         name: "contact"
         file: "content/pages/contact.json"
         fields:
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Phone", name: "phone", widget: "string" }
-          - { label: "Email", name: "email", widget: "string" }
-          - { label: "Address", name: "address", widget: "text" }
+          - label: "Page Title"
+            name: "title"
+            widget: "string"
+          - label: "Phone"
+            name: "phone"
+            widget: "string"
+          - label: "Email"
+            name: "email"
+            widget: "string"
+          - label: "Address"
+            name: "address"
+            widget: "text"
 
       - label: "Enrolment Page"
         name: "enrolment"
         file: "content/pages/enrolment.json"
         fields:
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Main Heading", name: "heading", widget: "string" }
-          - { label: "Instructions", name: "content", widget: "markdown" }
-
-
+          - label: "Page Title"
+            name: "title"
+            widget: "string"
+          - label: "Main Heading"
+            name: "heading"
+            widget: "string"
+          - label: "Instructions"
+            name: "content"
+            widget: "markdown"
