@@ -12,5 +12,11 @@
       "description": "Electri c"
     }
   ],
-  "why_features": []
+  "why_features": [
+    {
+      "icon": "ieee",
+      "title": "Because",
+      "description": "We bring this and that"
+    }
+  ]
 }
