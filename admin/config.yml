@@ -16,11 +16,8 @@ collections:
           - { label: "Page Title", name: "title", widget: "string" }
           - { label: "Main Heading", name: "heading", widget: "string" }
           - { label: "Main Content", name: "content", widget: "markdown" }
-
-          # CTA BUTTON LINK
           - { label: "CTA Link", name: "cta_link", widget: "string", required: false }
 
-          # SERVICES SECTION
           - label: "Services"
             name: "services"
             widget: "list"
@@ -29,7 +26,6 @@ collections:
               - { label: "Service Title", name: "title", widget: "string" }
               - { label: "Service Description", name: "description", widget: "text" }
 
-          # WHY FEATURES SECTION
           - label: "Why Features"
             name: "why_features"
             widget: "list"
@@ -39,15 +35,13 @@ collections:
               - { label: "Feature Title", name: "title", widget: "string" }
               - { label: "Feature Description", name: "description", widget: "text" }
 
-
-          - label: "About Page"
-             name: "about"
-             file: "content/pages/about.json"
-           fields:
-             - { label: "Page Title", name: "title", widget: "string" }
-             - { label: "Main Heading", name: "heading", widget: "string" }
-             - { label: "Main Content", name: "content", widget: "text" }
-
+      - label: "About Page"
+        name: "about"
+        file: "content/pages/about.json"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Main Heading", name: "heading", widget: "string" }
+          - { label: "Main Content", name: "content", widget: "text" }
 
       - label: "ARPL Page"
         name: "arpl"
@@ -95,10 +89,5 @@ collections:
           - { label: "Page Title", name: "title", widget: "string" }
           - { label: "Main Heading", name: "heading", widget: "string" }
           - { label: "Instructions", name: "content", widget: "markdown" }
-
-
-
-
-
 
 
