@@ -13,16 +13,12 @@ async function loadPage(pageName) {
     // =========================
     // BASIC TEXT FIELDS
     // =========================
-    document.querySelectorAll("[data-cms]").forEach(el => {
+ document.querySelectorAll("[data-cms]").forEach(el => {
   const key = el.getAttribute("data-cms");
 
   if (data[key] !== undefined) {
-    // If element is meant for rich text / content blocks
-    if (el.tagName === "DIV" || el.tagName === "SECTION") {
-      el.innerHTML = marked.parse(data[key]);
-    } else {
-      el.textContent = data[key];
-    }
+    el.textContent = data[key];
+    el.style.whiteSpace = "pre-line";
   }
 });
 
@@ -89,4 +85,5 @@ async function loadPage(pageName) {
     console.error("CMS Load Error:", err);
   }
 }
+
 
