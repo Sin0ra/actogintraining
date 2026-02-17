@@ -1,4 +1,11 @@
 {
-  "heading": "About Us",
-  "intro": "Information about Actogin Training and Assessment Centre’s mission, vision, and commitment to providing quality technical training and trade testing services."
+  "title": "About Actogin Training",
+  "heading": "About Actogin Training",
+  "intro": "Empowering artisans through recognized certification and skills development.",
+
+  "mission_heading": "Our Mission",
+  "mission_text": "To provide high-quality training and assessment services that empower individuals to achieve nationally recognized trade qualifications.",
+
+  "vision_heading": "Our Vision",
+  "vision_text": "To become a leading accredited training and assessment centre in South Africa."
 }
