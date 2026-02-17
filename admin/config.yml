@@ -40,13 +40,14 @@ collections:
               - { label: "Feature Description", name: "description", widget: "text" }
 
 
-      - label: "About Page"
-        name: "about"
-        file: "content/pages/about.json"
-        fields:
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Main Heading", name: "heading", widget: "string" }
-          - { label: "Main Content", name: "content", widget: "markdown" }
+          - label: "About Page"
+             name: "about"
+             file: "content/pages/about.json"
+           fields:
+             - { label: "Page Title", name: "title", widget: "string" }
+             - { label: "Main Heading", name: "heading", widget: "string" }
+             - { label: "Main Content", name: "content", widget: "text" }
+
 
       - label: "ARPL Page"
         name: "arpl"
@@ -94,6 +95,7 @@ collections:
           - { label: "Page Title", name: "title", widget: "string" }
           - { label: "Main Heading", name: "heading", widget: "string" }
           - { label: "Instructions", name: "content", widget: "markdown" }
+
 
 
 
