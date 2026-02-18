@@ -1,7 +1,7 @@
 {
   "title": "Actogin Training",
-  "heading": "Professional Trade Certification & Skills Development",
-  "intro": "Helping artisans gain recognition, certification, and career growth.",
+  "heading": "YOUR PATHWAY TO TRADE CERTIFICATION",
+  "intro": "Train. Test. Qualify. Actogin is your trusted partner in technical skills development and trade testing.",
 
   "services_title": "Our Core Services",
   "services_subtitle": "We provide a clear path for artisans to get qualified and advance their careers.",
@@ -9,15 +9,15 @@
   "services": [
     {
       "title": "ARPL & Trade Testing",
-      "description": "Get recognized for your skills with official assessment and testing."
+      "description": "Get recognized for your skills with our official assessment and accredited trade testing services."
     },
     {
       "title": "Skills Development",
-      "description": "Comprehensive training programs from basic to advanced levels."
+      "description": "Upskill with our comprehensive training programmes from foundational to advanced levels."
     },
     {
       "title": "Gap Training",
-      "description": "Close the gap between knowledge and certification requirements."
+      "description": "Close the gap between your existing knowledge and what’s required for certification."
     }
   ],
 
@@ -38,12 +38,12 @@
     {
       "icon": "bi-award",
       "title": "Certified Programs",
-      "description": "Gain nationally recognized qualifications that open doors to new career opportunities."
+      "description": "Gain nationally recognised qualifications that open doors to new career opportunities."
     }
   ],
 
   "cta_title": "Ready to Start Your Career?",
-  "cta_text": "Whether you're starting fresh, seeking certification, or advancing your skills, we have a program for you.",
+  "cta_text": "Whether you're starting fresh, seeking certification, or advancing your skills, we have a programme for you.",
   "cta_btn1_text": "Enroll Now",
   "cta_btn1_link": "enrolment.html",
   "cta_btn2_text": "Contact Us",
