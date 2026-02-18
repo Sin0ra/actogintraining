@@ -9,6 +9,7 @@ collections:
   - name: "pages"
     label: "Website Pages"
     files:
+
       - label: "Home Page"
         name: "index"
         file: "content/pages/index.json"
@@ -16,16 +17,20 @@ collections:
           - label: "Page Title"
             name: "title"
             widget: "string"
+
           - label: "Main Heading"
             name: "heading"
             widget: "string"
+
           - label: "Main Content"
             name: "content"
             widget: "text"
+
           - label: "CTA Link"
             name: "cta_link"
             widget: "string"
             required: false
+
           - label: "Services"
             name: "services"
             widget: "list"
@@ -34,9 +39,11 @@ collections:
               - label: "Service Title"
                 name: "title"
                 widget: "string"
+
               - label: "Service Description"
                 name: "description"
                 widget: "text"
+
           - label: "Why Features"
             name: "why_features"
             widget: "list"
@@ -45,9 +52,11 @@ collections:
               - label: "Icon (Bootstrap icon class)"
                 name: "icon"
                 widget: "string"
+
               - label: "Feature Title"
                 name: "title"
                 widget: "string"
+
               - label: "Feature Description"
                 name: "description"
                 widget: "text"
@@ -59,9 +68,11 @@ collections:
           - label: "Page Title"
             name: "title"
             widget: "string"
+
           - label: "Main Heading"
             name: "heading"
             widget: "string"
+
           - label: "Main Content"
             name: "content"
             widget: "text"
@@ -73,9 +84,11 @@ collections:
           - label: "Page Title"
             name: "title"
             widget: "string"
+
           - label: "Main Heading"
             name: "heading"
             widget: "string"
+
           - label: "Main Content"
             name: "content"
             widget: "text"
@@ -87,51 +100,52 @@ collections:
           - label: "Page Title"
             name: "title"
             widget: "string"
+
           - label: "Main Heading"
             name: "heading"
             widget: "string"
+
           - label: "Main Content"
             name: "content"
             widget: "text"
 
       - label: "Courses Page"
-  name: "courses"
-  file: "content/pages/courses.json"
-  fields:
-    - label: "Page Title"
-      name: "title"
-      widget: "string"
+        name: "courses"
+        file: "content/pages/courses.json"
+        fields:
+          - label: "Page Title"
+            name: "title"
+            widget: "string"
 
-    - label: "Main Content"
-      name: "content"
-      widget: "text"
-      hint: "Intro text shown at the top of the courses page"
+          - label: "Main Content"
+            name: "content"
+            widget: "text"
+            hint: "Intro text shown at the top of the courses page"
 
-    - label: "Courses"
-      name: "courses"
-      widget: "list"
-      summary: "{{fields.course_name}}"
-      fields:
-        - label: "Course Name"
-          name: "course_name"
-          widget: "string"
+          - label: "Courses"
+            name: "courses"
+            widget: "list"
+            summary: "{{fields.course_name}}"
+            fields:
+              - label: "Course Name"
+                name: "course_name"
+                widget: "string"
 
-        - label: "Course Description"
-          name: "description"
-          widget: "text"
+              - label: "Course Description"
+                name: "description"
+                widget: "text"
 
-        - label: "Duration"
-          name: "duration"
-          widget: "string"
+              - label: "Duration"
+                name: "duration"
+                widget: "string"
 
-        - label: "Price"
-          name: "price"
-          widget: "string"
+              - label: "Price"
+                name: "price"
+                widget: "string"
 
-        - label: "Certification"
-          name: "certification"
-          widget: "string"
-
+              - label: "Certification"
+                name: "certification"
+                widget: "string"
 
       - label: "Contact Page"
         name: "contact"
@@ -140,12 +154,15 @@ collections:
           - label: "Page Title"
             name: "title"
             widget: "string"
+
           - label: "Phone"
             name: "phone"
             widget: "string"
+
           - label: "Email"
             name: "email"
             widget: "string"
+
           - label: "Address"
             name: "address"
             widget: "text"
@@ -157,12 +174,16 @@ collections:
           - label: "Page Title"
             name: "title"
             widget: "string"
+
           - label: "Main Heading"
             name: "heading"
             widget: "string"
+
           - label: "Instructions"
             name: "content"
             widget: "text"
+
+
 
 
 
