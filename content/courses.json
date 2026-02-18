@@ -1,15 +1,14 @@
 {
   "title": "Our Courses",
-  "heading": "Our Training Courses",
-  "intro": "Explore our available programs.",
+  "content": "We offer accredited and skills-based training programmes designed to help you grow your career.",
   "courses": [
     {
-      "title": "Electrical Trade",
-      "description": "Full qualification training."
-    },
-    {
-      "title": "Plumbing",
-      "description": "Certified plumbing training."
+      "course_name": "Occupational Health and Safety",
+      "description": "Learn workplace safety standards and compliance.",
+      "duration": "3 Months",
+      "price": "R3,500",
+      "certification": "Accredited Certificate"
     }
   ]
 }
+
