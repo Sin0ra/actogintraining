@@ -1,11 +1,14 @@
 {
   "courses": [
     {
-      "name": "Tech",
+      "course_name": "IT ",
+      "description": "Learn About IT",
       "duration": "1 year",
-      "price": "2500"
+      "price": "2399",
+      "certification": "Diploma In IT"
     }
   ],
   "title": "Courses",
-  "heading": "Courses  and"
+  "heading": "Courses  and",
+  "content": "Check Our Courses"
 }
