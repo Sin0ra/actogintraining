@@ -95,28 +95,43 @@ collections:
             widget: "text"
 
       - label: "Courses Page"
-        name: "courses"
-        file: "content/pages/courses.json"
-        fields:
-          - label: "Page Title"
-            name: "title"
-            widget: "string"
-          - label: "Main Heading"
-            name: "heading"
-            widget: "string"
-          - label: "Courses"
-            name: "courses"
-            widget: "list"
-            fields:
-              - label: "Course Name"
-                name: "name"
-                widget: "string"
-              - label: "Duration"
-                name: "duration"
-                widget: "string"
-              - label: "Price"
-                name: "price"
-                widget: "string"
+  name: "courses"
+  file: "content/pages/courses.json"
+  fields:
+    - label: "Page Title"
+      name: "title"
+      widget: "string"
+
+    - label: "Main Content"
+      name: "content"
+      widget: "text"
+      hint: "Intro text shown at the top of the courses page"
+
+    - label: "Courses"
+      name: "courses"
+      widget: "list"
+      summary: "{{fields.course_name}}"
+      fields:
+        - label: "Course Name"
+          name: "course_name"
+          widget: "string"
+
+        - label: "Course Description"
+          name: "description"
+          widget: "text"
+
+        - label: "Duration"
+          name: "duration"
+          widget: "string"
+
+        - label: "Price"
+          name: "price"
+          widget: "string"
+
+        - label: "Certification"
+          name: "certification"
+          widget: "string"
+
 
       - label: "Contact Page"
         name: "contact"
@@ -148,6 +163,7 @@ collections:
           - label: "Instructions"
             name: "content"
             widget: "text"
+
 
 
 
