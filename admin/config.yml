@@ -78,7 +78,7 @@ collections:
             widget: "string"
           - label: "Main Content"
             name: "content"
-            widget: "markdown"
+            widget: "text"
 
       - label: "Why Choose Us Page"
         name: "choosing"
@@ -148,3 +148,4 @@ collections:
           - label: "Instructions"
             name: "content"
             widget: "markdown"
+
