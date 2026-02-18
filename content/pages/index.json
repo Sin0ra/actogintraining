@@ -16,5 +16,11 @@
       "description": "Close the gap between your existing knowledge and what's required for certification."
     }
   ],
-  "why_features": []
+  "why_features": [
+    {
+      "description": "missing this information : Why Train With Actogin? We are committed to providing the highest quality training and assessment to help you succeed in your trade.",
+      "title": "1",
+      "icon": "1"
+    }
+  ]
 }
