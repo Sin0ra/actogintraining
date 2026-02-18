@@ -92,7 +92,7 @@ collections:
             widget: "string"
           - label: "Main Content"
             name: "content"
-            widget: "markdown"
+            widget: "text"
 
       - label: "Courses Page"
         name: "courses"
@@ -147,5 +147,6 @@ collections:
             widget: "string"
           - label: "Instructions"
             name: "content"
-            widget: "markdown"
+            widget: "text"
+
 
