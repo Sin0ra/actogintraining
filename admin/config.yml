@@ -21,7 +21,7 @@ collections:
             widget: "string"
           - label: "Main Content"
             name: "content"
-            widget: "markdown"
+            widget: "text"
           - label: "CTA Link"
             name: "cta_link"
             widget: "string"
@@ -148,5 +148,6 @@ collections:
           - label: "Instructions"
             name: "content"
             widget: "text"
+
 
 
