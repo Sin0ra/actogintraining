@@ -1,22 +1,7 @@
 {
-  "title": "Actongin Training",
-  "heading": "Train with Us",
-  "content": "F﻿un fact",
-  "services": [
-    {
-      "title": "Electronic",
-      "description": "Electronic"
-    },
-    {
-      "title": "Electric",
-      "description": "Electri c"
-    }
-  ],
-  "why_features": [
-    {
-      "icon": "ieee",
-      "title": "Because",
-      "description": "We bring this and that"
-    }
-  ]
+  "title": "Home",
+  "heading": "YOUR PATHWAY TO TRADE CERTIFICATION",
+  "content": "Train. Test. Qualify. Actogin is your partner in technical skills development and trade testing.",
+  "services": [],
+  "why_features": []
 }
