@@ -219,3 +219,29 @@ section h3 {
   font-weight: 700;
 }
 
+/* ===== FIX: SERVICE CARD DESCRIPTION VISIBILITY ===== */
+
+/* Force readable paragraph text inside service cards */
+.card p,
+.service-card p,
+.card .card-text {
+  color: #2b2b2b !important;   /* Dark readable text */
+  opacity: 1 !important;       /* Remove faded look */
+  visibility: visible !important;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* If Bootstrap text-muted is being used (very likely) */
+.text-muted {
+  color: #4a4a4a !important;
+  opacity: 1 !important;
+}
+
+/* Ensure card background contrast is clean */
+.card,
+.service-card {
+  background-color: #ffffff !important;
+  border-radius: 12px;
+  padding: 20px;
+}
