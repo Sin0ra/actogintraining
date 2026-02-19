@@ -184,3 +184,27 @@ section:first-of-type {
   line-height: 1.6;
 }
 
+/* ===== CTA BOTTOM GREEN SECTION FIX ===== */
+.cta-section,
+section:last-of-type {
+  background: linear-gradient(135deg, #1B5E20, #2E7D32);
+  padding: 60px 0;
+  text-align: center;
+}
+
+/* Buttons inside bottom CTA */
+.cta-section .btn,
+section:last-of-type .btn {
+  background-color: #ffffff !important;
+  color: #1B5E20 !important;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 12px 28px;
+  border: none;
+}
+
+.cta-section .btn:hover,
+section:last-of-type .btn:hover {
+  background-color: #e8f5e9 !important;
+}
+
