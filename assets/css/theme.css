@@ -218,3 +218,181 @@ section h3 {
   color: #1B5E20;
   font-weight: 700;
 }
+/* ===== RESPONSIVE HERO (DOCUMENT STYLE) ===== */
+
+.hero,
+.banner,
+section:first-of-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 70vh;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #1B5E20, #2E7D32);
+  color: white;
+}
+
+/* Hero content container */
+.hero .container,
+.banner .container,
+section:first-of-type .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Main headline */
+.hero h1,
+.banner h1,
+section:first-of-type h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+/* Subtitle text */
+.hero p,
+.banner p,
+section:first-of-type p {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  color: #e8f5e9;
+}
+
+/* Hero buttons layout */
+.hero .btn,
+.banner .btn,
+section:first-of-type .btn {
+  margin: 10px;
+  padding: 14px 28px;
+  font-size: 1rem;
+  border-radius: 8px;
+}
+
+/* MOBILE RESPONSIVENESS */
+@media (max-width: 768px) {
+  .hero,
+  .banner,
+  section:first-of-type {
+    min-height: 60vh;
+    padding: 50px 15px;
+  }
+
+  .hero h1,
+  .banner h1,
+  section:first-of-type h1 {
+    font-size: 2rem;
+  }
+
+  .hero p,
+  .banner p,
+  section:first-of-type p {
+    font-size: 1rem;
+  }
+
+  /* Stack buttons vertically on mobile (like your document) */
+  .hero .btn,
+  .banner .btn,
+  section:first-of-type .btn {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin: 10px auto;
+  }
+}
+
+/* ===== RESPONSIVE CTA SECTION (BOTTOM GREEN BLOCK) ===== */
+.cta-section,
+section:last-of-type {
+  background: linear-gradient(135deg, #1B5E20, #2E7D32);
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.cta-section h2,
+section:last-of-type h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.cta-section p,
+section:last-of-type p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 15px auto;
+  color: #e8f5e9;
+}
+
+@media (max-width: 768px) {
+  .cta-section h2,
+  section:last-of-type h2 {
+    font-size: 1.6rem;
+  }
+
+  .cta-section .btn,
+  section:last-of-type .btn {
+    width: 100%;
+    max-width: 260px;
+    margin: 10px auto;
+    display: block;
+  }
+}
+
+/* ===== RESPONSIVE FOOTER (DOCUMENT STYLE) ===== */
+footer {
+  background-color: #0f2e1c;
+  color: #e8f5e9;
+  padding: 50px 20px 20px;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Footer headings */
+footer h5,
+footer h6 {
+  color: #66BB6A;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+/* Footer text */
+footer p,
+footer li {
+  color: #cfe8d6;
+  font-size: 0.95rem;
+}
+
+/* Footer links */
+footer a {
+  color: #cfe8d6;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+/* MOBILE FOOTER STACKING */
+@media (max-width: 768px) {
+  footer .row {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  footer .col,
+  footer .col-md-4,
+  footer .col-lg-4 {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  footer .text-md-start,
+  footer .text-md-end {
+    text-align: center !important;
+  }
+}
