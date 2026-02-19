@@ -158,4 +158,29 @@ section:first-of-type {
   align-items: center;
 }
 
+/* ===== SERVICE CARDS TEXT FIX ===== */
+.service-card,
+.card {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+/* Card titles (ARPL & Trade Testing, Skills Development, etc.) */
+.service-card h3,
+.service-card h4,
+.card h3,
+.card h4 {
+  color: #1B5E20 !important;
+  font-weight: 700;
+}
+
+/* Card descriptions (THIS fixes the faded text) */
+.service-card p,
+.card p {
+  color: #333333 !important;
+  opacity: 1 !important;
+  font-size: 1rem;
+  line-height: 1.6;
+}
 
