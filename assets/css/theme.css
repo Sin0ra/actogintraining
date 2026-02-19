@@ -78,3 +78,75 @@ a:hover {
 h1, h2, h3, h4, h5 {
   color: var(--dark-green);
 }
+
+/* ===== HERO BANNER GREEN UPGRADE ===== */
+
+/* Target common hero/banner sections safely */
+.hero,
+.banner,
+.jumbotron,
+header.hero,
+section:first-of-type {
+  background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 50%, #66BB6A 100%);
+  color: #ffffff;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero text styling */
+.hero h1,
+.banner h1,
+section:first-of-type h1 {
+  color: #ffffff !important;
+  font-weight: 700;
+  font-size: 2.8rem;
+}
+
+.hero p,
+.banner p,
+section:first-of-type p {
+  color: #f1f8f4 !important;
+  font-size: 1.1rem;
+}
+
+/* CTA Button inside hero */
+.hero .btn,
+.banner .btn,
+section:first-of-type .btn {
+  background-color: #ffffff !important;
+  color: #1B5E20 !important;
+  border: none;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 12px 28px;
+}
+
+.hero .btn:hover,
+.banner .btn:hover,
+section:first-of-type .btn:hover {
+  background-color: #e8f5e9 !important;
+  color: #1B5E20 !important;
+}
+
+/* Optional subtle overlay for premium look */
+.hero::before,
+.banner::before,
+section:first-of-type::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 0;
+}
+
+.hero > *,
+.banner > *,
+section:first-of-type > * {
+  position: relative;
+  z-index: 1;
+}
+
