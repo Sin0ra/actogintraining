@@ -1,0 +1,80 @@
+/* ===== GLOBAL GREEN & WHITE THEME ===== */
+:root {
+  --primary-green: #2E7D32;
+  --dark-green: #1B5E20;
+  --light-green: #66BB6A;
+  --white: #ffffff;
+  --light-bg: #f5f7f6;
+  --text-dark: #1a1a1a;
+}
+
+/* Replace ALL blue primary colors (Bootstrap override) */
+.bg-primary {
+  background-color: var(--primary-green) !important;
+}
+
+.text-primary {
+  color: var(--primary-green) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary-green) !important;
+  border-color: var(--primary-green) !important;
+}
+
+.btn-primary:hover {
+  background-color: var(--dark-green) !important;
+  border-color: var(--dark-green) !important;
+}
+
+/* Links */
+a {
+  color: var(--primary-green);
+}
+
+a:hover {
+  color: var(--dark-green);
+}
+
+/* Navbar styling (clean white + green accents) */
+.navbar {
+  background-color: var(--white) !important;
+  border-bottom: 2px solid var(--light-green);
+}
+
+.navbar .nav-link {
+  color: var(--text-dark) !important;
+  font-weight: 500;
+}
+
+.navbar .nav-link:hover {
+  color: var(--primary-green) !important;
+}
+
+/* Buttons (modern look) */
+.btn {
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Section backgrounds */
+.section-light {
+  background-color: var(--light-bg);
+}
+
+/* Cards / Services (for CMS sections) */
+.card, .service-card {
+  border: none;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.card:hover, .service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Headings accent color */
+h1, h2, h3, h4, h5 {
+  color: var(--dark-green);
+}
