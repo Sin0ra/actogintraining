@@ -245,3 +245,8 @@ section h3 {
   border-radius: 12px;
   padding: 20px;
 }
+
+.card-body p {
+  color: #1f2933 !important;
+  opacity: 1 !important;
+}
