@@ -422,7 +422,7 @@ section {
 }
 /* CORE SERVICES – COLOR ONLY OVERRIDE */
 .section-light {
-  background: #ffffff !important; /* white background */
+  background: #f5f5f5 !important; /* white background */
   color: #6b7280 !important;      /* gray paragraph text */
 }
 
