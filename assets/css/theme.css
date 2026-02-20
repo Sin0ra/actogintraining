@@ -420,3 +420,19 @@ section {
     text-align: center;
   }
 }
+/* CORE SERVICES – COLOR ONLY OVERRIDE */
+.section-light {
+  background-color: #ffffff !important;
+}
+
+.section-light h1,
+.section-light h2,
+.section-light h3,
+.section-light h4,
+.section-light h5 {
+  color: #1a1a1a !important; /* black headings */
+}
+
+.section-light p {
+  color: #6b7280 !important; /* gray text */
+}
