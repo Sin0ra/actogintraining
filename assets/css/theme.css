@@ -22,6 +22,19 @@ html, body {
   overflow-x: hidden;
 }
 
+/* =========================================
+   FLEX LAYOUT FOR STICKY FOOTER
+========================================= */
+html, body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto; /* allows main content to expand and push footer down */
+}
+
 body {
   color: var(--text-dark);
   background-color: #ffffff;
