@@ -51,25 +51,50 @@ body {
   padding-right: 15px;
 }
 
-/* ===== BOOTSTRAP COLOR OVERRIDES ===== */
-.bg-primary {
-  background-color: var(--primary-green) !important;
+/* Hero / Banner */
+.hero,
+.banner,
+header.hero {
+  background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 50%, #66BB6A 100%);
+  color: #ffffff;
 }
 
-.text-primary {
-  color: var(--primary-green) !important;
+/* Hero buttons */
+.hero .btn {
+  background-color: #ffffff !important;
+  color: #1B5E20 !important;
 }
 
-.btn-primary {
-  background-color: var(--primary-green) !important;
-  border-color: var(--primary-green) !important;
-  border-radius: 8px;
-  font-weight: 600;
+.hero .btn:hover {
+  background-color: #e8f5e9 !important;
 }
 
-.btn-primary:hover {
-  background-color: var(--dark-green) !important;
-  border-color: var(--dark-green) !important;
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #1B5E20, #2E7D32);
+  color: #ffffff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.cta-section h2,
+.cta-section p {
+  color: #ffffff;
+}
+
+.cta-section .btn-light {
+  background-color: #ffffff;
+  color: #1B5E20;
+}
+
+.cta-section .btn-outline-light {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.cta-section .btn-outline-light:hover {
+  background-color: #ffffff !important;
+  color: #1B5E20 !important;
 }
 
 /* ===== GLOBAL LINKS ===== */
