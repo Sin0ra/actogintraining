@@ -438,3 +438,26 @@ footer a:hover {
     list-style: none;
   }
 }
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, #1f6b2d, #2e8b3c);
+}
+
+/* Footer */
+.footer-section {
+  background: #0f3f1d;
+}
+
+.footer-link {
+  color: #d4f5dc;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 6px;
+  transition: 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #ffffff;
+  padding-left: 4px;
+}
