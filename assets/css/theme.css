@@ -1,6 +1,6 @@
 /* =========================================
-   GLOBAL GREEN & WHITE THEME (FINAL)
-   Fully Responsive + CMS Safe + Bootstrap Compatible
+   GLOBAL GREEN & WHITE THEME (FINAL MERGED)
+   Edge-to-Edge Fix + Fully Responsive + CMS Safe + Bootstrap Compatible
    ========================================= */
 
 /* ===== ROOT COLORS ===== */
@@ -11,6 +11,31 @@
   --white: #ffffff;
   --light-bg: #f5f7f6;
   --text-dark: #1a1a1a;
+}
+
+/* ===== GLOBAL RESET (FIX EDGE GAPS) ===== */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* prevents side white gaps */
+}
+
+/* Remove container side spacing that causes edge gaps */
+.container,
+.container-fluid {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Full width sections fix */
+.hero,
+.banner,
+.cta-section,
+section:last-of-type,
+footer {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  width: 100%;
 }
 
 /* ===== BOOTSTRAP COLOR OVERRIDES ===== */
@@ -113,7 +138,7 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-/* ===== HERO / BANNER (DOCUMENT STYLE RESPONSIVE) ===== */
+/* ===== HERO / BANNER (EDGE-TO-EDGE RESPONSIVE) ===== */
 .hero,
 .banner,
 header.hero,
@@ -128,6 +153,11 @@ section:first-of-type {
   padding: 80px 20px;
   position: relative;
   overflow: hidden;
+  width: 100vw; /* FULL WIDTH FIX */
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 /* Overlay */
@@ -188,7 +218,7 @@ section:first-of-type .btn:hover {
   background-color: #e8f5e9 !important;
 }
 
-/* ===== HERO RESPONSIVE SIZES ===== */
+/* ===== HERO RESPONSIVE ===== */
 @media (max-width: 992px) {
   .hero h1,
   section:first-of-type h1 {
@@ -232,7 +262,7 @@ section {
   padding: 60px 0;
 }
 
-/* ===== CMS SERVICE CARDS (DYNAMIC SAFE) ===== */
+/* ===== CMS SERVICE CARDS (CMS SAFE) ===== */
 #services .row,
 .services .row,
 .services-section .row {
@@ -264,7 +294,6 @@ section {
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
-/* CMS Text Fix (VERY IMPORTANT) */
 .card p,
 .service-card p {
   color: #333333 !important;
@@ -283,8 +312,6 @@ section {
 }
 
 /* ===== RESPONSIVE GRID (CMS CARDS) ===== */
-
-/* Desktop: 3 cards */
 @media (min-width: 993px) {
   .col-md-4 {
     flex: 0 0 30%;
@@ -292,7 +319,6 @@ section {
   }
 }
 
-/* Tablet: 2 cards */
 @media (max-width: 992px) {
   .col-md-4 {
     flex: 0 0 45% !important;
@@ -300,7 +326,6 @@ section {
   }
 }
 
-/* Mobile: 1 card full width */
 @media (max-width: 576px) {
   .col-md-4,
   .col-lg-4,
@@ -315,13 +340,16 @@ section {
   }
 }
 
-/* ===== CTA SECTION (BOTTOM GREEN BLOCK) ===== */
+/* ===== CTA SECTION (EDGE-TO-EDGE FIX) ===== */
 .cta-section,
 section:last-of-type {
   background: linear-gradient(135deg, #1B5E20, #2E7D32);
   color: white;
   text-align: center;
   padding: 70px 20px;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
 }
 
 .cta-section h2,
@@ -348,31 +376,14 @@ section:last-of-type .btn {
   font-weight: 600;
 }
 
-.cta-section .btn:hover,
-section:last-of-type .btn:hover {
-  background-color: #e8f5e9 !important;
-}
-
-@media (max-width: 768px) {
-  .cta-section h2,
-  section:last-of-type h2 {
-    font-size: 1.6rem;
-  }
-
-  .cta-section .btn,
-  section:last-of-type .btn {
-    width: 100%;
-    max-width: 260px;
-    margin: 10px auto;
-    display: block;
-  }
-}
-
-/* ===== FOOTER (FULLY RESPONSIVE) ===== */
+/* ===== FOOTER (FULL WIDTH + NO EDGE GAPS) ===== */
 footer {
   background-color: #0f2e1c;
   color: #e8f5e9;
   padding: 50px 20px 20px;
+  width: 100vw;
+  left: 50%;
+  margin-left: -50vw;
 }
 
 footer .row {
