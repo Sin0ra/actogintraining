@@ -76,18 +76,18 @@ h1, h2, h3, h4, h5 {
 }
 
 /* =========================================
-   NAVBAR (LOCKED + COMPACT + CLEAN)
+   NAVBAR (LOCKED + COMPACT + BLUE-SITE STYLE TYPOGRAPHY)
 ========================================= */
 
 .navbar {
-  position: fixed;   /* Proper lock */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
 
   background-color: #ffffff !important;
-  padding: 8px 0;
+  padding: 6px 0; /* slightly slimmer */
   border-bottom: 1px solid #e0e0e0;
 }
 
@@ -95,17 +95,22 @@ h1, h2, h3, h4, h5 {
   max-width: 1140px;
 }
 
+/* Brand */
 .navbar-brand {
   font-weight: 700;
   color: var(--dark-green) !important;
-  font-size: 1.05rem;
+  font-size: 1rem; /* slightly smaller like blue site */
+  letter-spacing: 0.3px;
 }
 
+/* Nav Links */
 .navbar-nav .nav-link {
+  font-size: 0.88rem;     /* smaller clean size */
+  font-weight: 500;       /* not too bold */
+  letter-spacing: 0.4px;  /* subtle professional spacing */
   color: #1a1a1a !important;
-  font-weight: 500;
-  margin: 0 6px;
-  padding: 6px 10px;
+  margin: 0 5px;
+  padding: 6px 8px;
   transition: 0.3s ease;
 }
 
@@ -113,9 +118,10 @@ h1, h2, h3, h4, h5 {
   color: var(--primary-green) !important;
 }
 
+/* Navbar Button */
 .navbar .btn {
-  padding: 6px 16px;
-  font-size: 0.9rem;
+  padding: 6px 14px;
+  font-size: 0.85rem;
   border-radius: 6px;
 }
 
@@ -134,8 +140,8 @@ h1, h2, h3, h4, h5 {
   }
 
   .navbar-nav .nav-link {
+    font-size: 1rem; /* readable on mobile */
     padding: 12px 0;
-    font-size: 1.05rem;
   }
 
   .navbar .btn {
