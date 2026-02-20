@@ -188,6 +188,31 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+/* NAVBAR BRAND & CONTACT BUTTON ENHANCEMENTS */
+
+/* Make the brand slightly larger and more prominent */
+.navbar-brand {
+  font-size: 1.15rem !important;   /* slightly larger than links */
+  font-weight: 800 !important;     /* bolder */
+  letter-spacing: 0.5px;
+}
+
+/* Separate Contact button from links and make slightly larger */
+.navbar .btn-contact {
+  font-size: 0.95rem;              /* slightly bigger */
+  font-weight: 600;
+  padding: 8px 18px;               /* bigger padding */
+  margin-left: 15px;               /* space from nav links */
+}
+
+/* Ensure on desktop the Contact button floats right of links */
+@media (min-width: 992px) {
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+}
 /* =========================================
    HERO / BANNER
 ========================================= */
