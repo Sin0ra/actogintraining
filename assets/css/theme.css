@@ -1,6 +1,7 @@
 /* =========================================
-   GLOBAL GREEN & WHITE THEME (FINAL MERGED)
-   Edge-to-Edge Fix + Fully Responsive + CMS Safe + Bootstrap Compatible
+   ACTOGIN TRAINING
+   FINAL CLEAN GREEN & WHITE THEME
+   CMS SAFE + EDGE-TO-EDGE + RESPONSIVE
    ========================================= */
 
 /* ===== ROOT COLORS ===== */
@@ -13,29 +14,17 @@
   --text-dark: #1a1a1a;
 }
 
-/* ===== GLOBAL RESET (FIX EDGE GAPS) ===== */
+/* ===== GLOBAL RESET ===== */
 html, body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* prevents side white gaps */
+  overflow-x: hidden;
 }
 
-/* Remove container side spacing that causes edge gaps */
 .container,
 .container-fluid {
   padding-left: 15px;
   padding-right: 15px;
-}
-
-/* Full width sections fix */
-.hero,
-.banner,
-.cta-section,
-section:last-of-type,
-footer {
-  margin-left: 0 !important;
-  margin-right: 0 !important;
-  width: 100%;
 }
 
 /* ===== BOOTSTRAP COLOR OVERRIDES ===== */
@@ -80,7 +69,10 @@ h1, h2, h3, h4, h5 {
   font-weight: 700;
 }
 
-/* ===== NAVBAR (FULLY RESPONSIVE) ===== */
+/* =========================================
+   NAVBAR
+========================================= */
+
 .navbar {
   position: sticky;
   top: 0;
@@ -138,7 +130,10 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-/* ===== HERO / BANNER (EDGE-TO-EDGE RESPONSIVE) ===== */
+/* =========================================
+   HERO / BANNER
+========================================= */
+
 .hero,
 .banner,
 header.hero,
@@ -153,14 +148,11 @@ section:first-of-type {
   padding: 80px 20px;
   position: relative;
   overflow: hidden;
-  width: 100vw; /* FULL WIDTH FIX */
+  width: 100vw;
   left: 50%;
-  right: 50%;
   margin-left: -50vw;
-  margin-right: -50vw;
 }
 
-/* Overlay */
 .hero::before,
 .banner::before,
 section:first-of-type::before {
@@ -177,32 +169,22 @@ section:first-of-type > * {
   z-index: 1;
 }
 
-.hero .container,
-.banner .container,
-section:first-of-type .container {
+.hero .container {
   max-width: 900px;
-  margin: 0 auto;
 }
 
-.hero h1,
-.banner h1,
-section:first-of-type h1 {
+.hero h1 {
   color: #ffffff !important;
   font-size: 3rem;
-  line-height: 1.2;
 }
 
-.hero p,
-.banner p,
-section:first-of-type p {
+.hero p {
   color: #e8f5e9 !important;
   font-size: 1.2rem;
   margin-top: 15px;
 }
 
-.hero .btn,
-.banner .btn,
-section:first-of-type .btn {
+.hero .btn {
   background-color: #ffffff !important;
   color: #1B5E20 !important;
   border: none;
@@ -212,252 +194,155 @@ section:first-of-type .btn {
   border-radius: 8px;
 }
 
-.hero .btn:hover,
-.banner .btn:hover,
-section:first-of-type .btn:hover {
+.hero .btn:hover {
   background-color: #e8f5e9 !important;
 }
 
-/* ===== HERO RESPONSIVE ===== */
-@media (max-width: 992px) {
-  .hero h1,
-  section:first-of-type h1 {
-    font-size: 2.4rem;
-  }
-}
+/* =========================================
+   SECTIONS
+========================================= */
 
-@media (max-width: 576px) {
-  .hero,
-  section:first-of-type {
-    min-height: 65vh;
-    padding: 60px 15px;
-  }
-
-  .hero h1,
-  section:first-of-type h1 {
-    font-size: 1.8rem;
-  }
-
-  .hero p,
-  section:first-of-type p {
-    font-size: 1rem;
-  }
-
-  .hero .btn,
-  section:first-of-type .btn {
-    display: block;
-    width: 100%;
-    max-width: 260px;
-    margin: 10px auto;
-  }
-}
-
-/* ===== SECTIONS ===== */
 .section-light {
   background-color: var(--light-bg);
 }
 
 section {
-  color: #1a1a1a;
   padding: 60px 0;
 }
 
-/* ===== CMS SERVICE CARDS (CMS SAFE) ===== */
-#services .row,
-.services .row,
-.services-section .row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
+/* =========================================
+   SERVICE CARDS (CMS SAFE)
+========================================= */
 
-#services .card,
-.services .card,
-.services-section .card,
-.service-card {
+.service-card,
+.card {
   height: 100%;
   padding: 25px;
   border-radius: 12px;
   background: #ffffff !important;
-  text-align: center;
   border: none;
   transition: all 0.3s ease;
   box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  text-align: center;
 }
 
-#services .card:hover,
-.services .card:hover,
-.services-section .card:hover,
-.service-card:hover {
+.service-card:hover,
+.card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
 }
 
-.card p,
-.service-card p {
-  color: #333333 !important;
-  opacity: 1 !important;
-  line-height: 1.6;
-  font-size: 1rem;
-}
+/* =========================================
+   CTA SECTION (UPDATED)
+========================================= */
 
-.card h3,
-.card h4,
-.service-card h3,
-.service-card h4 {
-  color: #1B5E20 !important;
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-
-/* ===== RESPONSIVE GRID (CMS CARDS) ===== */
-@media (min-width: 993px) {
-  .col-md-4 {
-    flex: 0 0 30%;
-    max-width: 30%;
-  }
-}
-
-@media (max-width: 992px) {
-  .col-md-4 {
-    flex: 0 0 45% !important;
-    max-width: 45% !important;
-  }
-}
-
-@media (max-width: 576px) {
-  .col-md-4,
-  .col-lg-4,
-  .col-sm-6 {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-  }
-
-  .card {
-    margin: 0 auto;
-    padding: 20px;
-  }
-}
-
-/* ===== CTA SECTION (EDGE-TO-EDGE FIX) ===== */
-.cta-section,
-section:last-of-type {
-  background: linear-gradient(135deg, #1B5E20, #2E7D32);
-  color: white;
+.cta-section {
+  background: linear-gradient(135deg, #1f6b2d, #2e8b3c);
+  color: #ffffff;
   text-align: center;
-  padding: 70px 20px;
+  padding: 80px 20px;
   width: 100vw;
+  position: relative;
   left: 50%;
   margin-left: -50vw;
 }
 
-.cta-section h2,
-section:last-of-type h2 {
-  font-size: 2.2rem;
+.cta-section h2 {
+  font-size: 2.4rem;
   font-weight: 700;
 }
 
-.cta-section p,
-section:last-of-type p {
-  font-size: 1.1rem;
-  max-width: 700px;
-  margin: 15px auto;
+.cta-section p {
+  font-size: 1.15rem;
+  max-width: 750px;
+  margin: 15px auto 30px;
   color: #e8f5e9;
 }
 
-.cta-section .btn,
-section:last-of-type .btn {
-  background-color: #ffffff !important;
-  color: #1B5E20 !important;
+.cta-section .btn {
   border-radius: 8px;
-  padding: 12px 28px;
-  border: none;
+  padding: 14px 30px;
   font-weight: 600;
+  transition: all 0.3s ease;
 }
 
-/* ===== FOOTER (FULL WIDTH + NO EDGE GAPS) ===== */
-footer {
-  background-color: #0f2e1c;
+.cta-section .btn-light {
+  background: #ffffff !important;
+  color: #1B5E20 !important;
+}
+
+.cta-section .btn-outline-light {
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+}
+
+.cta-section .btn-outline-light:hover {
+  background: #ffffff !important;
+  color: #1B5E20 !important;
+}
+
+/* =========================================
+   FOOTER (UPDATED)
+========================================= */
+
+.footer-section {
+  background: #0f3f1d;
   color: #e8f5e9;
-  padding: 50px 20px 20px;
+  padding: 60px 20px 25px;
   width: 100vw;
+  position: relative;
   left: 50%;
   margin-left: -50vw;
 }
 
-footer .row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-footer h5,
-footer h6 {
+.footer-section h5,
+.footer-section h6 {
   color: #66BB6A;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin-bottom: 18px;
 }
 
-footer p,
-footer li {
+.footer-section p {
   color: #cfe8d6;
   font-size: 0.95rem;
 }
 
-footer a {
-  color: #cfe8d6;
-}
-
-footer a:hover {
-  color: #ffffff;
-}
-
-/* Mobile Footer */
-@media (max-width: 768px) {
-  footer {
-    text-align: center;
-  }
-
-  footer .row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  footer .col,
-  footer .col-md-4,
-  footer .col-lg-4 {
-    width: 100%;
-    max-width: 400px;
-    margin-bottom: 30px;
-    text-align: center;
-  }
-
-  footer ul {
-    padding-left: 0;
-    list-style: none;
-  }
-}
-
-/* CTA Section */
-.cta-section {
-  background: linear-gradient(135deg, #1f6b2d, #2e8b3c);
-}
-
-/* Footer */
-.footer-section {
-  background: #0f3f1d;
-}
-
 .footer-link {
-  color: #d4f5dc;
+  color: #cfe8d6;
   text-decoration: none;
   display: block;
-  margin-bottom: 6px;
-  transition: 0.3s ease;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
 }
 
 .footer-link:hover {
   color: #ffffff;
-  padding-left: 4px;
+  padding-left: 6px;
+}
+
+.footer-section hr {
+  border-color: rgba(255,255,255,0.15);
+  margin: 30px 0;
+}
+
+/* =========================================
+   MOBILE OPTIMIZATION
+========================================= */
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cta-section h2 {
+    font-size: 1.8rem;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
 }
