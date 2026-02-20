@@ -420,10 +420,10 @@ section {
     text-align: center;
   }
 }
-/* CORE SERVICES – COLOR ONLY OVERRIDE */
+/* CORE SERVICES – BRIGHT WHITE BACKGROUND */
 .section-light {
-  background: #ffffff !important; /* white background */
-  color: #6b7280 !important;      /* gray paragraph text */
+  background-color: #ffffff !important; /* pure bright white */
+  color: #6b7280 !important;           /* gray paragraph text */
 }
 
 .section-light h1,
@@ -431,5 +431,5 @@ section {
 .section-light h3,
 .section-light h4,
 .section-light h5 {
-  color: #1a1a1a !important;      /* black headings */
+  color: #1a1a1a !important;           /* black headings */
 }
