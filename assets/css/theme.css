@@ -422,7 +422,8 @@ section {
 }
 /* CORE SERVICES – COLOR ONLY OVERRIDE */
 .section-light {
-  background-color: #ffffff !important;
+  background: #ffffff !important; /* white background */
+  color: #6b7280 !important;      /* gray paragraph text */
 }
 
 .section-light h1,
@@ -430,9 +431,5 @@ section {
 .section-light h3,
 .section-light h4,
 .section-light h5 {
-  color: #1a1a1a !important; /* black headings */
-}
-
-.section-light p {
-  color: #6b7280 !important; /* gray text */
+  color: #1a1a1a !important;      /* black headings */
 }
