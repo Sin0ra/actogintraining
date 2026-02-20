@@ -420,10 +420,15 @@ section {
     text-align: center;
   }
 }
-/* CORE SERVICES – COLOR ONLY OVERRIDE */
+/* CORE SERVICES – BRIGHT WHITE BACKGROUND FIX */
 .section-light {
-  background: #FDFEFF !important; /* white background */
+  background: #ffffff !important; /* pure bright white */
   color: #6b7280 !important;      /* gray paragraph text */
+  position: relative;             /* ensure z-index works */
+}
+
+.section-light::before {
+  content: none !important;       /* remove the dark overlay */
 }
 
 .section-light h1,
