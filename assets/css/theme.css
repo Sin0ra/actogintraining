@@ -143,34 +143,40 @@ h1, h2, h3, h4, h5 {
    HERO / BANNER
 ========================================= */
 
+/* HERO SECTION - CLEAN FIXED VERSION */
 .hero,
 .banner,
 header.hero,
 section:first-of-type {
   background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 50%, #66BB6A 100%);
   color: #ffffff;
-  min-height: 75vh;
+
+  /* Reduced height */
+  min-height: 55vh;
+
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 80px 20px;
+
+  /* Reduced padding */
+  padding: 60px 20px;
+
   position: relative;
   overflow: hidden;
-  width: 100vw;
-  left: 50%;
-  margin-left: -50vw;
 }
 
+/* Overlay */
 .hero::before,
 .banner::before,
 section:first-of-type::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0,0,0,0.15);
+  background: rgba(0, 0, 0, 0.15);
 }
 
+/* Content above overlay */
 .hero > *,
 .banner > *,
 section:first-of-type > * {
@@ -179,32 +185,54 @@ section:first-of-type > * {
 }
 
 .hero .container {
-  max-width: 900px;
+  max-width: 850px;
 }
 
+/* Heading */
 .hero h1 {
   color: #ffffff !important;
-  font-size: 3rem;
+  font-size: 2.4rem; /* Reduced */
+  font-weight: 700;
 }
 
+/* Paragraph */
 .hero p {
   color: #e8f5e9 !important;
-  font-size: 1.2rem;
+  font-size: 1.05rem; /* Reduced */
   margin-top: 15px;
 }
 
+/* Buttons */
 .hero .btn {
   background-color: #ffffff !important;
   color: #1B5E20 !important;
   border: none;
-  margin: 10px;
-  padding: 14px 28px;
+  margin: 8px;
+  padding: 12px 24px;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 6px;
+  transition: 0.3s ease;
 }
 
 .hero .btn:hover {
   background-color: #e8f5e9 !important;
+  transform: translateY(-2px);
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 45vh;
+    padding: 50px 15px;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
 }
 
 /* =========================================
