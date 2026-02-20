@@ -562,3 +562,94 @@ footer .col-lg-4 {
     list-style: none;
   }
 }
+
+
+/* =========================================
+   CMS SERVICE CARDS - RESPONSIVE LAYOUT
+   (SAFE FOR DYNAMIC CMS CONTENT)
+   ========================================= */
+
+/* Target the services section container */
+#services .row,
+.services .row,
+.services-section .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Base card styling (works with CMS-generated cards) */
+#services .card,
+.services .card,
+.services-section .card {
+  height: 100%;
+  padding: 25px;
+  border-radius: 12px;
+  background: #ffffff !important;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+/* Fix invisible CMS text (your earlier issue) */
+#services .card p,
+.services .card p,
+.services-section .card p {
+  color: #2b2b2b !important;
+  opacity: 1 !important;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* Strong readable titles */
+#services .card h3,
+#services .card h4,
+.services .card h3,
+.services .card h4 {
+  color: #1B5E20 !important;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+/* Hover effect (still CMS safe) */
+#services .card:hover,
+.services .card:hover,
+.services-section .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== RESPONSIVE GRID FOR CMS CARDS ===== */
+
+/* Desktop: 3 cards */
+@media (min-width: 993px) {
+  .col-md-4 {
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+}
+
+/* Tablet: 2 cards per row */
+@media (max-width: 992px) {
+  .col-md-4 {
+    flex: 0 0 45% !important;
+    max-width: 45% !important;
+  }
+}
+
+/* Mobile: 1 card per row (FULL WIDTH) */
+@media (max-width: 576px) {
+  .col-md-4,
+  .col-lg-4,
+  .col-sm-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Better spacing for mobile readability */
+  .card {
+    margin: 0 auto;
+    padding: 20px;
+  }
+}
