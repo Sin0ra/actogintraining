@@ -2,6 +2,7 @@
    ACTOGIN TRAINING
    FINAL CLEAN GREEN & WHITE THEME
    CMS SAFE + EDGE-TO-EDGE + RESPONSIVE
+   UPDATED & OPTIMIZED
    ========================================= */
 
 /* ===== ROOT COLORS ===== */
@@ -19,6 +20,16 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+
+body {
+  color: var(--text-dark);
+  background-color: #ffffff;
+}
+
+/* Prevent navbar overlap */
+body {
+  padding-top: 70px;
 }
 
 .container,
@@ -59,30 +70,24 @@ a:hover {
 }
 
 /* ===== GLOBAL TYPOGRAPHY ===== */
-body {
-  color: var(--text-dark);
-  background-color: #ffffff;
-}
-
 h1, h2, h3, h4, h5 {
   color: var(--dark-green);
   font-weight: 700;
 }
 
 /* =========================================
-   NAVBAR
-========================================= */
-
-/* =========================================
-   NAVBAR (COMPACT + CLEAN)
+   NAVBAR (LOCKED + COMPACT + CLEAN)
 ========================================= */
 
 .navbar {
-  position: sticky;
+  position: fixed;   /* Proper lock */
   top: 0;
+  left: 0;
+  width: 100%;
   z-index: 1000;
+
   background-color: #ffffff !important;
-  padding: 8px 0; /* smaller height */
+  padding: 8px 0;
   border-bottom: 1px solid #e0e0e0;
 }
 
@@ -93,14 +98,14 @@ h1, h2, h3, h4, h5 {
 .navbar-brand {
   font-weight: 700;
   color: var(--dark-green) !important;
-  font-size: 1.1rem; /* slightly smaller */
+  font-size: 1.05rem;
 }
 
 .navbar-nav .nav-link {
   color: #1a1a1a !important;
   font-weight: 500;
   margin: 0 6px;
-  padding: 6px 10px; /* reduces vertical height */
+  padding: 6px 10px;
   transition: 0.3s ease;
 }
 
@@ -109,7 +114,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .navbar .btn {
-  padding: 6px 16px; /* smaller button */
+  padding: 6px 16px;
   font-size: 0.9rem;
   border-radius: 6px;
 }
@@ -143,30 +148,24 @@ h1, h2, h3, h4, h5 {
    HERO / BANNER
 ========================================= */
 
-/* HERO SECTION - CLEAN FIXED VERSION */
 .hero,
 .banner,
 header.hero,
 section:first-of-type {
-  background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 50%, #66BB6A 100%);
+  background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-green) 50%, var(--light-green) 100%);
   color: #ffffff;
 
-  /* Reduced height */
   min-height: 55vh;
-
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
 
-  /* Reduced padding */
   padding: 60px 20px;
-
   position: relative;
   overflow: hidden;
 }
 
-/* Overlay */
 .hero::before,
 .banner::before,
 section:first-of-type::before {
@@ -176,7 +175,6 @@ section:first-of-type::before {
   background: rgba(0, 0, 0, 0.15);
 }
 
-/* Content above overlay */
 .hero > *,
 .banner > *,
 section:first-of-type > * {
@@ -188,24 +186,21 @@ section:first-of-type > * {
   max-width: 850px;
 }
 
-/* Heading */
 .hero h1 {
   color: #ffffff !important;
-  font-size: 2.4rem; /* Reduced */
+  font-size: 2.4rem;
   font-weight: 700;
 }
 
-/* Paragraph */
 .hero p {
   color: #e8f5e9 !important;
-  font-size: 1.05rem; /* Reduced */
+  font-size: 1.05rem;
   margin-top: 15px;
 }
 
-/* Buttons */
 .hero .btn {
   background-color: #ffffff !important;
-  color: #1B5E20 !important;
+  color: var(--dark-green) !important;
   border: none;
   margin: 8px;
   padding: 12px 24px;
@@ -219,32 +214,16 @@ section:first-of-type > * {
   transform: translateY(-2px);
 }
 
-/* Mobile optimization */
-@media (max-width: 768px) {
-  .hero {
-    min-height: 45vh;
-    padding: 50px 15px;
-  }
-
-  .hero h1 {
-    font-size: 1.9rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-}
-
 /* =========================================
    SECTIONS
 ========================================= */
 
-.section-light {
-  background-color: var(--light-bg);
+section {
+  padding: 70px 0; /* More balanced spacing */
 }
 
-section {
-  padding: 60px 0;
+.section-light {
+  background-color: var(--light-bg);
 }
 
 /* =========================================
@@ -270,7 +249,7 @@ section {
 }
 
 /* =========================================
-   CTA SECTION (UPDATED)
+   CTA SECTION (FIXED OVERFLOW ISSUE)
 ========================================= */
 
 .cta-section {
@@ -278,10 +257,8 @@ section {
   color: #ffffff;
   text-align: center;
   padding: 80px 20px;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  margin-left: -50vw;
+  width: 100%;            /* FIXED */
+  position: relative;     /* removed 100vw trick */
 }
 
 .cta-section h2 {
@@ -303,23 +280,13 @@ section {
   transition: all 0.3s ease;
 }
 
-.cta-section .btn-light {
-  background: #ffffff !important;
-  color: #1B5E20 !important;
-}
-
-.cta-section .btn-outline-light {
-  border: 2px solid #ffffff !important;
-  color: #ffffff !important;
-}
-
 .cta-section .btn-outline-light:hover {
   background: #ffffff !important;
-  color: #1B5E20 !important;
+  color: var(--dark-green) !important;
 }
 
 /* =========================================
-   FOOTER (UPDATED)
+   FOOTER (STABLE + CLEAN)
 ========================================= */
 
 .footer-section {
@@ -335,7 +302,7 @@ section {
 
 .footer-section h5,
 .footer-section h6 {
-  color: #66BB6A;
+  color: var(--light-green);
   font-weight: 700;
   margin-bottom: 18px;
 }
@@ -368,6 +335,15 @@ section {
 ========================================= */
 
 @media (max-width: 768px) {
+  body {
+    padding-top: 65px;
+  }
+
+  .hero {
+    min-height: 45vh;
+    padding: 50px 15px;
+  }
+
   .hero h1 {
     font-size: 2rem;
   }
