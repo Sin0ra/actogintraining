@@ -285,10 +285,27 @@ section {
   text-align: center;
 }
 
+/* Hover effect */
 .service-card:hover,
 .card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* Card headings */
+.service-card h5,
+.card h5 {
+  color: #1a1a1a; /* black headings */
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Card paragraphs */
+.service-card p,
+.card p {
+  color: #6b7280; /* gray text */
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 /* =========================================
