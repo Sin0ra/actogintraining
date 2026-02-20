@@ -73,25 +73,34 @@ h1, h2, h3, h4, h5 {
    NAVBAR
 ========================================= */
 
+/* =========================================
+   NAVBAR (COMPACT + CLEAN)
+========================================= */
+
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
   background-color: #ffffff !important;
-  padding: 12px 20px;
-  border-bottom: 2px solid var(--light-green);
+  padding: 8px 0; /* smaller height */
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.navbar .container {
+  max-width: 1140px;
 }
 
 .navbar-brand {
   font-weight: 700;
   color: var(--dark-green) !important;
-  font-size: 1.3rem;
+  font-size: 1.1rem; /* slightly smaller */
 }
 
 .navbar-nav .nav-link {
   color: #1a1a1a !important;
   font-weight: 500;
-  margin: 0 8px;
+  margin: 0 6px;
+  padding: 6px 10px; /* reduces vertical height */
   transition: 0.3s ease;
 }
 
@@ -100,9 +109,9 @@ h1, h2, h3, h4, h5 {
 }
 
 .navbar .btn {
-  border-radius: 8px;
-  padding: 8px 18px;
-  font-weight: 600;
+  padding: 6px 16px; /* smaller button */
+  font-size: 0.9rem;
+  border-radius: 6px;
 }
 
 /* Mobile Navbar */
