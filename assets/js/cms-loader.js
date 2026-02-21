@@ -74,7 +74,7 @@ async function loadPage(pageName) {
       container.innerHTML = data.courses.map(course => `
         <div class="col-md-4">
           <div class="card p-4 shadow-sm">
-            <h5>${course.title}</h5>
+           <h5>${course.course_name}</h5>
             <p>${course.description}</p>
           </div>
         </div>
@@ -85,5 +85,6 @@ async function loadPage(pageName) {
     console.error("CMS Load Error:", err);
   }
 }
+
 
 
