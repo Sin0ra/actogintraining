@@ -2,6 +2,8 @@ async function loadPage(pageName) {
   try {
     const res = await fetch(`/content/pages/${pageName}.json`);
     const data = await res.json();
+    console.log("FULL DATA:", data);
+    console.log("COURSES FIELD:", data.courses);
 
     // =========================
     // SET PAGE TITLE
@@ -86,6 +88,7 @@ if (Array.isArray(data.courses) && document.getElementById("courses-container"))
     </div>
   `).join('');
 }
+
 
 
 
