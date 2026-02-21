@@ -167,21 +167,8 @@ collections:
             name: "address"
             widget: "text"
 
-      - label: "Enrolment Page"
-        name: "enrolment"
-        file: "content/pages/enrolment.json"
-        fields:
-          - label: "Page Title"
-            name: "title"
-            widget: "string"
+     
 
-          - label: "Main Heading"
-            name: "heading"
-            widget: "string"
-
-          - label: "Instructions"
-            name: "content"
-            widget: "text"
 
 
 
