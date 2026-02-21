@@ -18,19 +18,33 @@
   <link rel="stylesheet" href="assets/css/theme.css">
 
   <style>
-    /* Center all main section text */
-    .main-content {
+    /* Center the section content */
+    .section-light {
       text-align: center;
-      margin-top: 6rem;
     }
+
+    /* Courses cards */
     #courses-list .card {
-      text-align: left;
+      text-align: center;
     }
-    .brand-icon {
-      color: #0f172a; /* match About/ARPL pages */
+
+    #courses-list ul {
+      padding: 0;
+      list-style: none;
+      text-align: center;
     }
+
+    #courses-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Footer background */
     footer {
-      background-color: #1e293b;
+      background: #1e293b;
+    }
+
+    .brand-icon {
+      color: #0f172a;
     }
   </style>
 </head>
@@ -83,15 +97,19 @@
 </div>
 
 <!-- Main Content -->
-<main class="main-content container">
-  <h1 data-cms="title"></h1>
-  <p data-cms="content"></p>
+<main>
+  <section class="section-light">
+    <div class="container">
+      <h1 data-cms="title"></h1>
+      <p data-cms="content"></p>
 
-  <div id="courses-list" class="row mt-4 justify-content-center"></div>
+      <div id="courses-list" class="row justify-content-center mt-4"></div>
+    </div>
+  </section>
 </main>
 
 <!-- Footer -->
-<footer class="footer-section mt-5">
+<footer>
   <div class="container">
     <div class="row text-center text-md-start g-4">
       <div class="col-md-4">
@@ -128,24 +146,26 @@
 <!-- Scripts -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="assets/js/content-loader.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 <script>
+  // Load CMS content
   loadContent("courses");
 
+  // Load course cards from JSON
   fetch("content/pages/courses.json")
     .then(res => res.json())
     .then(data => {
       const container = document.getElementById("courses-list");
       if (!container || !Array.isArray(data.courses)) return;
+
       container.innerHTML = "";
 
       data.courses.forEach(course => {
         const col = document.createElement("div");
-        col.className = "col-md-4 mb-4";
+        col.className = "col-md-4 mb-4 d-flex justify-content-center";
 
         col.innerHTML = `
-          <div class="card h-100 shadow-sm">
+          <div class="card h-100 shadow-sm" style="width: 100%; max-width: 320px;">
             <div class="card-body">
               <h5 class="card-title">${course.course_name || ""}</h5>
               <p class="card-text">${course.description || ""}</p>
