@@ -18,17 +18,36 @@
   <link rel="stylesheet" href="assets/css/theme.css">
 
   <style>
-    /* Center all main section text */
+    /* Center main section text */
     .main-content {
       text-align: center;
       margin-top: 6rem;
     }
+
+    /* Center the cards and their content */
+    #courses-list {
+      justify-content: center; /* center row */
+    }
+
     #courses-list .card {
-      text-align: left;
+      text-align: center; /* center text inside card */
     }
+
+    #courses-list ul {
+      padding: 0;
+      list-style: none;
+      text-align: center;
+    }
+
+    #courses-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Logo color */
     .brand-icon {
-      color: #0f172a; /* match About/ARPL pages */
+      color: #0f172a;
     }
+
     footer {
       background-color: #1e293b;
     }
@@ -87,7 +106,7 @@
   <h1 data-cms="title"></h1>
   <p data-cms="content"></p>
 
-  <div id="courses-list" class="row mt-4 justify-content-center"></div>
+  <div id="courses-list" class="row mt-4"></div>
 </main>
 
 <!-- Footer -->
@@ -142,10 +161,10 @@
 
       data.courses.forEach(course => {
         const col = document.createElement("div");
-        col.className = "col-md-4 mb-4";
+        col.className = "col-md-4 mb-4 d-flex justify-content-center";
 
         col.innerHTML = `
-          <div class="card h-100 shadow-sm">
+          <div class="card h-100 shadow-sm" style="width: 100%; max-width: 320px;">
             <div class="card-body">
               <h5 class="card-title">${course.course_name || ""}</h5>
               <p class="card-text">${course.description || ""}</p>
@@ -166,7 +185,6 @@
 
 </body>
 </html>
-
 
 
 
