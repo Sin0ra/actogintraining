@@ -466,3 +466,32 @@ section {
 .section-light h5 {
   color: #1a1a1a !important;      /* black headings */
 }
+
+/* FLOATING CHAT BUTTON FIX */
+.chat-btn {
+  position: fixed !important;
+  bottom: 25px !important;
+  right: 25px !important;
+  z-index: 9999 !important;
+
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+
+  background: #25D366; /* WhatsApp green (or change if needed) */
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 24px;
+  text-decoration: none;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+
+.chat-btn:hover {
+  transform: scale(1.1);
+}
