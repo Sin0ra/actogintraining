@@ -495,3 +495,9 @@ section {
 .chat-btn:hover {
   transform: scale(1.1);
 }
+
+/* NAVBAR ICON GREEN ONLY */
+.brand-icon {
+  color: var(--primary-green) !important;  /* your theme green */
+  font-size: 1.4rem;                      /* optional slight size boost */
+}
