@@ -135,11 +135,13 @@
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="/assets/js/cms-loader.js"></script>
 <script>
-  loadPage("about");
+  const page = window.location.pathname.replace("/", "") || "home";
+  loadPage(page);
 </script>
 
 </body>
 </html>
+
 
 
 
