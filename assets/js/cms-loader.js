@@ -88,6 +88,10 @@ if (Array.isArray(data.courses) && document.getElementById("courses-container"))
     </div>
   `).join('');
 }
+  }
+}
+
+loadPage("home");
 
 
 
