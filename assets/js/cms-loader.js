@@ -27,36 +27,17 @@ async function loadPage(pageName) {
 
 // =========================
 // SERVICES SECTION
-// =========================
 if (Array.isArray(data.services) && document.getElementById("services-container")) {
   const container = document.getElementById("services-container");
 
-  container.innerHTML = data.services.map(service => {
-    // Check if extra_info exists
-    const hasExtra = service.extra_info && service.extra_info.trim() !== "";
-    return `
-      <div class="col-md-4">
-        <div class="service-card p-4 h-100">
-          <h5 class="fw-semibold">${service.title || ""}</h5>
-          <p class="service-desc mb-2">${service.description || ""}</p>
-          ${hasExtra ? `
-            <p class="service-extra d-none">${service.extra_info}</p>
-            <button class="btn btn-link p-0 mt-2 see-more-btn">See More</button>
-          ` : ""}
-        </div>
+  container.innerHTML = data.services.map(service => `
+    <div class="col-md-4">
+      <div class="service-card p-4 h-100">
+        <h5 class="fw-semibold">${service.title || ""}</h5>
+        <p>${service.description || ""}</p>
       </div>
-    `;
-  }).join('');
-
-  // Add click listeners for See More buttons
-  container.querySelectorAll(".see-more-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const extra = btn.previousElementSibling;
-      if (!extra) return;
-      extra.classList.toggle("d-none");
-      btn.textContent = extra.classList.contains("d-none") ? "See More" : "See Less";
-    });
-  });
+    </div>
+  `).join('');
 }
 
   // Add click handlers for all "See More" buttons
@@ -97,6 +78,7 @@ if (Array.isArray(data.services) && document.getElementById("services-container"
     console.error("CMS LOAD ERROR:", error);
   }
 }
+
 
 
 
