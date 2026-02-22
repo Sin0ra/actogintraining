@@ -67,13 +67,19 @@
 
   <!-- Main content -->
   <main>
-    <!-- Hero -->
-   <header class="hero mt-5">
+  <!-- Hero -->
+<header class="hero mt-5">
   <div class="container">
+    <!-- Main heading from CMS -->
     <h1 data-cms="heading"></h1>
+
+    <!-- Hero paragraph from CMS -->
     <p data-cms="intro"></p>
+
+    <!-- CTA buttons from CMS -->
     <div class="d-flex justify-content-center gap-3 flex-wrap mt-3">
-      <a href="contact.html" class="btn btn-outline-light px-4 py-2">Contact Us</a>
+      <a data-cms-href="cta_btn1_link" data-cms="cta_btn1_text" class="btn btn-outline-light px-4 py-2"></a>
+      <a data-cms-href="cta_btn2_link" data-cms="cta_btn2_text" class="btn btn-outline-light px-4 py-2"></a>
     </div>
   </div>
 </header>
@@ -173,6 +179,7 @@
 
 </body>
 </html>
+
 
 
 
