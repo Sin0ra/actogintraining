@@ -1,17 +1,25 @@
 async function loadPage(pageName) {
   try {
+    // Fetch CMS JSON
     const res = await fetch(`/content/${pageName}.json`);
     if (!res.ok) throw new Error(`Failed to load ${pageName}.json`);
 
     const data = await res.json();
     console.log("FULL DATA:", data);
 
-    // ------------------ Set Page Title ------------------
-    if (data.title) document.title = data.title;
+    // =========================
+    // PAGE TITLE
+    // =========================
+    if (data.title) {
+      document.title = data.title;
+    }
 
-    // ------------------ Populate text fields ------------------
+    // =========================
+    // BASIC TEXT FIELDS (Skip Hero Section)
+    // =========================
     document.querySelectorAll("[data-cms]").forEach(el => {
-      if (!el.closest("#hero") && !el.classList.contains("hardcoded")) {
+      // Skip elements inside hero
+      if (!el.closest(".hero") && !el.classList.contains("hardcoded")) {
         const key = el.getAttribute("data-cms");
         if (data[key] !== undefined) {
           el.textContent = data[key];
@@ -20,15 +28,21 @@ async function loadPage(pageName) {
       }
     });
 
-    // ------------------ Populate hrefs (CTA buttons, links) ------------------
+    // =========================
+    // SET HREF ATTRIBUTES (Skip Hero CTA Buttons)
+    // =========================
     document.querySelectorAll("[data-cms-href]").forEach(el => {
-      if (!el.closest("#hero") && !el.classList.contains("hardcoded")) {
+      if (!el.closest(".hero") && !el.classList.contains("hardcoded")) {
         const key = el.getAttribute("data-cms-href");
-        if (data[key]) el.setAttribute("href", data[key]);
+        if (data[key]) {
+          el.setAttribute("href", data[key]);
+        }
       }
     });
 
-    // ------------------ SERVICES ------------------
+    // =========================
+    // SERVICES SECTION
+    // =========================
     if (Array.isArray(data.services) && document.getElementById("services-container")) {
       const container = document.getElementById("services-container");
       container.innerHTML = data.services.map(service => `
@@ -41,7 +55,9 @@ async function loadPage(pageName) {
       `).join('');
     }
 
-    // ------------------ WHY FEATURES ------------------
+    // =========================
+    // WHY FEATURES SECTION
+    // =========================
     if (Array.isArray(data.why_features) && document.getElementById("why-container")) {
       const container = document.getElementById("why-container");
       container.innerHTML = data.why_features.map(item => `
@@ -57,7 +73,9 @@ async function loadPage(pageName) {
       `).join('');
     }
 
-    // ------------------ COURSES ------------------
+    // =========================
+    // COURSES SECTION
+    // =========================
     if (Array.isArray(data.courses) && document.getElementById("courses-container")) {
       const container = document.getElementById("courses-container");
       container.innerHTML = data.courses.map(course => `
