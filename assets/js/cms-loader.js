@@ -1,6 +1,12 @@
 async function loadPage(pageName) {
   try {
-    const res = await fetch(`/content/pages/${pageName}.json`);
+    // ✅ UPDATED PATH (removed /pages/)
+    const res = await fetch(`/content/${pageName}.json`);
+
+    if (!res.ok) {
+      throw new Error(`Failed to load ${pageName}.json`);
+    }
+
     const data = await res.json();
     console.log("FULL DATA:", data);
     console.log("COURSES FIELD:", data.courses);
@@ -15,15 +21,14 @@ async function loadPage(pageName) {
     // =========================
     // BASIC TEXT FIELDS
     // =========================
- document.querySelectorAll("[data-cms]").forEach(el => {
-  const key = el.getAttribute("data-cms");
+    document.querySelectorAll("[data-cms]").forEach(el => {
+      const key = el.getAttribute("data-cms");
 
-  if (data[key] !== undefined) {
-    el.textContent = data[key];
-    el.style.whiteSpace = "pre-line";
-  }
-});
-
+      if (data[key] !== undefined) {
+        el.textContent = data[key];
+        el.style.whiteSpace = "pre-line";
+      }
+    });
 
     // =========================
     // SET HREF ATTRIBUTES (CTA buttons etc.)
@@ -38,13 +43,14 @@ async function loadPage(pageName) {
     // =========================
     // SERVICES SECTION
     // =========================
-    if (data.services && document.getElementById("services-container")) {
+    if (Array.isArray(data.services) && document.getElementById("services-container")) {
       const container = document.getElementById("services-container");
+
       container.innerHTML = data.services.map(service => `
         <div class="col-md-4">
           <div class="service-card">
-            <h5 class="fw-semibold">${service.title}</h5>
-            <p class="text-muted">${service.description}</p>
+            <h5 class="fw-semibold">${service.title || ""}</h5>
+            <p class="text-muted">${service.description || ""}</p>
           </div>
         </div>
       `).join('');
@@ -53,40 +59,46 @@ async function loadPage(pageName) {
     // =========================
     // WHY FEATURES SECTION
     // =========================
-    if (data.why_features && document.getElementById("why-container")) {
+    if (Array.isArray(data.why_features) && document.getElementById("why-container")) {
       const container = document.getElementById("why-container");
+
       container.innerHTML = data.why_features.map(item => `
         <div class="d-flex mb-3">
           <div class="why-icon">
-            <i class="bi ${item.icon}"></i>
+            <i class="bi ${item.icon || ""}"></i>
           </div>
           <div>
-            <h6 class="fw-semibold mb-1">${item.title}</h6>
-            <p class="text-muted mb-0">${item.description}</p>
+            <h6 class="fw-semibold mb-1">${item.title || ""}</h6>
+            <p class="text-muted mb-0">${item.description || ""}</p>
           </div>
         </div>
       `).join('');
     }
 
- // =========================
-// COURSES SECTION
-// =========================
-if (Array.isArray(data.courses) && document.getElementById("courses-container")) {
-  const container = document.getElementById("courses-container");
+    // =========================
+    // COURSES SECTION
+    // =========================
+    if (Array.isArray(data.courses) && document.getElementById("courses-container")) {
+      const container = document.getElementById("courses-container");
 
-  container.innerHTML = data.courses.map(course => `
-    <div class="col-md-4">
-      <div class="course-card h-100">
-        <h5>${course.course_name || ""}</h5>
-        <p>${course.description || ""}</p>
-        <ul class="list-unstyled mt-3">
-          <li><strong>Duration:</strong> ${course.duration || "-"}</li>
-          <li><strong>Price:</strong> ${course.price || "-"}</li>
-          <li><strong>Certification:</strong> ${course.certification || "-"}</li>
-        </ul>
-      </div>
-    </div>
-  `).join('');
+      container.innerHTML = data.courses.map(course => `
+        <div class="col-md-4">
+          <div class="course-card h-100">
+            <h5>${course.course_name || ""}</h5>
+            <p>${course.description || ""}</p>
+            <ul class="list-unstyled mt-3">
+              <li><strong>Duration:</strong> ${course.duration || "-"}</li>
+              <li><strong>Price:</strong> ${course.price || "-"}</li>
+              <li><strong>Certification:</strong> ${course.certification || "-"}</li>
+            </ul>
+          </div>
+        </div>
+      `).join('');
+    }
+
+  } catch (error) {
+    console.error("CMS LOAD ERROR:", error);
+  }
 }
 
 
