@@ -2,15 +2,18 @@
   "services": [
     {
       "title": "ARPL & Trade Testing",
-      "description": "Get recognized for your skills with our official assessment and testing services."
+      "description": "Get recognized for your skills with our official assessment and testing services.",
+      "extra_info": "Our assessments are aligned with national standards and recognized by industry leaders."
     },
     {
       "title": "Skills Development",
-      "description": "Upskill with our comprehensive training programs from basic to advanced levels."
+      "description": "Upskill with our comprehensive training programs from basic to advanced levels.",
+      "extra_info": "Includes hands-on practical exercises and theory to ensure real-world competence."
     },
     {
       "title": "Gap Training",
-      "description": "Close the gap between your existing knowledge and what's required for certification"
+      "description": "Close the gap between your existing knowledge and what's required for certification",
+      "extra_info": "Personalized learning paths are available to focus on your weak areas efficiently."
     }
   ],
   "title": "Actogintraining",
