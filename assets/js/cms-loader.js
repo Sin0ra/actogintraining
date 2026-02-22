@@ -73,27 +73,28 @@ async function loadPage(pageName) {
       `).join('');
     }
 
-    // =========================
-    // COURSES SECTION
-    // =========================
-    if (Array.isArray(data.courses) && document.getElementById("courses-container")) {
-      const container = document.getElementById("courses-container");
-      container.innerHTML = data.courses.map(course => `
-        <div class="col-md-4">
-          <div class="course-card h-100">
-            <h5>${course.course_name || ""}</h5>
-            <p>${course.description || ""}</p>
-            <ul class="list-unstyled mt-3">
-              <li><strong>Duration:</strong> ${course.duration || "-"}</li>
-              <li><strong>Price:</strong> ${course.price || "-"}</li>
-              <li><strong>Certification:</strong> ${course.certification || "-"}</li>
-            </ul>
-          </div>
-        </div>
-      `).join('');
-    }
+   // =========================
+// COURSES SECTION
+// =========================
+if (Array.isArray(data.courses) && document.getElementById("courses-container")) {
+  const container = document.getElementById("courses-container");
+  container.innerHTML = data.courses.map(course => `
+    <div class="col-md-4 mb-4">
+      <div class="course-card h-100">
+        <h5>${course.course_name || ""}</h5>
+        <p>${course.description || ""}</p>
+        <ul class="list-unstyled mt-3">
+          <li><strong>Duration:</strong> ${course.duration || "-"}</li>
+          <li><strong>Price:</strong> ${course.price || "-"}</li>
+          <li><strong>Certification:</strong> ${course.certification || "-"}</li>
+        </ul>
+      </div>
+    </div>
+  `).join('');
+}
 
   } catch (error) {
     console.error("CMS LOAD ERROR:", error);
   }
 }
+
