@@ -1,27 +1,17 @@
 async function loadPage(pageName) {
   try {
-    // ✅ UPDATED PATH (removed /pages/)
     const res = await fetch(`/content/${pageName}.json`);
-
-    if (!res.ok) {
-      throw new Error(`Failed to load ${pageName}.json`);
-    }
+    if (!res.ok) throw new Error(`Failed to load ${pageName}.json`);
 
     const data = await res.json();
     console.log("FULL DATA:", data);
 
-    // =========================
-    // SET PAGE TITLE
-    // =========================
-    if (data.title) {
-      document.title = data.title;
-    }
+    // ------------------ Set Page Title ------------------
+    if (data.title) document.title = data.title;
 
-    // =========================
-    // BASIC TEXT FIELDS (Skip hero)
-    // =========================
+    // ------------------ Populate text fields ------------------
     document.querySelectorAll("[data-cms]").forEach(el => {
-      if (!el.closest("#hero")) { // ignore hero section
+      if (!el.closest("#hero") && !el.classList.contains("hardcoded")) {
         const key = el.getAttribute("data-cms");
         if (data[key] !== undefined) {
           el.textContent = data[key];
@@ -30,21 +20,15 @@ async function loadPage(pageName) {
       }
     });
 
-    // =========================
-    // SET HREF ATTRIBUTES (Skip hero)
-    // =========================
+    // ------------------ Populate hrefs (CTA buttons, links) ------------------
     document.querySelectorAll("[data-cms-href]").forEach(el => {
-      if (!el.closest("#hero")) { // ignore hero buttons
+      if (!el.closest("#hero") && !el.classList.contains("hardcoded")) {
         const key = el.getAttribute("data-cms-href");
-        if (data[key]) {
-          el.setAttribute("href", data[key]);
-        }
+        if (data[key]) el.setAttribute("href", data[key]);
       }
     });
 
-    // =========================
-    // SERVICES SECTION
-    // =========================
+    // ------------------ SERVICES ------------------
     if (Array.isArray(data.services) && document.getElementById("services-container")) {
       const container = document.getElementById("services-container");
       container.innerHTML = data.services.map(service => `
@@ -57,9 +41,7 @@ async function loadPage(pageName) {
       `).join('');
     }
 
-    // =========================
-    // WHY FEATURES SECTION
-    // =========================
+    // ------------------ WHY FEATURES ------------------
     if (Array.isArray(data.why_features) && document.getElementById("why-container")) {
       const container = document.getElementById("why-container");
       container.innerHTML = data.why_features.map(item => `
@@ -75,9 +57,7 @@ async function loadPage(pageName) {
       `).join('');
     }
 
-    // =========================
-    // COURSES SECTION
-    // =========================
+    // ------------------ COURSES ------------------
     if (Array.isArray(data.courses) && document.getElementById("courses-container")) {
       const container = document.getElementById("courses-container");
       container.innerHTML = data.courses.map(course => `
@@ -99,7 +79,3 @@ async function loadPage(pageName) {
     console.error("CMS LOAD ERROR:", error);
   }
 }
-
-
-
-
