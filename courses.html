@@ -136,18 +136,20 @@
   </div>
 </div>
 
-<!-- Hero Section -->
+<!-- Hero Section (Hardcoded) -->
 <section class="hero">
-  <h1 data-cms="title">Our Courses & Programs</h1>
-  <p data-cms="content">Explore our wide range of training programs designed to boost your career in trades and technical fields.</p>
+  <div class="container text-center py-5">
+    <h1 style="color:white;">Our Courses & Programs</h1>
+    <p style="color:#cbd5f5;">Explore our wide range of training programs designed to boost your career in trades and technical fields.</p>
+  </div>
 </section>
 
-<!-- Courses Section -->
+<!-- Courses Section (CMS-driven) -->
 <section id="courses" class="py-5">
   <div class="container">
-    <h1 data-cms="title"></h1>
-    <p data-cms="content"></p>
-    <div class="row" id="courses-container"></div>
+    <div class="row" id="courses-container">
+      <!-- Courses from CMS will be injected here -->
+    </div>
   </div>
 </section>
 
@@ -236,6 +238,7 @@ loadContent("courses");
 
 </body>
 </html>
+
 
 
 
