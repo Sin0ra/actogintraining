@@ -25,23 +25,39 @@ async function loadPage(pageName) {
       if (data[key]) el.setAttribute("href", data[key]);
     });
 
-    // =========================
-    // SERVICES SECTION (CMS-driven + See More button)
+// =========================
+// SERVICES SECTION
+// =========================
 if (Array.isArray(data.services) && document.getElementById("services-container")) {
   const container = document.getElementById("services-container");
 
-  container.innerHTML = data.services.map((service, idx) => `
-    <div class="col-md-4">
-      <div class="service-card h-100 d-flex flex-column justify-content-between">
-        <div>
+  container.innerHTML = data.services.map(service => {
+    // Check if extra_info exists
+    const hasExtra = service.extra_info && service.extra_info.trim() !== "";
+    return `
+      <div class="col-md-4">
+        <div class="service-card p-4 h-100">
           <h5 class="fw-semibold">${service.title || ""}</h5>
-          <p class="text-muted">${service.description || ""}</p>
-          ${service.more_info ? `<p class="text-muted more-info d-none">${service.more_info}</p>` : ""}
+          <p class="service-desc mb-2">${service.description || ""}</p>
+          ${hasExtra ? `
+            <p class="service-extra d-none">${service.extra_info}</p>
+            <button class="btn btn-link p-0 mt-2 see-more-btn">See More</button>
+          ` : ""}
         </div>
-        ${service.more_info ? `<button class="btn btn-outline-dark mt-3 see-more-btn" data-idx="${idx}">See More</button>` : (service.link ? `<a href="${service.link}" class="btn btn-outline-dark mt-3">See More</a>` : "")}
       </div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
+
+  // Add click listeners for See More buttons
+  container.querySelectorAll(".see-more-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const extra = btn.previousElementSibling;
+      if (!extra) return;
+      extra.classList.toggle("d-none");
+      btn.textContent = extra.classList.contains("d-none") ? "See More" : "See Less";
+    });
+  });
+}
 
   // Add click handlers for all "See More" buttons
   container.querySelectorAll(".see-more-btn").forEach(btn => {
@@ -81,6 +97,7 @@ if (Array.isArray(data.services) && document.getElementById("services-container"
     console.error("CMS LOAD ERROR:", error);
   }
 }
+
 
 
 
