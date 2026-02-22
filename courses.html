@@ -204,40 +204,14 @@
    <i class="bi bi-whatsapp"></i>
 </a>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/content-loader.js"></script>
+<script src="/assets/js/cms-loader.js"></script>
 <script>
-fetch("content/pages/courses.json")
-  .then(res => { if (!res.ok) throw new Error("Failed to load courses"); return res.json(); })
-  .then(data => {
-    const container = document.getElementById("courses-list");
-    if (!container || !Array.isArray(data.courses)) return;
-    container.innerHTML = "";
-    data.courses.forEach(course => {
-      const col = document.createElement("div");
-      col.className = "col-md-4";
-      col.innerHTML = `
-        <div class="course-card h-100">
-          <h5>${course.course_name || ""}</h5>
-          <p>${course.description || ""}</p>
-          <ul class="list-unstyled mt-3">
-            <li><strong>Duration:</strong> ${course.duration || "-"}</li>
-            <li><strong>Price:</strong> ${course.price || "-"}</li>
-            <li><strong>Certification:</strong> ${course.certification || "-"}</li>
-          </ul>
-        </div>
-      `;
-      container.appendChild(col);
-    });
-  })
-  .catch(err => console.error(err));
-
-loadContent("courses");
+  loadPage("courses"); // loads only courses from CMS
 </script>
 
 </body>
 </html>
+
 
 
 
