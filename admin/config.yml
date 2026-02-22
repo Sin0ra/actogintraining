@@ -12,7 +12,7 @@ collections:
 
       - label: "Home Page"
         name: "index"
-        file: "content/pages/index.json"
+        file: "content/index.json"
         fields:
           - label: "Page Title"
             name: "title"
@@ -23,7 +23,7 @@ collections:
             widget: "string"
 
           - label: "Hero Paragraph"
-            name: "intro"        # updated from 'content' to 'intro'
+            name: "intro"
             widget: "text"
 
           - label: "CTA Button 1 Text"
@@ -78,7 +78,7 @@ collections:
 
       - label: "About Page"
         name: "about"
-        file: "content/pages/about.json"
+        file: "content/about.json"
         fields:
           - label: "Page Title"
             name: "title"
@@ -94,7 +94,7 @@ collections:
 
       - label: "ARPL Page"
         name: "arpl"
-        file: "content/pages/arpl.json"
+        file: "content/arpl.json"
         fields:
           - label: "Page Title"
             name: "title"
@@ -110,7 +110,7 @@ collections:
 
       - label: "Why Choose Us Page"
         name: "choosing"
-        file: "content/pages/choosing.json"
+        file: "content/choosing.json"
         fields:
           - label: "Page Title"
             name: "title"
@@ -126,7 +126,7 @@ collections:
 
       - label: "Courses Page"
         name: "courses"
-        file: "content/pages/courses.json"
+        file: "content/courses.json"
         fields:
           - label: "Page Title"
             name: "title"
@@ -164,7 +164,7 @@ collections:
 
       - label: "Contact Page"
         name: "contact"
-        file: "content/pages/contact.json"
+        file: "content/contact.json"
         fields:
           - label: "Page Title"
             name: "title"
@@ -181,11 +181,4 @@ collections:
           - label: "Address"
             name: "address"
             widget: "text"
-
-
-
-
-
-
-
 
