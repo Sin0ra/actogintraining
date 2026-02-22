@@ -9,7 +9,6 @@ async function loadPage(pageName) {
 
     const data = await res.json();
     console.log("FULL DATA:", data);
-    console.log("COURSES FIELD:", data.courses);
 
     // =========================
     // SET PAGE TITLE
@@ -19,24 +18,27 @@ async function loadPage(pageName) {
     }
 
     // =========================
-    // BASIC TEXT FIELDS
+    // BASIC TEXT FIELDS (Skip hero)
     // =========================
     document.querySelectorAll("[data-cms]").forEach(el => {
-      const key = el.getAttribute("data-cms");
-
-      if (data[key] !== undefined) {
-        el.textContent = data[key];
-        el.style.whiteSpace = "pre-line";
+      if (!el.closest("#hero")) { // ignore hero section
+        const key = el.getAttribute("data-cms");
+        if (data[key] !== undefined) {
+          el.textContent = data[key];
+          el.style.whiteSpace = "pre-line";
+        }
       }
     });
 
     // =========================
-    // SET HREF ATTRIBUTES (CTA buttons etc.)
+    // SET HREF ATTRIBUTES (Skip hero)
     // =========================
     document.querySelectorAll("[data-cms-href]").forEach(el => {
-      const key = el.getAttribute("data-cms-href");
-      if (data[key]) {
-        el.setAttribute("href", data[key]);
+      if (!el.closest("#hero")) { // ignore hero buttons
+        const key = el.getAttribute("data-cms-href");
+        if (data[key]) {
+          el.setAttribute("href", data[key]);
+        }
       }
     });
 
@@ -45,7 +47,6 @@ async function loadPage(pageName) {
     // =========================
     if (Array.isArray(data.services) && document.getElementById("services-container")) {
       const container = document.getElementById("services-container");
-
       container.innerHTML = data.services.map(service => `
         <div class="col-md-4">
           <div class="service-card">
@@ -61,7 +62,6 @@ async function loadPage(pageName) {
     // =========================
     if (Array.isArray(data.why_features) && document.getElementById("why-container")) {
       const container = document.getElementById("why-container");
-
       container.innerHTML = data.why_features.map(item => `
         <div class="d-flex mb-3">
           <div class="why-icon">
@@ -80,7 +80,6 @@ async function loadPage(pageName) {
     // =========================
     if (Array.isArray(data.courses) && document.getElementById("courses-container")) {
       const container = document.getElementById("courses-container");
-
       container.innerHTML = data.courses.map(course => `
         <div class="col-md-4">
           <div class="course-card h-100">
@@ -100,10 +99,6 @@ async function loadPage(pageName) {
     console.error("CMS LOAD ERROR:", error);
   }
 }
-
-
-
-
 
 
 
