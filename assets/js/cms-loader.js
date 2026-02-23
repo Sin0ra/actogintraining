@@ -56,3 +56,18 @@ async function loadPage(pageName) {
 }
 
 
+fetch('/content/gallery.json')
+  .then(res => res.json())
+  .then(data => {
+    const galleryGrid = document.getElementById('gallery-grid');
+    if (!galleryGrid || !data.images) return;
+
+    galleryGrid.innerHTML = data.images.map(item => `
+      <div class="gallery-item">
+        <img src="${item.image}" alt="${item.caption || 'Gallery image'}">
+        ${item.caption ? `<p>${item.caption}</p>` : ''}
+      </div>
+    `).join('');
+  })
+  .catch(err => console.error('Gallery load error:', err));
+
