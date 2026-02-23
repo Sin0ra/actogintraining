@@ -182,3 +182,15 @@ collections:
             name: "address"
             widget: "text"
 
+            - label: "Gallery"
+  name: "gallery"
+  file: "content/gallery.json"
+  fields:
+    - label: "Gallery Images"
+      name: "images"
+      widget: "list"
+      fields:
+        - { label: "Image", name: "image", widget: "image" }
+        - { label: "Caption", name: "caption", widget: "string", required: false }
+
+
