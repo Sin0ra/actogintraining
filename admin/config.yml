@@ -182,15 +182,207 @@ collections:
             name: "address"
             widget: "text"
 
-            - label: "Gallery"
-  name: "gallery"
-  file: "content/gallery.json"
-  fields:
-    - label: "Gallery Images"
-      name: "images"
-      widget: "list"
-      fields:
-        - { label: "Image", name: "image", widget: "image" }
-        - { label: "Caption", name: "caption", widget: "string", required: false }
+            backend:
+  name: git-gateway
+  branch: main
 
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Website Pages"
+    files:
+
+      - label: "Home Page"
+        name: "index"
+        file: "content/index.json"
+        fields:
+          - label: "Page Title"
+            name: "title"
+            widget: "string"
+
+          - label: "Main Heading"
+            name: "heading"
+            widget: "string"
+
+          - label: "Hero Paragraph"
+            name: "intro"
+            widget: "text"
+
+          - label: "CTA Button 1 Text"
+            name: "cta_btn1_text"
+            widget: "string"
+            required: false
+
+          - label: "CTA Button 1 Link"
+            name: "cta_btn1_link"
+            widget: "string"
+            required: false
+
+          - label: "CTA Button 2 Text"
+            name: "cta_btn2_text"
+            widget: "string"
+            required: false
+
+          - label: "CTA Button 2 Link"
+            name: "cta_btn2_link"
+            widget: "string"
+            required: false
+
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            required: false
+            fields:
+              - label: "Service Title"
+                name: "title"
+                widget: "string"
+
+              - label: "Service Description"
+                name: "description"
+                widget: "text"
+
+          - label: "Why Features"
+            name: "why_features"
+            widget: "list"
+            required: false
+            fields:
+              - label: "Icon (Bootstrap icon class)"
+                name: "icon"
+                widget: "string"
+
+              - label: "Feature Title"
+                name: "title"
+                widget: "string"
+
+              - label: "Feature Description"
+                name: "description"
+                widget: "text"
+
+      - label: "About Page"
+        name: "about"
+        file: "content/about.json"
+        fields:
+          - label: "Page Title"
+            name: "title"
+            widget: "string"
+
+          - label: "Main Heading"
+            name: "heading"
+            widget: "string"
+
+          - label: "Main Content"
+            name: "content"
+            widget: "text"
+
+      - label: "ARPL Page"
+        name: "arpl"
+        file: "content/arpl.json"
+        fields:
+          - label: "Page Title"
+            name: "title"
+            widget: "string"
+
+          - label: "Main Heading"
+            name: "heading"
+            widget: "string"
+
+          - label: "Main Content"
+            name: "content"
+            widget: "text"
+
+      - label: "Why Choose Us Page"
+        name: "choosing"
+        file: "content/choosing.json"
+        fields:
+          - label: "Page Title"
+            name: "title"
+            widget: "string"
+
+          - label: "Main Heading"
+            name: "heading"
+            widget: "string"
+
+          - label: "Main Content"
+            name: "content"
+            widget: "text"
+
+      - label: "Courses Page"
+        name: "courses"
+        file: "content/courses.json"
+        fields:
+          - label: "Page Title"
+            name: "title"
+            widget: "string"
+
+          - label: "Main Content"
+            name: "content"
+            widget: "text"
+            hint: "Intro text shown at the top of the courses page"
+
+          - label: "Courses"
+            name: "courses"
+            widget: "list"
+            summary: "{{fields.course_name}}"
+            fields:
+              - label: "Course Name"
+                name: "course_name"
+                widget: "string"
+
+              - label: "Course Description"
+                name: "description"
+                widget: "text"
+
+              - label: "Duration"
+                name: "duration"
+                widget: "string"
+
+              - label: "Price"
+                name: "price"
+                widget: "string"
+
+              - label: "Certification"
+                name: "certification"
+                widget: "string"
+
+      - label: "Contact Page"
+        name: "contact"
+        file: "content/contact.json"
+        fields:
+          - label: "Page Title"
+            name: "title"
+            widget: "string"
+
+          - label: "Phone"
+            name: "phone"
+            widget: "string"
+
+          - label: "Email"
+            name: "email"
+            widget: "string"
+
+          - label: "Address"
+            name: "address"
+            widget: "text"
+
+  - name: "gallery"
+    label: "Gallery"
+    files:
+      - label: "Gallery Images"
+        name: "gallery"
+        file: "content/gallery.json"
+        fields:
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            fields:
+              - label: "Image"
+                name: "image"
+                widget: "image"
+
+              - label: "Caption"
+                name: "caption"
+                widget: "string"
+                required: false
 
