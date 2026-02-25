@@ -378,7 +378,7 @@ section {
 ========================================= */
 .footer-section {
   background: linear-gradient(135deg, #00CC00 0%, #00FF00 100%); /* Lime gradient */
-  color: #e8f5e9;
+  color: #ffffff;  /* Set text color to white */
   padding: 60px 0 25px;
   width: 100%;
 }
