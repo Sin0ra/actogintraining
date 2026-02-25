@@ -376,9 +376,8 @@ section {
 /* =========================================
    FOOTER (STABLE + CLEAN)
 ========================================= */
-
 .footer-section {
-  background: #0f3f1d;
+  background: linear-gradient(135deg, #00CC00 0%, #00FF00 100%); /* Lime gradient */
   color: #e8f5e9;
   padding: 60px 0 25px;
   width: 100%;
