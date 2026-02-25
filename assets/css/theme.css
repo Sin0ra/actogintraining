@@ -7,9 +7,9 @@
 
 /* ===== ROOT COLORS ===== */
 :root {
-  --primary-green: #2E7D32;
-  --dark-green: #1B5E20;
-  --light-green: #66BB6A;
+  --primary-green: #00FF00;   /* Lime */
+  --dark-green: #00CC00;      /* Dark lime */
+  --light-green: #66FF66;     /* Light lime */
   --white: #ffffff;
   --light-bg: #f5f7f6;
   --text-dark: #1a1a1a;
