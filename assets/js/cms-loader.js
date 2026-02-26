@@ -16,7 +16,7 @@ async function loadPage(pageName) {
     });
 
     // =========================
-    // SERVICES SECTION (CMS-driven, no See More)
+    // SERVICES SECTION
     // =========================
     if (Array.isArray(data.services) && document.getElementById("services-container")) {
       const container = document.getElementById("services-container");
@@ -50,41 +50,23 @@ async function loadPage(pageName) {
       `).join('');
     }
 
+    // =========================
+    // GALLERY SECTION
+    // =========================
+    if (Array.isArray(data.images) && document.getElementById("gallery-container")) {
+      const container = document.getElementById("gallery-container");
+
+      container.innerHTML = data.images.map(img => `
+        <div class="col-md-4">
+          <div class="gallery-item">
+            <img src="${img.image}" class="img-fluid rounded shadow-sm" alt="">
+            ${img.caption ? `<p class="mt-2">${img.caption}</p>` : ""}
+          </div>
+        </div>
+      `).join('');
+    }
+
   } catch (error) {
     console.error("CMS LOAD ERROR:", error);
   }
 }
-
-
-fetch('/content/gallery.json')
-  .then(res => res.json())
-  .then(data => {
-    const galleryGrid = document.getElementById('gallery-grid');
-    if (!galleryGrid || !data.images) return;
-
-    galleryGrid.innerHTML = data.images.map(item => `
-      <div class="gallery-item">
-        <img src="${item.image}" alt="${item.caption || 'Gallery image'}">
-        ${item.caption ? `<p>${item.caption}</p>` : ''}
-      </div>
-    `).join('');
-  })
-  .catch(err => console.error('Gallery load error:', err));
-
-
-// =========================
-// GALLERY SECTION
-// =========================
-if (Array.isArray(data.images) && document.getElementById("gallery-container")) {
-  const container = document.getElementById("gallery-container");
-
-  container.innerHTML = data.images.map(img => `
-    <div class="col-md-4">
-      <div class="gallery-item">
-        <img src="${img.image}" class="img-fluid rounded shadow-sm" alt="">
-        ${img.caption ? `<p class="mt-2">${img.caption}</p>` : ""}
-      </div>
-    </div>
-  `).join('');
-}
-
