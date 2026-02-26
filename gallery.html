@@ -78,22 +78,9 @@
   <section class="section-light text-center">
     <div class="container">
       <h2 class="fw-bold">Our Gallery</h2>
-      <div class="row g-4 justify-content-center" id="gallery-container">
-        <!-- Gallery Images -->
-        <div class="col-md-4">
-          <div class="gallery-item">
-            <img src="assets/images/gallery/image1.jpg" class="img-fluid rounded" alt="Image 1">
-            <p>A beautiful sunset</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="gallery-item">
-            <img src="assets/images/gallery/image2.jpg" class="img-fluid rounded" alt="Image 2">
-            <p>Mountain landscape</p>
-          </div>
-        </div>
-        <!-- Add more images as needed -->
-      </div>
+    <div class="row g-4 justify-content-center" id="gallery-container">
+  <!-- CMS Images will load here -->
+</div>
     </div>
   </section>
 
@@ -133,5 +120,10 @@
   <a href="https://wa.me/27649590303" class="chat-btn" target="_blank">
     <i class="bi bi-whatsapp"></i>
   </a>
+<script src="/assets/js/cms-loader.js"></script>
+<script>
+  loadPage("gallery");
+</script>
+</body>
 </body>
 </html>
