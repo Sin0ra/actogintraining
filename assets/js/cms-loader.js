@@ -71,3 +71,20 @@ fetch('/content/gallery.json')
   })
   .catch(err => console.error('Gallery load error:', err));
 
+
+// =========================
+// GALLERY SECTION
+// =========================
+if (Array.isArray(data.images) && document.getElementById("gallery-container")) {
+  const container = document.getElementById("gallery-container");
+
+  container.innerHTML = data.images.map(img => `
+    <div class="col-md-4">
+      <div class="gallery-item">
+        <img src="${img.image}" class="img-fluid rounded shadow-sm" alt="">
+        ${img.caption ? `<p class="mt-2">${img.caption}</p>` : ""}
+      </div>
+    </div>
+  `).join('');
+}
+
