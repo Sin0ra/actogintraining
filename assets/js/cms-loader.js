@@ -50,23 +50,38 @@ async function loadPage(pageName) {
       `).join('');
     }
 
-    // =========================
-    // GALLERY SECTION
-    // =========================
-    if (Array.isArray(data.images) && document.getElementById("gallery-container")) {
-      const container = document.getElementById("gallery-container");
+  // =========================
+// GALLERY SECTION (Upgraded)
+// =========================
+if (Array.isArray(data.images) && document.getElementById("gallery-container")) {
+  const container = document.getElementById("gallery-container");
 
-      container.innerHTML = data.images.map(img => `
-        <div class="col-md-4">
-          <div class="gallery-item">
-            <img src="${img.image}" class="img-fluid rounded shadow-sm" alt="">
-            ${img.caption ? `<p class="mt-2">${img.caption}</p>` : ""}
+  container.innerHTML = data.images.map((img, index) => `
+    <div class="col-md-4">
+      <div class="gallery-card" data-bs-toggle="modal" data-bs-target="#galleryModal${index}">
+        <img src="${img.image}" class="img-fluid" alt="">
+        <div class="gallery-overlay">
+          ${img.caption ? `<span>${img.caption}</span>` : ""}
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="galleryModal${index}" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+          <div class="modal-content bg-dark border-0">
+            <div class="modal-body p-0">
+              <img src="${img.image}" class="img-fluid w-100">
+              ${img.caption ? `<div class="text-white text-center p-3">${img.caption}</div>` : ""}
+            </div>
           </div>
         </div>
-      `).join('');
-    }
+      </div>
+    </div>
+  `).join('');
+}
 
   } catch (error) {
     console.error("CMS LOAD ERROR:", error);
   }
 }
+
