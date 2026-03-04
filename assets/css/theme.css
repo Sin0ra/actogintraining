@@ -217,73 +217,58 @@ h1, h2, h3, h4, h5 {
   margin-left: 12px;         /* small space from links */
 }
 /* =========================================
-   HERO / BANNER
+   HERO SECTION (FIXED CLEAN VERSION)
 ========================================= */
 
-.hero,
-.banner,
-header.hero,
-section:first-of-type {
-  background: linear-gradient(135deg, var(--dark-green) 0%, var(--primary-green) 50%, var(--light-green) 100%);
-  color: #ffffff;
-
-  min-height: 55vh;
+.hero-section {
+  position: relative;
+  min-height: 90vh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-
-  padding: 60px 20px;
-  position: relative;
+  padding: 100px 0;
+  background: url('../images/uploads/logo.jpg') center/cover no-repeat;
   overflow: hidden;
 }
 
-.hero::before,
-.banner::before,
-section:first-of-type::before {
+/* Controlled green overlay */
+.hero-section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.15);
-}
-
-.hero > *,
-.banner > *,
-section:first-of-type > * {
-  position: relative;
+  background: linear-gradient(
+    to right,
+    rgba(0, 70, 0, 0.85),
+    rgba(0, 140, 0, 0.55)
+  );
   z-index: 1;
 }
 
-.hero .container {
-  max-width: 850px;
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  max-width: 900px;
 }
 
-.hero h1 {
-  color: #ffffff !important;
-  font-size: 2.4rem;
+.hero-section h1 {
+  font-size: 2.8rem;
   font-weight: 700;
+  color: #ffffff;
 }
 
-.hero p {
-  color: #e8f5e9 !important;
-  font-size: 1.05rem;
+.hero-section p {
+  font-size: 1.1rem;
+  color: #e8f5e9;
   margin-top: 15px;
 }
 
-.hero .btn {
+.hero-section .btn {
   background-color: #ffffff !important;
   color: var(--dark-green) !important;
-  border: none;
-  margin: 8px;
-  padding: 12px 24px;
+  border-radius: 30px;
+  padding: 10px 25px;
   font-weight: 600;
-  border-radius: 6px;
-  transition: 0.3s ease;
-}
-
-.hero .btn:hover {
-  background-color: #e8f5e9 !important;
-  transform: translateY(-2px);
+  margin: 8px;
 }
 
 /* =========================================
