@@ -51,24 +51,6 @@ body {
   padding-right: 15px;
 }
 
-/* Hero / Banner */
-.hero,
-.banner,
-header.hero {
-  background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 50%, #66BB6A 100%);
-  color: #ffffff;
-}
-
-/* Hero buttons */
-.hero .btn {
-  background-color: #ffffff !important;
-  color: #1B5E20 !important;
-}
-
-.hero .btn:hover {
-  background-color: #e8f5e9 !important;
-}
-
 /* CTA Section */
 .cta-section {
   background: linear-gradient(135deg, #1B5E20, #2E7D32);
@@ -217,60 +199,83 @@ h1, h2, h3, h4, h5 {
   margin-left: 12px;         /* small space from links */
 }
 /* =========================================
-   HERO SECTION (FIXED CLEAN VERSION)
+   HERO SECTION (FINAL RESPONSIVE VERSION)
 ========================================= */
 
 .hero-section {
-  position: relative;
   min-height: 90vh;
   display: flex;
   align-items: center;
   padding: 100px 0;
-  background: url('../images/uploads/logo.jpg') center/cover no-repeat;
-  overflow: hidden;
+  text-align: center;
+
+  background:
+    linear-gradient(
+      to right,
+      rgba(27, 94, 32, 0.85),
+      rgba(102, 187, 106, 0.6)
+    ),
+    url('../images/uploads/logo.jpg') center center / cover no-repeat;
 }
 
-/* Controlled green overlay */
-.hero-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(0, 70, 0, 0.85),
-    rgba(0, 140, 0, 0.55)
-  );
-  z-index: 1;
-}
-
+/* Content container */
 .hero-section .container {
   position: relative;
   z-index: 2;
-  color: #ffffff;
   max-width: 900px;
 }
 
+/* Heading */
 .hero-section h1 {
   font-size: 2.8rem;
   font-weight: 700;
   color: #ffffff;
 }
 
+/* Subtext */
 .hero-section p {
   font-size: 1.1rem;
-  color: #e8f5e9;
   margin-top: 15px;
+  color: #e8f5e9;
 }
 
+/* Buttons */
 .hero-section .btn {
-  background-color: #ffffff !important;
-  color: var(--dark-green) !important;
+  background: #ffffff !important;
+  color: #1B5E20 !important;
   border-radius: 30px;
   padding: 10px 25px;
   font-weight: 600;
   margin: 8px;
 }
 
+/* ===== MOBILE FIX ===== */
+@media (max-width: 768px) {
+
+  .hero-section {
+    min-height: 75vh;
+    padding: 60px 20px;
+  }
+
+  .hero-section h1 {
+    font-size: 1.9rem;
+  }
+
+  .hero-section p {
+    font-size: 1rem;
+  }
+
+  .hero-quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero-section .btn {
+    padding: 8px 18px;
+    font-size: 0.9rem;
+  }
+}
 /* =========================================
    SECTIONS
 ========================================= */
