@@ -595,3 +595,27 @@ gallery-item p {
 .gallery-card:hover .gallery-overlay {
   opacity: 1;
 }
+
+/* Prevent brand from breaking */
+.navbar-brand {
+  white-space: nowrap;
+}
+
+/* Slightly reduce long company name size */
+.brand-text {
+  font-size: 1.05rem;
+}
+
+/* Improve alignment */
+.navbar {
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+}
+
+/* Slightly reduce nav link size for balance */
+.nav-link {
+  font-size: 0.95rem;
+}
+
+
+
