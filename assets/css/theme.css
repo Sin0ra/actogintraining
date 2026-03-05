@@ -198,6 +198,12 @@ h1, h2, h3, h4, h5 {
   padding: 8px 18px;
   margin-left: 12px;         /* small space from links */
 }
+
+.navbar-logo{
+  height:45px;
+  width:auto;
+}
+
 /* =========================================
    HERO SECTION (FINAL RESPONSIVE VERSION)
 ========================================= */
