@@ -209,20 +209,23 @@ h1, h2, h3, h4, h5 {
   max-height:none;
 }
 
-/* HERO SECTION */
 .hero-section{
-  min-height:90vh;
+  min-height:100vh; /* full screen height */
   background: linear-gradient(
-      rgba(0,0,0,0.65),
-      rgba(0,0,0,0.65)
+      rgba(0,0,0,0.6),
+      rgba(0,0,0,0.6)
     ),
-    url("../images/uploads/logo.jpg");
+    url("../images/uploads/hero-bg.jpg");
 
   background-size:cover;
   background-position:center;
+  background-repeat:no-repeat;
+
   display:flex;
   align-items:center;
-  padding-top:120px;
+  justify-content:center;
+
+  padding-top:120px; /* space for navbar */
 }
 .hero-section .lead{
   font-size:1.2rem;
