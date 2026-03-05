@@ -116,11 +116,15 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Brand */
-.navbar-brand {
+.navbar-brand{
+  display: flex;
+  align-items: center;
+  gap: 10px; /* space between logo and text */
   font-weight: 700;
   color: var(--dark-green) !important;
-  font-size: 1rem; /* slightly smaller like blue site */
+  font-size: 1rem;
   letter-spacing: 0.3px;
+  padding: 0;
 }
 
 /* Nav Links */
