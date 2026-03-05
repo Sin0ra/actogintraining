@@ -212,11 +212,21 @@ h1, h2, h3, h4, h5 {
 /* HERO SECTION */
 .hero-section{
   min-height:90vh;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
-              url("../images/uploads/hero-bg.jpg");
+  background: linear-gradient(
+      rgba(0,0,0,0.65),
+      rgba(0,0,0,0.65)
+    ),
+    url("../images/uploads/logo.jpg");
+
   background-size:cover;
   background-position:center;
-  padding-top:100px; /* prevents navbar overlap */
+  display:flex;
+  align-items:center;
+  padding-top:120px;
+}
+.hero-section .lead{
+  font-size:1.2rem;
+  color:#e5e5e5;
 }
 
 /* Hero content */
@@ -240,20 +250,24 @@ h1, h2, h3, h4, h5 {
 
 /* Service buttons */
 .hero-quick-links .btn{
-  margin:5px;
-  padding:10px 18px;
+  margin:6px;
+  padding:10px 20px;
   font-size:0.9rem;
-  border-radius:6px;
+  border-radius:8px;
+  font-weight:500;
 }
 /* Hero Brand */
 .hero-logo{
-  height:90px;
-  margin-bottom:10px;
+  height:120px;
+  width:auto;
+  margin-bottom:15px;
 }
 
 .hero-company-name{
-  font-size:2.8rem;
+  font-size:2.6rem;
   font-weight:800;
+  color:#ffffff;
+  margin-bottom:10px;
 }
 /* =========================================
    SECTIONS
