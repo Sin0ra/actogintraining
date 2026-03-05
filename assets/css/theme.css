@@ -200,8 +200,9 @@ h1, h2, h3, h4, h5 {
 }
 
 .navbar-logo{
-  height:70px;
+  height:70px !important;
   width:auto;
+  max-height:none;
 }
 
 /* =========================================
