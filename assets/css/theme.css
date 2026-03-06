@@ -231,6 +231,11 @@ h1, h2, h3, h4, h5 {
   font-size:1.2rem;
   color:#e5e5e5;
 }
+@media (min-width:992px){
+  .hero-section{
+    background-position:center 40%;
+  }
+}
 
 /* Hero content */
 .hero-content{
