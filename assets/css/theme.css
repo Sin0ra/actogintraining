@@ -210,7 +210,7 @@ h1, h2, h3, h4, h5 {
 }
 
 .hero-section{
-  min-height:60vh;
+  min-height:40vh;
   background-color: #00FF00; /* Lime background */
 
   display:flex;
