@@ -210,22 +210,14 @@ h1, h2, h3, h4, h5 {
 }
 
 .hero-section{
-  min-height:100vh; /* full screen height */
-  background: linear-gradient(
-      rgba(0,0,0,0.6),
-      rgba(0,0,0,0.6)
-    ),
-    url("../images/uploads/logo.jpg");
-
-  background-size:cover;
-  background-position:center;
-  background-repeat:no-repeat;
+  min-height:100vh;
+  background-color: #00FF00; /* Lime background */
 
   display:flex;
   align-items:center;
   justify-content:center;
 
-  padding-top:120px; /* space for navbar */
+  padding-top:120px;
 }
 .hero-section .lead{
   font-size:1.2rem;
