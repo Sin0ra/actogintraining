@@ -321,7 +321,10 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-
+.hero-quick-links .btn:hover{
+  transform: translateY(-4px);
+  box-shadow:0 10px 20px rgba(0,0,0,0.2), 0 0 12px rgba(0,255,0,0.4);
+}
 
 /* ===============================
    HERO MOBILE FIX
