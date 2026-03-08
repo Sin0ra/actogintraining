@@ -249,28 +249,32 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Service buttons */
+/* Animated gradient buttons */
 .hero-quick-links .btn{
   margin:6px;
   padding:10px 20px;
   font-size:0.9rem;
   border-radius:8px;
   font-weight:500;
-
-  animation: buttonFloat 3s ease-in-out infinite;
+  color:#fff;
+  border:none;
+  background: linear-gradient(270deg,#1b5e20,#2e7d32,#43a047,#2e7d32);
+  background-size:400% 400%;
+  animation: gradientMove 6s ease infinite;
 }
 
-/* Delay each button so they don't move together */
-.hero-quick-links .btn:nth-child(1){ animation-delay:0s; }
-.hero-quick-links .btn:nth-child(2){ animation-delay:0.4s; }
-.hero-quick-links .btn:nth-child(3){ animation-delay:0.8s; }
-.hero-quick-links .btn:nth-child(4){ animation-delay:1.2s; }
-
-/* Floating animation */
-@keyframes buttonFloat{
-  0%{ transform:translateY(0); }
-  50%{ transform:translateY(-6px); }
-  100%{ transform:translateY(0); }
+@keyframes gradientMove{
+  0%{
+    background-position:0% 50%;
+  }
+  50%{
+    background-position:100% 50%;
+  }
+  100%{
+    background-position:0% 50%;
+  }
 }
+
 /* Hero Brand */
 .hero-logo{
   width:120px;
