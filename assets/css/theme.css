@@ -283,6 +283,25 @@ h1, h2, h3, h4, h5 {
 .hero-section .container{
   max-width:900px;
 }
+
+/* ===============================
+   HERO MOBILE FIX
+================================ */
+@media (max-width:768px){
+
+.hero-brand{
+  flex-direction:column;
+}
+
+.hero-logo{
+  width:90px;
+}
+
+.hero-company-name{
+  font-size:30px;
+}
+
+}
 /* =========================================
    SECTIONS
 ========================================= */
