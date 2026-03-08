@@ -209,16 +209,6 @@ h1, h2, h3, h4, h5 {
   max-height:none;
 }
 
-here is the hero css ; .hero-section{
-  min-height:40vh;
-  background-color: #00FF00; /* Lime background */
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  padding-top:120px;
-}
 .hero-section .lead{
   font-size:1.2rem;
   color:#e5e5e5;
