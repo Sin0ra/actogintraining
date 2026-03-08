@@ -295,6 +295,19 @@ h1, h2, h3, h4, h5 {
   transition: all 0.3s ease;
 }
 
+/* SCROLL ANIMATION START STATE */
+.hero-quick-links .btn{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all 0.6s ease;
+}
+
+/* WHEN BUTTON BECOMES VISIBLE */
+.hero-quick-links .btn.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
 /* Hover effect */
 .hero-quick-links .btn:hover{
   transform: translateY(-4px);
@@ -324,6 +337,27 @@ h1, h2, h3, h4, h5 {
 .hero-quick-links .btn:hover{
   transform: translateY(-4px);
   box-shadow:0 10px 20px rgba(0,0,0,0.2), 0 0 12px rgba(0,255,0,0.4);
+}
+
+/* HERO BACKGROUND ANIMATION */
+.hero-section{
+  min-height:40vh;
+
+  background: linear-gradient(270deg,#1b5e20,#2e7d32,#43a047,#2e7d32);
+  background-size: 600% 600%;
+
+  animation: heroGradientMove 12s ease infinite;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding-top:120px;
+}
+
+@keyframes heroGradientMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
 }
 
 /* ===============================
