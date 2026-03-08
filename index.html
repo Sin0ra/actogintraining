@@ -196,6 +196,20 @@
     loadPage("index"); // CMS-driven content for services
   </script>
 
+  <script>
+const buttons = document.querySelectorAll(".hero-quick-links .btn");
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+});
+
+buttons.forEach(btn => observer.observe(btn));
+</script>
+
   <!-- Floating chat -->
   <a href="https://wa.me/27649590303" class="chat-btn" target="_blank">
     <i class="bi bi-whatsapp"></i>
@@ -203,6 +217,7 @@
 
 </body>
 </html>
+
 
 
 
