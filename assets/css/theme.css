@@ -275,10 +275,11 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-/* Hero Brand */
-.hero-logo{
-  width:120px;
-  height:auto;
+/* Ensure logo stays inline */
+.hero-logo {
+  width: 120px;
+  height: auto;
+  flex-shrink: 0;             /* prevent shrinking */
   animation: floatLogo 4s ease-in-out infinite;
 }
 
@@ -289,12 +290,12 @@ h1, h2, h3, h4, h5 {
 }
 
 /* HERO BRAND LAYOUT (logo + text side by side) */
-.hero-brand{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:18px;
-  flex-wrap:wrap;
+.hero-brand {
+  display: flex;
+  align-items: center;        /* vertical align logo and text */
+  justify-content: center;    /* center in hero section */
+  gap: 18px;                  /* space between logo and text */
+  flex-wrap: nowrap;           /* prevent wrapping */
 }
 
 .hero-company-name {
@@ -306,12 +307,19 @@ h1, h2, h3, h4, h5 {
   letter-spacing: 2px;
   
   /* Gradient animation */
+  font-family: 'Poppins', sans-serif;
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
   background: linear-gradient(90deg, #FF6B6B, #FFD93D, #6BCB77);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientMove 3s ease-in-out infinite, fadeIn 2s forwards;
-  opacity: 0;                             /* fade-in initial state */
+  opacity: 0;
+  white-space: nowrap;         /* prevent wrapping */
 }
 
 /* Gradient movement */
@@ -425,8 +433,7 @@ h1, h2, h3, h4, h5 {
 .hero-company-name{
   font-size:30px;
 }
-
-}
+   
 /* =========================================
    SECTIONS
 ========================================= */
