@@ -209,20 +209,15 @@ h1, h2, h3, h4, h5 {
   max-height:none;
 }
 
-.hero-section {
-  min-height: 40vh; /* keeps your hero tall enough */
-  background: linear-gradient(270deg,#1b5e20,#2e7d32,#43a047,#2e7d32);
-  background-size: 600% 600%;
-  animation: heroGradientMove 12s ease infinite;
+here is the hero css ; .hero-section{
+  min-height:40vh;
+  background-color: #00FF00; /* Lime background */
 
-  display: block;                   /* remove flex centering */
-  padding: 120px 20px 60px 20px;   /* top + bottom padding, horizontal padding optional */
-}
+  display:flex;
+  align-items:center;
+  justify-content:center;
 
-.hero-content {
-  max-width: 800px;
-  margin: 0 auto; /* horizontally center content */
-  text-align: center;
+  padding-top:120px;
 }
 .hero-section .lead{
   font-size:1.2rem;
@@ -280,11 +275,10 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-/* Ensure logo stays inline */
-.hero-logo {
-  width: 120px;
-  height: auto;
-  flex-shrink: 0;             /* prevent shrinking */
+/* Hero Brand */
+.hero-logo{
+  width:120px;
+  height:auto;
   animation: floatLogo 4s ease-in-out infinite;
 }
 
@@ -295,12 +289,12 @@ h1, h2, h3, h4, h5 {
 }
 
 /* HERO BRAND LAYOUT (logo + text side by side) */
-.hero-brand {
-  display: flex;
-  align-items: center;        /* vertical align logo and text */
-  justify-content: center;    /* center in hero section */
-  gap: 18px;                  /* space between logo and text */
-  flex-wrap: nowrap;           /* prevent wrapping */
+.hero-brand{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
 }
 
 .hero-company-name {
@@ -312,19 +306,12 @@ h1, h2, h3, h4, h5 {
   letter-spacing: 2px;
   
   /* Gradient animation */
-  font-family: 'Poppins', sans-serif;
-  font-size: 42px;
-  font-weight: 700;
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 2px;
   background: linear-gradient(90deg, #FF6B6B, #FFD93D, #6BCB77);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: gradientMove 3s ease-in-out infinite, fadeIn 2s forwards;
-  opacity: 0;
-  white-space: nowrap;         /* prevent wrapping */
+  opacity: 0;                             /* fade-in initial state */
 }
 
 /* Gradient movement */
