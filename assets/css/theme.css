@@ -260,6 +260,13 @@ h1, h2, h3, h4, h5 {
 .hero-logo{
   width:120px;
   height:auto;
+  animation: floatLogo 4s ease-in-out infinite;
+}
+
+@keyframes floatLogo{
+  0%{transform:translateY(0);}
+  50%{transform:translateY(-8px);}
+  100%{transform:translateY(0);}
 }
 
 /* HERO BRAND LAYOUT (logo + text side by side) */
