@@ -297,10 +297,33 @@ h1, h2, h3, h4, h5 {
   flex-wrap:wrap;
 }
 
-.hero-company-name{
-  font-size:42px;
-  font-weight:700;
-   margin:0;
+.hero-company-name {
+  font-family: 'Poppins', sans-serif;   /* modern clean font */
+  font-size: 42px;                       /* your existing size */
+  font-weight: 700;
+  margin: 0;
+  text-transform: uppercase;             /* optional modern touch */
+  letter-spacing: 2px;
+  
+  /* Gradient animation */
+  background: linear-gradient(90deg, #FF6B6B, #FFD93D, #6BCB77);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s ease-in-out infinite, fadeIn 2s forwards;
+  opacity: 0;                             /* fade-in initial state */
+}
+
+/* Gradient movement */
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Fade-in effect */
+@keyframes fadeIn {
+  to { opacity: 1; }
 }
 
 .hero-subtitle{
