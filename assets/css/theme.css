@@ -284,6 +284,45 @@ h1, h2, h3, h4, h5 {
   max-width:900px;
 }
 
+/* Hero Button Animation */
+.hero-quick-links .btn{
+  margin:6px;
+  padding:10px 20px;
+  font-size:0.9rem;
+  border-radius:8px;
+  font-weight:500;
+
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.hero-quick-links .btn:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* Button fade-in animation */
+.hero-quick-links .btn{
+  opacity:0;
+  transform:translateY(20px);
+  animation:heroButtonFade 0.6s ease forwards;
+}
+
+/* Stagger animation */
+.hero-quick-links .btn:nth-child(1){ animation-delay:0.2s; }
+.hero-quick-links .btn:nth-child(2){ animation-delay:0.4s; }
+.hero-quick-links .btn:nth-child(3){ animation-delay:0.6s; }
+.hero-quick-links .btn:nth-child(4){ animation-delay:0.8s; }
+
+@keyframes heroButtonFade{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+
+
 /* ===============================
    HERO MOBILE FIX
 ================================ */
