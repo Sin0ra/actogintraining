@@ -258,15 +258,23 @@ h1, h2, h3, h4, h5 {
 }
 /* Hero Brand */
 .hero-logo{
-  width:220px;
+  width:120px;
   height:auto;
-  display:block;
-  margin:auto;
+}
+
+/* HERO BRAND LAYOUT (logo + text side by side) */
+.hero-brand{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:18px;
+  flex-wrap:wrap;
 }
 
 .hero-company-name{
   font-size:42px;
   font-weight:700;
+   margin:0;
 }
 
 .hero-subtitle{
