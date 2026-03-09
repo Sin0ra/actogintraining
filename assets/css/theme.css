@@ -265,6 +265,24 @@ h1, h2, h3, h4, h5 {
   }
 }
 
+/* Readm more buttons */
+.service-extra{
+  display:none;
+  margin-top:10px;
+  color:#555;
+  animation:fadeDown .3s ease;
+}
+@keyframes fadeDown{
+  from{
+    opacity:0;
+    transform:translateY(-8px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
 /* Hero Brand */
 .hero-logo{
   width:120px;
