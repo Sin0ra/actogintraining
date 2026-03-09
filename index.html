@@ -202,6 +202,16 @@ const observer = new IntersectionObserver(entries => {
 });
 buttons.forEach(btn => observer.observe(btn));
 </script>
+  <script>
+function toggleService(id){
+  const section = document.getElementById("extra-" + id);
+  if(section.style.display === "block"){
+    section.style.display = "none";
+  } else {
+    section.style.display = "block";
+  }
+}
+</script>
 
   <!-- Floating chat -->
   <a href="https://wa.me/27649590303" class="chat-btn" target="_blank">
@@ -210,6 +220,7 @@ buttons.forEach(btn => observer.observe(btn));
 
 </body>
 </html>
+
 
 
 
