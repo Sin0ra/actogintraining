@@ -2,7 +2,9 @@
   "services": [
     {
       "title": "Training and Assessment Services",
-      "description": "We provide structured, outcomes-based training and assessment solutions designed to equip\nindividuals and teams with practical skills and recognized competencies. Our programs are aligned\nwith industry standards and delivered by qualified facilitators to ensure measurable impact and\nprofessional growth."
+      "description": "We provide structured, outcomes-based training and assessment solutions designed to equip\nindividuals and teams with practical skills and recognized competencies. ",
+      "button_text": "more",
+      "modal_content": "Our programs are aligned with industry standards and delivered by qualified facilitators to ensure measurable impact and professional growth."
     },
     {
       "title": "General Construction & Amp; Mobile Sanitation Solutions",
