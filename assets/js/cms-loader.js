@@ -32,7 +32,7 @@ if (Array.isArray(data.services) && document.getElementById("services-container"
     const modalHTML = service.modal_content
       ? `
       <div class="modal fade" id="${modalId}" tabindex="-1">
-        <div class="modal-dialog modal-lg">
+     <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title">${service.title}</h5>
@@ -118,6 +118,7 @@ if (Array.isArray(data.images) && document.getElementById("gallery-container")) 
     console.error("CMS LOAD ERROR:", error);
   }
 }
+
 
 
 
