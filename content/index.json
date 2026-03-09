@@ -8,15 +8,21 @@
     },
     {
       "title": "General Construction & Amp; Mobile Sanitation Solutions",
-      "description": "Actogin Group Investment offers comprehensive general construction services tailored to meet\nproject specifications and timelines. As part of our infrastructure support solutions, we supply and\nhire mobile toilets for road construction projects and other large-scale developments, ensuring\ncompliance with health, safety, and environmental standards."
+      "description": "Actogin Group Investment offers comprehensive general construction services tailored to meet\nproject specifications and timelines.",
+      "button_text": "Read more",
+      "modal_content": "As part of our infrastructure support solutions, we supply and hire mobile toilets for road construction projects and other large-scale developments, ensuring compliance with health, safety, and environmental standards."
     },
     {
       "title": "NSFAS-Accredited Student Accommodation (Grade A)",
-      "description": "We are proud to provide NSFAS-accredited student accommodation that prioritizes safety, comfort,\nand a conducive learning environment. Our facilities are well-managed and designed to support\nstudent success, offering quality living spaces aligned with regulatory requirements."
+      "description": "We are proud to provide NSFAS-accredited student accommodation that prioritizes safety, comfort,\nand a conducive learning environment.",
+      "button_text": "Read more",
+      "modal_content": "Our facilities are well-managed and designed to support student success, offering quality living spaces aligned with regulatory requirements."
     },
     {
       "title": "Catering Services",
-      "description": "Our professional catering division delivers exceptional culinary experiences for corporate events,\nconferences, and private functions. We combine quality ingredients, skilled preparation, and\nseamless service to ensure every event is memorable and professionally executed."
+      "description": "Our professional catering division delivers exceptional culinary experiences for corporate events, conferences, and private functions. ",
+      "button_text": "Read more",
+      "modal_content": "We combine quality ingredients, skilled preparation, and seamless service to ensure every event is memorable and professionally executed."
     }
   ],
   "title": "Actogintraining",
