@@ -191,10 +191,8 @@
   <script>
     loadPage("index"); // CMS-driven content for services
   </script>
-
   <script>
 const buttons = document.querySelectorAll(".hero-quick-links .btn");
-
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
@@ -202,9 +200,64 @@ const observer = new IntersectionObserver(entries => {
     }
   });
 });
-
 buttons.forEach(btn => observer.observe(btn));
 </script>
+  fetch('/content/index.json')
+  .then(response => response.json())
+  .then(data => {
+    const servicesContainer = document.getElementById("services-container");
+    const modalsContainer = document.getElementById("service-modals");
+    data.services.forEach((service, index) => {
+      const modalId = "serviceModal" + index;
+      let buttonHTML = "";
+      if (service.button_text && service.modal_content) {
+        buttonHTML = `
+          <button class="btn btn-primary mt-3"
+            data-bs-toggle="modal"
+            data-bs-target="#${modalId}">
+            ${service.button_text}
+          </button>
+        `;
+      }
+      const serviceCard = `
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">${service.title}</h5>
+              <p class="card-text">
+                ${service.description}
+              </p>
+              ${buttonHTML}
+            </div>
+          </div>
+        </div>
+      `;
+      servicesContainer.innerHTML += serviceCard;
+      if (service.modal_content) {
+        const modalHTML = `
+        <div class="modal fade" id="${modalId}" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">${service.title}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+              <div class="modal-body">
+                <p>${service.modal_content}</p>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        `;
+        modalsContainer.innerHTML += modalHTML;
+      }
+    });
+  });
 
   <!-- Floating chat -->
   <a href="https://wa.me/27649590303" class="chat-btn" target="_blank">
@@ -213,6 +266,7 @@ buttons.forEach(btn => observer.observe(btn));
 
 </body>
 </html>
+
 
 
 
