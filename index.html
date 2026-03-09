@@ -202,6 +202,7 @@ const observer = new IntersectionObserver(entries => {
 });
 buttons.forEach(btn => observer.observe(btn));
 </script>
+  <script>
   fetch('/content/index.json')
   .then(response => response.json())
   .then(data => {
@@ -258,6 +259,7 @@ buttons.forEach(btn => observer.observe(btn));
       }
     });
   });
+    </script>
 
   <!-- Floating chat -->
   <a href="https://wa.me/27649590303" class="chat-btn" target="_blank">
@@ -266,6 +268,7 @@ buttons.forEach(btn => observer.observe(btn));
 
 </body>
 </html>
+
 
 
 
