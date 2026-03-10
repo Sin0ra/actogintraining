@@ -799,3 +799,69 @@ gallery-item p {
   font-size: 0.75rem;
   color: #7ED957; /* your green theme */
 }
+
+/* =========================================
+   PAGE HERO (COURSES / WHY CHOOSE US)
+========================================= */
+
+.page-hero{
+
+  min-height:35vh;
+
+  background: linear-gradient(270deg,#1b5e20,#2e7d32,#43a047,#2e7d32);
+  background-size:600% 600%;
+
+  animation:heroGradientMove 12s ease infinite;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+
+  padding:80px 20px;
+
+  color:white;
+}
+
+.page-hero h1{
+  font-size:2.6rem;
+  font-weight:800;
+  margin-bottom:15px;
+  color:white;
+}
+
+.page-hero p{
+  max-width:700px;
+  margin:auto;
+  font-size:1.1rem;
+  color:#e5e5e5;
+}
+
+/* Tablet */
+
+@media (max-width:992px){
+
+.page-hero h1{
+font-size:2.1rem;
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+.page-hero{
+min-height:30vh;
+padding:60px 15px;
+}
+
+.page-hero h1{
+font-size:1.8rem;
+}
+
+.page-hero p{
+font-size:1rem;
+}
+
+}
