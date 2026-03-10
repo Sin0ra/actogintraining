@@ -15,6 +15,10 @@
   --text-dark: #1a1a1a;
 }
 
+html{
+  scroll-behavior:smooth;
+}
+
 /* ===== GLOBAL RESET ===== */
 html, body {
   margin: 0;
