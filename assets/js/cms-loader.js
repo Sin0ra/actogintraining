@@ -20,14 +20,16 @@ async function loadPage(pageName) {
 // =========================
 if (Array.isArray(data.services) && document.getElementById("services-container")) {
   const container = document.getElementById("services-container");
-  container.innerHTML = data.services.map(service => {
-
-    // create automatic id from title
-    const serviceId = service.title
-      .toLowerCase()
-      .replace(/\s+/g,"-");
+  const serviceIds = [
+    "training-services",
+    "construction",
+    "accommodation",
+    "catering"
+  ];
+  container.innerHTML = data.services.map((service, index) => {
+    const id = serviceIds[index] || `service-${index}`;
     return `
-      <div class="col-md-4" id="${serviceId}">
+      <div class="col-md-6 col-lg-3" id="${id}">
         <div class="service-card p-4 h-100 text-center">
           <h5 class="fw-semibold">${service.title || ""}</h5>
           <p>${service.description || ""}</p>
@@ -91,6 +93,7 @@ if (Array.isArray(data.images) && document.getElementById("gallery-container")) 
     console.error("CMS LOAD ERROR:", error);
   }
 }
+
 
 
 
