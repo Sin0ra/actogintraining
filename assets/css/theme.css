@@ -460,7 +460,7 @@ flex-direction:column ;
 }
 
 .hero-logo{
-  width:120px;
+  width:clamp(120px, 25vw, 260px);
 }
 
 .hero-company-name{
@@ -694,7 +694,7 @@ section {
   text-align: center;
 }
 
-gallery-section {
+.gallery-section {
   padding: 70px 15px;
   background-color: #f9f9f9;
 }
@@ -732,7 +732,7 @@ gallery-section {
   display: block;
 }
 
-gallery-item p {
+.gallery-item p {
   padding: 10px;
   font-size: 0.9rem;
   text-align: center;
