@@ -285,15 +285,36 @@ h1, h2, h3, h4, h5 {
 
 /* Hero Brand */
 .hero-logo{
-  width:120px;
+  width:140px;
   height:auto;
-  animation: floatLogo 4s ease-in-out infinite;
+ object-fit: contain
+ animation: floatLogo 4s ease-in-out infinite;
+filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
 }
 
 @keyframes floatLogo{
   0%{transform:translateY(0);}
   50%{transform:translateY(-8px);}
   100%{transform:translateY(0);}
+}
+
+/* Desktop */
+.hero-logo{
+  width:160px;
+}
+
+/* Tablet */
+@media (max-width:992px){
+  .hero-logo{
+    width:130px;
+  }
+}
+
+/* Mobile */
+@media (max-width:576px){
+  .hero-logo{
+    width:100px;
+  }
 }
 
 /* HERO BRAND LAYOUT (logo + text side by side) */
