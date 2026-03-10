@@ -227,9 +227,8 @@ h1, h2, h3, h4, h5 {
 
 /* Hero title */
 .hero-title{
-  font-size:3rem;
-  font-weight:800;
-  margin-bottom:15px;
+display:flex
+flex-direction:column
 }
 
 /* Subtitle */
@@ -309,17 +308,15 @@ h1, h2, h3, h4, h5 {
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:18px;
-  flex-wrap:wrap;
+  gap:20px;
+  text-align:left
 }
 
 .hero-company-name {
   font-family: 'Poppins', sans-serif;   /* modern clean font */
-  font-size: 42px;                       /* your existing size */
+  font-size: 2.4rem;                       /* your existing size */
   font-weight: 700;
-  margin: 0;
-  text-transform: uppercase;             /* optional modern touch */
-  letter-spacing: 2px;
+   line-height:1.1
   
   /* Gradient animation */
   background: linear-gradient(90deg, #FF6B6B, #FFD93D, #6BCB77);
@@ -343,7 +340,9 @@ h1, h2, h3, h4, h5 {
 }
 
 .hero-subtitle{
-  font-size:20px;
+  font-size:1.3rem;
+   letter-spacing:2px;
+   opacity:.9;
 }
 .hero-section .container{
   max-width:1100px;
@@ -426,6 +425,21 @@ h1, h2, h3, h4, h5 {
 }
 
 /* ===============================
+   tablet screens
+================================ */
+@media (max-width:992px){
+.hero-logo{
+  width:160px;
+}
+.hero-company-name{
+  font-size:1.8rem;
+}
+.hero-subname{
+  font-size:1.1rem;
+}
+}
+
+/* ===============================
    HERO MOBILE FIX
 ================================ */
 @media (max-width:768px){
@@ -435,11 +449,18 @@ h1, h2, h3, h4, h5 {
 }
 
 .hero-logo{
-  width:90px;
+  width:120px;
 }
 
 .hero-company-name{
-  font-size:30px;
+  font-size:1.4rem;
+}
+   .hero-subname{
+  font-size:0.9rem;
+}
+
+.hero-brand{
+  gap:12px;
 }
 }
    
