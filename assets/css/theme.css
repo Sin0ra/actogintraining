@@ -19,6 +19,13 @@ html{
   scroll-behavior:smooth;
 }
 
+#training-services,
+#construction,
+#accommodation,
+#catering{
+  scroll-margin-top:100px;
+}
+
 /* ===== GLOBAL RESET ===== */
 html, body {
   margin: 0;
