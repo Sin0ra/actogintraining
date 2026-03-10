@@ -292,12 +292,6 @@ h1, h2, h3, h4, h5 {
 filter: drop-shadow(0 6px 14px rgba(0,0,0,0.4));
 }
 
-@keyframes floatLogo{
-  0%{transform:translateY(0);}
-  50%{transform:translateY(-8px);}
-  100%{transform:translateY(0);}
-}
-
 /* Desktop */
 .hero-logo{
   width:220px;
@@ -315,14 +309,25 @@ filter: drop-shadow(0 6px 14px rgba(0,0,0,0.4));
 /* Tablet */
 @media (max-width:992px){
   .hero-logo{
-    width:180px;
+    width:2000px;
   }
 }
 
 /* Mobile */
 @media (max-width:576px){
   .hero-logo{
-    width:130px;
+    width:150px;
+  }
+}
+@keyframes floatLogo{
+  0%{
+    transform:translateY(0px);
+  }
+  50%{
+    transform:translateY(-8px);
+  }
+  100%{
+    transform:translateY(0px);
   }
 }
 
