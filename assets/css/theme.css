@@ -289,7 +289,7 @@ h1, h2, h3, h4, h5 {
   height:auto;
  object-fit: contain
  animation: floatLogo 4s ease-in-out infinite;
-filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+filter: drop-shadow(0 6px 14px rgba(0,0,0,0.4));
 }
 
 @keyframes floatLogo{
@@ -300,20 +300,29 @@ filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
 
 /* Desktop */
 .hero-logo{
-  width:160px;
+  width:220px;
+  height:auto;
+  object-fit:contain;
+}
+
+/* Large screens */
+@media (min-width:1200px){
+  .hero-logo{
+    width:260px;
+  }
 }
 
 /* Tablet */
 @media (max-width:992px){
   .hero-logo{
-    width:130px;
+    width:180px;
   }
 }
 
 /* Mobile */
 @media (max-width:576px){
   .hero-logo{
-    width:100px;
+    width:130px;
   }
 }
 
