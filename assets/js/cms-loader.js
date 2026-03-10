@@ -20,25 +20,17 @@ async function loadPage(pageName) {
 // =========================
 if (Array.isArray(data.services) && document.getElementById("services-container")) {
   const container = document.getElementById("services-container");
-  container.innerHTML = data.services.map((service, index) => {
-    const extraContent = service.modal_content
-      ? `<div class="service-extra" id="extra-${index}">
-           <p>${service.modal_content}</p>
-         </div>`
-      : "";
-    const buttonHTML = service.modal_content
-      ? `<button class="btn btn-success btn-sm mt-2"
-          onclick="toggleService(${index})">
-          Read More
-        </button>`
-      : "";
+  container.innerHTML = data.services.map(service => {
+
+    // create automatic id from title
+    const serviceId = service.title
+      .toLowerCase()
+      .replace(/\s+/g,"-");
     return `
-      <div class="col-md-4">
+      <div class="col-md-4" id="${serviceId}">
         <div class="service-card p-4 h-100 text-center">
           <h5 class="fw-semibold">${service.title || ""}</h5>
           <p>${service.description || ""}</p>
-          ${extraContent}
-          ${buttonHTML}
         </div>
       </div>
     `;
@@ -99,6 +91,7 @@ if (Array.isArray(data.images) && document.getElementById("gallery-container")) 
     console.error("CMS LOAD ERROR:", error);
   }
 }
+
 
 
 
