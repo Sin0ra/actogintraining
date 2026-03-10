@@ -27,17 +27,29 @@ if (Array.isArray(data.services) && document.getElementById("services-container"
     "catering"
   ];
   container.innerHTML = data.services.map((service, index) => {
-    const id = serviceIds[index] || `service-${index}`;
-    return `
-      <div class="col-md-6 col-lg-3" id="${id}">
-        <div class="service-card p-4 h-100 text-center">
-          <h5 class="fw-semibold">${service.title || ""}</h5>
-          <p>${service.description || ""}</p>
+
+  const id = serviceIds[index] || `service-${index}`;
+
+  return `
+    <div class="col-md-6 col-lg-3" id="${id}">
+      <div class="service-card p-4 h-100 text-center">
+
+        <h5 class="fw-semibold">${service.title || ""}</h5>
+
+        <p>${service.description || ""}</p>
+
+        <button class="read-more-btn" onclick="toggleService(${index})">
+          Read More
+        </button>
+
+        <div class="service-extra" id="extra-${index}">
+          <p>${service.more || ""}</p>
         </div>
+
       </div>
-    `;
-  }).join('');
-}
+    </div>
+  `;
+}).join('');
 
     // =========================
     // COURSES SECTION
@@ -93,6 +105,7 @@ if (Array.isArray(data.images) && document.getElementById("gallery-container")) 
     console.error("CMS LOAD ERROR:", error);
   }
 }
+
 
 
 
