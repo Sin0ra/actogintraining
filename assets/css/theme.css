@@ -243,6 +243,27 @@ h1, h2, h3, h4, h5 {
   color:#1d4ed8;
 }
 
+.email-icon{
+  font-size:1.6rem;
+  color:#2563eb;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.email-icon:hover{
+  transform:scale(1.2);
+  color:#1d4ed8;
+}
+
+.email-link{
+  text-decoration:none;
+  color:inherit;
+}
+
+.email-link:hover{
+  text-decoration:underline;
+}
+
 /* Hero content */
 .hero-content{
   max-width:800px;
