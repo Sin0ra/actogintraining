@@ -15,6 +15,7 @@ async function loadPage(pageName) {
       }
     });
 
+    
 // =========================
 // SERVICES SECTION
 // =========================
@@ -40,9 +41,10 @@ if (Array.isArray(data.services) && document.getElementById("services-container"
           <p>${service.description || ""}</p>
 
           ${service.button_text ? `
-            <button class="btn btn-primary mt-2"
+            <button class="btn btn-primary mt-2 toggle-btn"
               data-bs-toggle="collapse"
-              data-bs-target="#${collapseId}">
+              data-bs-target="#${collapseId}"
+              data-btn="${service.button_text}">
               ${service.button_text}
             </button>
           ` : ""}
@@ -58,6 +60,21 @@ if (Array.isArray(data.services) && document.getElementById("services-container"
     `;
   }).join('');
 }
+
+    // Toggle Read More / Read Less
+document.querySelectorAll(".collapse").forEach(collapse => {
+
+  collapse.addEventListener("shown.bs.collapse", function () {
+    const btn = document.querySelector(`[data-bs-target="#${collapse.id}"]`);
+    if (btn) btn.textContent = "Read Less";
+  });
+
+  collapse.addEventListener("hidden.bs.collapse", function () {
+    const btn = document.querySelector(`[data-bs-target="#${collapse.id}"]`);
+    if (btn) btn.textContent = "Read More";
+  });
+
+});
 
     // =========================
     // COURSES SECTION
@@ -113,6 +130,7 @@ if (Array.isArray(data.images) && document.getElementById("gallery-container")) 
     console.error("CMS LOAD ERROR:", error);
   }
 }
+
 
 
 
