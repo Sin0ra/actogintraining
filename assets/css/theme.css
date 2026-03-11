@@ -486,6 +486,50 @@ section {
   background-color: var(--light-bg);
 }
 
+/* SERVICE BUTTON */
+.toggle-btn{
+  background: var(--primary-green);
+  border: none;
+  color: #000;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 30px;
+  transition: all .3s ease;
+}
+
+/* Hover */
+.toggle-btn:hover{
+  background: var(--dark-green);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+}
+
+/* Active state */
+.toggle-btn:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+.service-card{
+  background:#fff;
+  border-radius:16px;
+  padding:30px 25px;
+  transition:all .35s ease;
+  box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
+
+.service-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 35px rgba(0,0,0,0.12);
+}
+
+.service-card .card{
+  border:none;
+  border-radius:12px;
+  background:#f8f9fa;
+}
+
 /* =========================================
    SERVICE CARDS (CMS SAFE)
 ========================================= */
