@@ -41,7 +41,7 @@ if (Array.isArray(data.services) && document.getElementById("services-container"
           <p>${service.description || ""}</p>
 
           ${service.button_text ? `
-            <button class="btn btn-primary mt-2 toggle-btn"
+            <button class="btn toggle-btn mt-2"
               data-bs-toggle="collapse"
               data-bs-target="#${collapseId}"
               data-btn="${service.button_text}">
@@ -130,6 +130,7 @@ if (Array.isArray(data.images) && document.getElementById("gallery-container")) 
     console.error("CMS LOAD ERROR:", error);
   }
 }
+
 
 
 
