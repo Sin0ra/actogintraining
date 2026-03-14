@@ -126,6 +126,30 @@ if (Array.isArray(data.images) && document.getElementById("gallery-container")) 
   `).join('');
 }
 
+// =========================
+// TEAM SECTION
+// =========================
+if (Array.isArray(data.team) && document.getElementById("team-container")) {
+  const container = document.getElementById("team-container");
+
+  container.innerHTML = data.team.map(member => `
+    <div class="col-md-6 col-lg-3">
+      <div class="team-card text-center h-100">
+
+        <div class="team-img">
+          <img src="${member.image}" class="img-fluid" alt="${member.name}">
+        </div>
+
+        <div class="team-info p-3">
+          <h5 class="fw-bold">${member.name || ""}</h5>
+          <p class="text-muted small">${member.role || ""}</p>
+        </div>
+
+      </div>
+    </div>
+  `).join('');
+}
+    
   } catch (error) {
     console.error("CMS LOAD ERROR:", error);
   }
