@@ -13,5 +13,18 @@
     {
       "image": "/assets/images/uploads/img-20260207-wa0009.jpg"
     }
+  ],
+
+  "team": [
+    {
+      "name": "John Doe",
+      "role": "Training Director",
+      "image": "/assets/images/uploads/team1.jpg"
+    },
+    {
+      "name": "Jane Smith",
+      "role": "Safety Instructor",
+      "image": "/assets/images/uploads/team2.jpg"
+    }
   ]
 }
