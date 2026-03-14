@@ -539,6 +539,11 @@ section {
   box-shadow: 0 6px 14px rgba(0,0,0,0.15);
 }
 
+.card:hover{
+transform: translateY(-8px);
+transition: 0.3s ease;
+}
+
 /* Active state */
 .toggle-btn:focus{
   outline: none;
