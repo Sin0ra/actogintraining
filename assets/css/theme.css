@@ -978,3 +978,16 @@ background:white;
 transform:translateY(-5px);
 box-shadow:0 10px 25px rgba(0,0,0,0.1);
 }
+
+.course-card{
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+.course-card i{
+font-size:28px;
+color:#22c55e;
+margin-bottom:10px;
+}
+
