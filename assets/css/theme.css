@@ -991,3 +991,14 @@ color:#22c55e;
 margin-bottom:10px;
 }
 
+
+.hero{
+background: linear-gradient(180deg,#1e293b,#0f172a);
+color:#fff;
+padding:7rem 1rem 4rem;
+margin-top:70px;
+}
+
+.hero .container{
+max-width:1140px;
+}
