@@ -967,3 +967,14 @@ font-size:1rem;
 }
 
 }
+
+.info-card{
+transition: all 0.3s ease;
+border-radius:10px;
+background:white;
+}
+
+.info-card:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
