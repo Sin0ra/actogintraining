@@ -190,46 +190,7 @@ h1, h2, h3, h4, h5 {
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%280, 0, 0, 0.7%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
-/* =========================================
-   MOBILE NAVBAR (FIXED)
-========================================= */
 
-@media (max-width: 992px) {
-
-  /* Layout */
-  .navbar .container {
-    display: flex;
-    align-items: center;
-  }
-
-  /* Logo left */
-  .navbar-brand {
-    margin-right: auto;
-  }
-
-  /* Hamburger right */
-  .navbar-toggler {
-    margin-left: auto;
-    border: none;
-  }
-
-  /* Reset nav layout */
-  .navbar-nav {
-    display: block;
-    text-align: center;
-  }
-
-  .navbar-nav .nav-link {
-    font-size: 1rem;
-    padding: 12px 0;
-  }
-
-  /* Buttons full width */
-  .navbar .btn {
-    width: 100%;
-    margin-top: 10px;
-  }
-}
 
 .hero-section .lead{
   font-size:1.2rem;
