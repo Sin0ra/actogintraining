@@ -1147,3 +1147,39 @@ max-width:1140px;
 .navbar-brand {
   margin-right: auto;
 }
+
+/* =========================
+   MOBILE NAVBAR FIX (FORCE RIGHT)
+========================= */
+
+@media (max-width: 992px) {
+
+  .navbar .container {
+    display: flex !important;
+    align-items: center;
+  }
+
+  /* Logo stays left */
+  .navbar-brand {
+    margin-right: auto;
+  }
+
+  /* Hamburger goes right */
+  .navbar-toggler {
+    margin-left: auto !important;
+  }
+
+  /* Stop collapse from affecting layout */
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .navbar-nav {
+    display: block; /* reset Bootstrap behavior */
+  }
+}
