@@ -1121,3 +1121,29 @@ max-width:1140px;
 .hero-courses .btn-primary:hover {
   background-color: #388e3c; /* Darker shade on hover */
 }
+
+/* =========================
+   FIX HAMBURGER POSITION
+========================= */
+
+/* Force proper layout */
+.navbar .container {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Push hamburger to far right */
+.navbar-toggler {
+  margin-left: auto !important;
+  display: block;
+}
+
+/* Prevent nav from pushing things */
+.navbar-collapse {
+  flex-basis: 100%;
+}
+
+.navbar-brand {
+  margin-right: auto;
+}
