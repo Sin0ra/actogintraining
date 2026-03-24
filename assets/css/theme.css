@@ -1183,3 +1183,8 @@ max-width:1140px;
     display: block; /* reset Bootstrap behavior */
   }
 }
+
+/* FORCE hamburger to the right (offcanvas version) */
+.navbar-toggler {
+  margin-left: auto !important;
+}
