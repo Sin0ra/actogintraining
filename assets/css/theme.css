@@ -281,20 +281,29 @@ h1, h2, h3, h4, h5 {
   margin:auto;
 }
 
-/* ===== GALLERY BUTTON ===== */
+/* ===== GALLERY BUTTON (LIME STYLE) ===== */
 .btn-gallery {
-  background: #ffffff;
-  color: #00CC00;
+  background: linear-gradient(135deg, #00ff88, #00cc44);
+  color: #ffffff;
   font-weight: 600;
-  padding: 10px 22px;
+  padding: 12px 26px;
   border-radius: 8px;
-  transition: 0.3s ease;
+  border: none;
+  display: inline-block;
+  transition: all 0.3s ease;
 }
 
+/* Hover effect */
 .btn-gallery:hover {
-  background: linear-gradient(135deg, #00ff88, #00cc44);
-  color: #000;
-  transform: translateY(-2px);
+  background: #ffffff;
+  color: #00cc44;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 255, 136, 0.4);
+}
+
+/* Click effect */
+.btn-gallery:active {
+  transform: scale(0.97);
 }
 
 /* Hero title */
