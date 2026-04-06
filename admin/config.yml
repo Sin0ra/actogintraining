@@ -2,7 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
-# Enable this for local development (VERY IMPORTANT)
+# Enable this for local development
 local_backend: true
 
 media_folder: "assets/images/uploads"
@@ -13,7 +13,6 @@ collections:
   # =========================
   # WEBSITE PAGES
   # =========================
-
   - name: "pages"
     label: "Website Pages"
     files:
@@ -21,7 +20,6 @@ collections:
       # ---------------------
       # HOME PAGE
       # ---------------------
-
       - label: "Home Page"
         name: "index"
         file: "content/index.json"
@@ -60,7 +58,6 @@ collections:
       # ---------------------
       # ABOUT PAGE
       # ---------------------
-
       - label: "About Page"
         name: "about"
         file: "content/about.json"
@@ -72,7 +69,6 @@ collections:
       # ---------------------
       # WHY CHOOSE US PAGE
       # ---------------------
-
       - label: "Why Choose Us Page"
         name: "choosing"
         file: "content/choosing.json"
@@ -84,7 +80,6 @@ collections:
       # ---------------------
       # COURSES PAGE
       # ---------------------
-
       - label: "Courses Page"
         name: "courses"
         file: "content/courses.json"
@@ -106,7 +101,6 @@ collections:
       # ---------------------
       # CONTACT PAGE
       # ---------------------
-
       - label: "Contact Page"
         name: "contact"
         file: "content/contact.json"
@@ -117,9 +111,8 @@ collections:
           - { label: "Address", name: "address", widget: "text" }
 
   # =========================
-  # GALLERY + TEAM
+  # GALLERY + TEAM (Optimized)
   # =========================
-
   - name: "gallery"
     label: "Gallery"
     files:
@@ -129,14 +122,23 @@ collections:
         file: "content/gallery.json"
         fields:
 
+          # ---------------------
+          # GALLERY IMAGES
+          # ---------------------
           - label: "Gallery Images"
             name: "images"
             widget: "list"
             summary: "{{fields.caption}}"
+            hint: "Upload optimized images (thumb ~400px, full ~1200px, WebP recommended)"
             fields:
-              - { label: "Image", name: "image", widget: "image" }
+              - { label: "Thumbnail (small image)", name: "thumb", widget: "image", required: false, hint: "Use ~400px width" }
+              - { label: "Full Image (large)", name: "full", widget: "image", required: false, hint: "Use ~1200px width" }
+              - { label: "Image (fallback / old)", name: "image", widget: "image", required: false }
               - { label: "Caption", name: "caption", widget: "string", required: false }
 
+          # ---------------------
+          # TEAM SECTION
+          # ---------------------
           - label: "Meet The Team"
             name: "team"
             widget: "list"
@@ -144,4 +146,5 @@ collections:
             fields:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Role", name: "role", widget: "string" }
-              - { label: "Photo", name: "image", widget: "image" }
+              - { label: "Thumbnail (small)", name: "thumb", widget: "image", required: false, hint: "Use ~300-400px width" }
+              - { label: "Photo (full / fallback)", name: "image", widget: "image", hint: "Use ~600-800px width" }
