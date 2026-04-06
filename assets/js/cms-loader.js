@@ -95,9 +95,8 @@ document.querySelectorAll(".collapse").forEach(collapse => {
         </div>
       `).join('');
     }
-
-  // =========================
-// GALLERY SECTION (Upgraded)
+// =========================
+// GALLERY SECTION (Optimized but safe)
 // =========================
 if (Array.isArray(data.images) && document.getElementById("gallery-container")) {
   const container = document.getElementById("gallery-container");
@@ -105,7 +104,15 @@ if (Array.isArray(data.images) && document.getElementById("gallery-container")) 
   container.innerHTML = data.images.map((img, index) => `
     <div class="col-md-4">
       <div class="gallery-card" data-bs-toggle="modal" data-bs-target="#galleryModal${index}">
-        <img src="${img.image}" class="img-fluid" alt="">
+        
+        <!-- Thumbnail image (fallback to original if thumb doesn't exist) -->
+        <img 
+          src="${img.thumb || img.image}" 
+          class="img-fluid" 
+          alt="${img.caption || 'Gallery image'}"
+          loading="lazy"
+        >
+
         <div class="gallery-overlay">
           ${img.caption ? `<span>${img.caption}</span>` : ""}
         </div>
@@ -116,7 +123,15 @@ if (Array.isArray(data.images) && document.getElementById("gallery-container")) 
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content bg-dark border-0">
             <div class="modal-body p-0">
-              <img src="${img.image}" class="img-fluid w-100">
+              
+              <!-- Full image (only used inside modal) -->
+              <img 
+                src="${img.full || img.image}" 
+                class="img-fluid w-100"
+                alt="${img.caption || 'Gallery image'}"
+                loading="lazy"
+              >
+
               ${img.caption ? `<div class="text-white text-center p-3">${img.caption}</div>` : ""}
             </div>
           </div>
@@ -127,7 +142,7 @@ if (Array.isArray(data.images) && document.getElementById("gallery-container")) 
 }
 
 // =========================
-// TEAM SECTION
+// TEAM SECTION (Optimized)
 // =========================
 if (Array.isArray(data.team) && document.getElementById("team-container")) {
   const container = document.getElementById("team-container");
@@ -137,7 +152,13 @@ if (Array.isArray(data.team) && document.getElementById("team-container")) {
       <div class="team-card text-center h-100">
 
         <div class="team-img">
-          <img src="${member.image}" class="img-fluid" alt="${member.name}">
+          <!-- Use optimized image if available, fallback to original -->
+          <img 
+            src="${member.thumb || member.image}" 
+            class="img-fluid" 
+            alt="${member.name || 'Team member'}"
+            loading="lazy"
+          >
         </div>
 
         <div class="team-info p-3">
@@ -149,13 +170,6 @@ if (Array.isArray(data.team) && document.getElementById("team-container")) {
     </div>
   `).join('');
 }
-    
-  } catch (error) {
-    console.error("CMS LOAD ERROR:", error);
-  }
-}
-
-
 
 
 
