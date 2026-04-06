@@ -1,5 +1,18 @@
 {
-  "images": [],
+  "images": [
+    {
+      "image": "/assets/images/uploads/img-20260331-wa0061.png"
+    },
+    {
+      "image": "/assets/images/uploads/img-20260331-wa0059.png"
+    },
+    {
+      "image": "/assets/images/uploads/img-20260331-wa0030.png"
+    },
+    {
+      "image": "/assets/images/uploads/image 1.jpg"
+    }
+  ],
   "team": [
     {
       "name": "Mr Khumalo",
@@ -10,6 +23,51 @@
       "name": "Mrs Khumalo",
       "role": "Chief Director",
       "image": "/assets/images/uploads/img-20260331-wa0046.png"
+    },
+    {
+      "image": "/assets/images/uploads/img-20260331-wa0049.png",
+      "role": "Admin Support",
+      "name": "Nondwe Tyilo"
+    },
+    {
+      "name": "Lusanda Kala",
+      "role": "Coordinator",
+      "image": "/assets/images/uploads/img-20260331-wa0056.png"
+    },
+    {
+      "role": "Facilitator",
+      "name": "Akhona Pokozayo",
+      "image": "/assets/images/uploads/img-20260331-wa0054.png"
+    },
+    {
+      "role": "Head chef",
+      "name": "Khaya Mtwa",
+      "image": "/assets/images/uploads/img-20260331-wa0043.png"
+    },
+    {
+      "role": "Assistant Chef",
+      "name": "Ongeziwe Ndzimela",
+      "image": "/assets/images/uploads/img-20260331-wa0047.png"
+    },
+    {
+      "role": "Storeman",
+      "name": "Frank Hoya",
+      "image": "/assets/images/uploads/img-20260331-wa0033.png"
+    },
+    {
+      "name": "Nonkoliseko Kaizer",
+      "role": "Housekeeping manager",
+      "image": "/assets/images/uploads/img-20260331-wa0052.png"
+    },
+    {
+      "role": "Driver",
+      "name": "Anele Fetile",
+      "image": "/assets/images/uploads/img-20260331-wa0042.png"
+    },
+    {
+      "role": "Operator",
+      "name": "Sandile Dyele",
+      "image": "/assets/images/uploads/img-20260331-wa0039.png"
     }
   ]
 }
