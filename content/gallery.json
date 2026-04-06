@@ -1,29 +1,15 @@
 {
-  "images": [
-    {
-      "image": "/assets/images/uploads/img-20260207-wa0007.jpg",
-      "caption": "Office"
-    },
-    {
-      "image": "/assets/images/uploads/img-20260207-wa0010.jpg"
-    },
-    {
-      "image": "/assets/images/uploads/image-3.jpg"
-    },
-    {
-      "image": "/assets/images/uploads/img-20260207-wa0009.jpg"
-    }
-  ],
+  "images": [],
   "team": [
     {
-      "name": "Mr Vusi",
-      "role": "Training Director",
-      "image": "/assets/images/uploads/img-20260207-wa0008.jpg"
+      "name": "Mr Khumalo",
+      "role": "CEO",
+      "image": "/assets/images/uploads/img-20260331-wa0035.png"
     },
     {
-      "name": "Smith",
-      "role": "Safety Instructor",
-      "image": "/assets/images/uploads/image-3.jpg"
+      "name": "Mrs Khumalo",
+      "role": "Chief Director",
+      "image": "/assets/images/uploads/img-20260331-wa0046.png"
     }
   ]
 }
