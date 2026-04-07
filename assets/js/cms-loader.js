@@ -98,77 +98,98 @@ document.querySelectorAll(".collapse").forEach(collapse => {
 // =========================
 // GALLERY SECTION (Optimized but safe)
 // =========================
+// =========================
+// GALLERY SECTION (Fixed + Safe)
+// =========================
 if (Array.isArray(data.images) && document.getElementById("gallery-container")) {
   const container = document.getElementById("gallery-container");
 
-  container.innerHTML = data.images.map((img, index) => `
-    <div class="col-md-4">
-      <div class="gallery-card" data-bs-toggle="modal" data-bs-target="#galleryModal${index}">
-        
-        <!-- Thumbnail image (fallback to original if thumb doesn't exist) -->
-        <img 
-          src="${img.thumb || img.image}" 
-          class="img-fluid" 
-          alt="${img.caption || 'Gallery image'}"
-          loading="lazy"
-        >
+  container.innerHTML = data.images.map((img, index) => {
 
-        <div class="gallery-overlay">
-          ${img.caption ? `<span>${img.caption}</span>` : ""}
+    // FIX: Resolve correct image path safely
+    const thumbSrc = (img.thumb || img.full || img.image || '');
+    const fixedThumb = thumbSrc.startsWith('/') ? thumbSrc : '/' + thumbSrc;
+
+    const fullSrc = (img.full || img.thumb || img.image || '');
+    const fixedFull = fullSrc.startsWith('/') ? fullSrc : '/' + fullSrc;
+
+    return `
+      <div class="col-md-4">
+        <div class="gallery-card" data-bs-toggle="modal" data-bs-target="#galleryModal${index}">
+          
+          <!-- Thumbnail image -->
+          <img 
+            src="${fixedThumb}" 
+            class="img-fluid" 
+            alt="${img.caption || 'Gallery image'}"
+            loading="lazy"
+          >
+
+          <div class="gallery-overlay">
+            ${img.caption ? `<span>${img.caption}</span>` : ""}
+          </div>
         </div>
-      </div>
 
-      <!-- Modal -->
-      <div class="modal fade" id="galleryModal${index}" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content bg-dark border-0">
-            <div class="modal-body p-0">
-              
-              <!-- Full image (only used inside modal) -->
-              <img 
-                src="${img.full || img.image}" 
-                class="img-fluid w-100"
-                alt="${img.caption || 'Gallery image'}"
-                loading="lazy"
-              >
+        <!-- Modal -->
+        <div class="modal fade" id="galleryModal${index}" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-dark border-0">
+              <div class="modal-body p-0">
+                
+                <!-- Full image -->
+                <img 
+                  src="${fixedFull}" 
+                  class="img-fluid w-100"
+                  alt="${img.caption || 'Gallery image'}"
+                  loading="lazy"
+                >
 
-              ${img.caption ? `<div class="text-white text-center p-3">${img.caption}</div>` : ""}
+                ${img.caption ? `<div class="text-white text-center p-3">${img.caption}</div>` : ""}
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 }
 
+
 // =========================
-// TEAM SECTION (Optimized)
+// TEAM SECTION (Fixed + Safe)
 // =========================
 if (Array.isArray(data.team) && document.getElementById("team-container")) {
   const container = document.getElementById("team-container");
 
-  container.innerHTML = data.team.map(member => `
-    <div class="col-md-6 col-lg-3">
-      <div class="team-card text-center h-100">
+  container.innerHTML = data.team.map(member => {
 
-        <div class="team-img">
-          <!-- Use optimized image if available, fallback to original -->
-          <img 
-            src="${member.thumb || member.image}" 
-            class="img-fluid" 
-            alt="${member.name || 'Team member'}"
-            loading="lazy"
-          >
+    // FIX: Resolve correct image path safely
+    const imgSrc = (member.thumb || member.image || '');
+    const fixedImg = imgSrc.startsWith('/') ? imgSrc : '/' + imgSrc;
+
+    return `
+      <div class="col-md-6 col-lg-3">
+        <div class="team-card text-center h-100">
+
+          <div class="team-img">
+            <!-- Team image -->
+            <img 
+              src="${fixedImg}" 
+              class="img-fluid" 
+              alt="${member.name || 'Team member'}"
+              loading="lazy"
+            >
+          </div>
+
+          <div class="team-info p-3">
+            <h5 class="fw-bold">${member.name || ""}</h5>
+            <p class="text-muted small">${member.role || ""}</p>
+          </div>
+
         </div>
-
-        <div class="team-info p-3">
-          <h5 class="fw-bold">${member.name || ""}</h5>
-          <p class="text-muted small">${member.role || ""}</p>
-        </div>
-
       </div>
-    </div>
-  `).join('');
+    `;
+  }).join('');
 }
 
 
