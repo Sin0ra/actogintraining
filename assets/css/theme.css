@@ -130,9 +130,17 @@ h1, h2, h3, h4, h5 {
   align-items: center;
 }
 
-/* Hamburger icon */
+/* Fix hamburger icon visibility */
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,...");
+  background-image: none; /* remove broken SVG */
+}
+
+/* Use Bootstrap icon instead */
+.navbar-toggler::before {
+  content: "\f479"; /* Bootstrap icon: list */
+  font-family: "bootstrap-icons";
+  font-size: 1.5rem;
+  color: #1a1a1a; /* visible on white navbar */
 }
 
 /* =========================================
