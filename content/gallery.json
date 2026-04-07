@@ -2,7 +2,8 @@
   "images": [
     {
       "image": "/assets/images/uploads/img-20260331-wa0061.png",
-      "thumb": "/assets/images/uploads/img-20260331-wa0003.png"
+      "thumb": "/assets/images/uploads/img-20260331-wa0003.png",
+      "full": "/assets/images/uploads/img-20260331-wa0003.png"
     },
     {
       "image": "/assets/images/uploads/img-20260331-wa0059.png"
