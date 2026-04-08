@@ -10,18 +10,6 @@ public_folder: "/assets/images/uploads"
 
 collections:
 
-  # =========================
-  # SITE SETTINGS (Add Maintenance Mode here)
-  # =========================
-  - name: "settings"
-    label: "Site Settings"
-    folder: "content/settings"  # Create this folder to store the settings file
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Enable Maintenance Mode", name: "maintenance_mode", widget: "boolean", default: false }
-      - { label: "Maintenance Start Time (HH:MM)", name: "start_time", widget: "string", default: "09:00" }
-      - { label: "Maintenance End Time (HH:MM)", name: "end_time", widget: "string", default: "18:00" }
 
   # =========================
   # WEBSITE PAGES
