@@ -1,7 +1,7 @@
 // maintenance.js
 
 // Fetch the maintenance settings from the settings JSON file
-fetch('/content/settings/maintenance.json')
+fetch('./content/Settings/maintenance.json')
   .then(response => response.json())
   .then(data => {
     const maintenanceMode = data.maintenance_mode;  // true or false
@@ -26,7 +26,7 @@ fetch('/content/settings/maintenance.json')
         (currentHour < endHour || (currentHour === endHour && currentMinute < endMinute))
       ) {
         // Redirect to the maintenance page
-        window.location.href = '/maintenance.html';  // Redirect to the maintenance page
+        window.location.href = './maintenance.html';  // Redirect to the maintenance page
       }
     }
   })
