@@ -26,5 +26,13 @@
     <div class="message">
         <p>We appreciate your patience!</p>
     </div>
+    <p id="maintenance-message">We'll be back soon.</p>
+
+<script>
+  const msg = sessionStorage.getItem('maintenanceMessage');
+  if (msg) {
+    document.getElementById('maintenance-message').textContent = msg;
+  }
+</script>
 </body>
 </html>
