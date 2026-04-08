@@ -96,17 +96,32 @@ document.querySelectorAll(".collapse").forEach(collapse => {
       `).join('');
     }
 
+    function fixPath(path) {
+  if (!path) return '';
+  return path.replace(/^\/+/, '');
+}
 // =========================
 // GALLERY SECTION (Fixed + Safe)
+// =========================
+// =========================
+// PATH HELPER (ADD ONCE)
+// =========================
+function fixPath(path) {
+  if (!path) return '';
+  return path.replace(/^\/+/, '');
+}
+
+
+// =========================
+// GALLERY SECTION
 // =========================
 if (Array.isArray(data.images) && document.getElementById("gallery-container")) {
   const container = document.getElementById("gallery-container");
 
   container.innerHTML = data.images.map((img, index) => {
 
-    // ✅ FIXED: remove leading "/" safely
-    const thumbSrc = (img.thumb || img.full || img.image || '').replace(/^\/+/, '');
-    const fullSrc  = (img.full || img.thumb || img.image || '').replace(/^\/+/, '');
+    const thumbSrc = fixPath(img.thumb || img.full || img.image);
+    const fullSrc  = fixPath(img.full || img.thumb || img.image);
 
     return `
       <div class="col-md-4">
@@ -148,15 +163,14 @@ if (Array.isArray(data.images) && document.getElementById("gallery-container")) 
 
 
 // =========================
-// TEAM SECTION (FIXED)
+// TEAM SECTION
 // =========================
 if (Array.isArray(data.team) && document.getElementById("team-container")) {
   const container = document.getElementById("team-container");
 
   container.innerHTML = data.team.map(member => {
 
-    // ✅ FIXED: remove leading "/" safely
-    const imgSrc = (member.thumb || member.image || '').replace(/^\/+/, '');
+    const imgSrc = fixPath(member.thumb || member.image);
 
     return `
       <div class="col-md-6 col-lg-3">
@@ -181,8 +195,6 @@ if (Array.isArray(data.team) && document.getElementById("team-container")) {
     `;
   }).join('');
 }
-
-
 
 
 
