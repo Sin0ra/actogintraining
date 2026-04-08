@@ -1,14 +1,14 @@
 // 🔥 MASTER SWITCH
-const MAINTENANCE_MODE = true; // true = ON, false = OFF
+const MAINTENANCE_MODE = true; // ← change to false to turn OFF
 
-// Optional: allow yourself access
+// Allow developer bypass
 const BYPASS = window.location.search.includes('admin=true');
 
 if (MAINTENANCE_MODE && !BYPASS) {
-  const path = window.location.pathname;
+  const currentPage = window.location.pathname;
 
-  // prevent redirect loop
-  if (!path.includes('maintenance.html')) {
+  // Prevent infinite loop
+  if (!currentPage.includes('maintenance.html')) {
     window.location.href = './maintenance.html';
   }
 }
