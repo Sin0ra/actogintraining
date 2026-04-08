@@ -1,17 +1,33 @@
 // maintenance.js
 
-// Define the start and end times for maintenance mode (24-hour format)
-const startHour = 9; // 9:00 AM
-const endHour = 18;  // 6:00 PM
+// Fetch the maintenance settings from the settings JSON file
+fetch('/content/settings/maintenance.json')
+  .then(response => response.json())
+  .then(data => {
+    const maintenanceMode = data.maintenance_mode;  // true or false
+    const startTime = data.start_time;  // Start time in "HH:MM" format
+    const endTime = data.end_time;  // End time in "HH:MM" format
 
-// Get the current time (hours only)
-const currentHour = new Date().getHours();
+    // If maintenance mode is enabled, proceed with time checking
+    if (maintenanceMode) {
+      // Get the current hour (24-hour format)
+      const currentHour = new Date().getHours();
+      const currentMinute = new Date().getMinutes();
 
-// Check if the current time is within the maintenance period
-if (currentHour >= startHour && currentHour < endHour) {
-    // Redirect to the maintenance page during maintenance hours
-    window.location.href = '/maintenance.html'; 
-} else {
-    // Allow users to access the regular site outside maintenance hours
-    console.log("Site is running normally.");
-}
+      // Convert start and end times to hours and minutes
+      const [startHour, startMinute] = startTime.split(':').map(num => parseInt(num, 10));
+      const [endHour, endMinute] = endTime.split(':').map(num => parseInt(num, 10));
+
+      // Check if the current time is within the maintenance window
+      // Current time is within the window if:
+      //   (Start time <= current time < End time)
+      if (
+        (currentHour > startHour || (currentHour === startHour && currentMinute >= startMinute)) &&
+        (currentHour < endHour || (currentHour === endHour && currentMinute < endMinute))
+      ) {
+        // Redirect to the maintenance page
+        window.location.href = '/maintenance.html';  // Redirect to the maintenance page
+      }
+    }
+  })
+  .catch(err => console.error('Failed to load maintenance settings:', err));
