@@ -95,9 +95,7 @@ document.querySelectorAll(".collapse").forEach(collapse => {
         </div>
       `).join('');
     }
-// =========================
-// GALLERY SECTION (Optimized but safe)
-// =========================
+
 // =========================
 // GALLERY SECTION (Fixed + Safe)
 // =========================
@@ -106,20 +104,16 @@ if (Array.isArray(data.images) && document.getElementById("gallery-container")) 
 
   container.innerHTML = data.images.map((img, index) => {
 
-    // FIX: Resolve correct image path safely
-    const thumbSrc = (img.thumb || img.full || img.image || '');
-    const fixedThumb = thumbSrc.startsWith('/') ? thumbSrc : '/' + thumbSrc;
-
-    const fullSrc = (img.full || img.thumb || img.image || '');
-    const fixedFull = fullSrc.startsWith('/') ? fullSrc : '/' + fullSrc;
+    // ✅ FIXED: remove leading "/" safely
+    const thumbSrc = (img.thumb || img.full || img.image || '').replace(/^\/+/, '');
+    const fullSrc  = (img.full || img.thumb || img.image || '').replace(/^\/+/, '');
 
     return `
       <div class="col-md-4">
         <div class="gallery-card" data-bs-toggle="modal" data-bs-target="#galleryModal${index}">
           
-          <!-- Thumbnail image -->
           <img 
-            src="${fixedThumb}" 
+            src="${thumbSrc}" 
             class="img-fluid" 
             alt="${img.caption || 'Gallery image'}"
             loading="lazy"
@@ -130,15 +124,13 @@ if (Array.isArray(data.images) && document.getElementById("gallery-container")) 
           </div>
         </div>
 
-        <!-- Modal -->
         <div class="modal fade" id="galleryModal${index}" tabindex="-1">
           <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content bg-dark border-0">
               <div class="modal-body p-0">
                 
-                <!-- Full image -->
                 <img 
-                  src="${fixedFull}" 
+                  src="${fullSrc}" 
                   class="img-fluid w-100"
                   alt="${img.caption || 'Gallery image'}"
                   loading="lazy"
@@ -156,25 +148,23 @@ if (Array.isArray(data.images) && document.getElementById("gallery-container")) 
 
 
 // =========================
-// TEAM SECTION (Fixed + Safe)
+// TEAM SECTION (FIXED)
 // =========================
 if (Array.isArray(data.team) && document.getElementById("team-container")) {
   const container = document.getElementById("team-container");
 
   container.innerHTML = data.team.map(member => {
 
-    // FIX: Resolve correct image path safely
-    const imgSrc = (member.thumb || member.image || '');
-    const fixedImg = imgSrc.startsWith('/') ? imgSrc : '/' + imgSrc;
+    // ✅ FIXED: remove leading "/" safely
+    const imgSrc = (member.thumb || member.image || '').replace(/^\/+/, '');
 
     return `
       <div class="col-md-6 col-lg-3">
         <div class="team-card text-center h-100">
 
           <div class="team-img">
-            <!-- Team image -->
             <img 
-              src="${fixedImg}" 
+              src="${imgSrc}" 
               class="img-fluid" 
               alt="${member.name || 'Team member'}"
               loading="lazy"
@@ -191,10 +181,6 @@ if (Array.isArray(data.team) && document.getElementById("team-container")) {
     `;
   }).join('');
 }
-
-
-
-
 
 
 
