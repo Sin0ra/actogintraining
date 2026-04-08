@@ -101,60 +101,24 @@ document.querySelectorAll(".collapse").forEach(collapse => {
   return path.replace(/^\/+/, '');
 }
 // =========================
-// GALLERY SECTION (Fixed + Safe)
-// =========================
-// =========================
-// PATH HELPER (ADD ONCE)
-// =========================
-function fixPath(path) {
-  if (!path) return '';
-  return path.replace(/^\/+/, '');
-}
-
-
-// =========================
-// GALLERY SECTION
+// GALLERY (CLEAN VERSION)
 // =========================
 if (Array.isArray(data.images) && document.getElementById("gallery-container")) {
   const container = document.getElementById("gallery-container");
 
   container.innerHTML = data.images.map((img, index) => {
-
-    const thumbSrc = fixPath(img.thumb || img.full || img.image);
-    const fullSrc  = fixPath(img.full || img.thumb || img.image);
+    const src = img.image;
 
     return `
       <div class="col-md-4">
-        <div class="gallery-card" data-bs-toggle="modal" data-bs-target="#galleryModal${index}">
-          
+        <div class="gallery-card">
+
           <img 
-            src="${thumbSrc}" 
-            class="img-fluid" 
-            alt="${img.caption || 'Gallery image'}"
-            loading="lazy"
+            src="${src}" 
+            class="img-fluid"
+            alt="Gallery image"
           >
 
-          <div class="gallery-overlay">
-            ${img.caption ? `<span>${img.caption}</span>` : ""}
-          </div>
-        </div>
-
-        <div class="modal fade" id="galleryModal${index}" tabindex="-1">
-          <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content bg-dark border-0">
-              <div class="modal-body p-0">
-                
-                <img 
-                  src="${fullSrc}" 
-                  class="img-fluid w-100"
-                  alt="${img.caption || 'Gallery image'}"
-                  loading="lazy"
-                >
-
-                ${img.caption ? `<div class="text-white text-center p-3">${img.caption}</div>` : ""}
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     `;
@@ -163,47 +127,18 @@ if (Array.isArray(data.images) && document.getElementById("gallery-container")) 
 
 
 // =========================
-// TEAM SECTION
+// TEAM (CLEAN VERSION)
 // =========================
 if (Array.isArray(data.team) && document.getElementById("team-container")) {
   const container = document.getElementById("team-container");
 
   container.innerHTML = data.team.map(member => {
-
-    const imgSrc = fixPath(member.thumb || member.image);
-
     return `
-      <div class="col-md-6 col-lg-3">
-        <div class="team-card text-center h-100">
-
-          <div class="team-img">
-            <img 
-              src="${imgSrc}" 
-              class="img-fluid" 
-              alt="${member.name || 'Team member'}"
-              loading="lazy"
-            >
-          </div>
-
-          <div class="team-info p-3">
-            <h5 class="fw-bold">${member.name || ""}</h5>
-            <p class="text-muted small">${member.role || ""}</p>
-          </div>
-
-        </div>
+      <div class="col-md-3 text-center">
+        <img src="${member.image}" class="img-fluid mb-2">
+        <h5>${member.name}</h5>
+        <p>${member.role}</p>
       </div>
     `;
   }).join('');
 }
-
-
-
-
-
-
-
-
-
-
-
-
