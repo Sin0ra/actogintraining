@@ -1,5 +1,5 @@
 // 🔥 MASTER SWITCH
-const MAINTENANCE_MODE = false; // ← change to false to turn OFF
+const MAINTENANCE_MODE = true; // ← change to false to turn OFF
 
 // Allow developer bypass
 const BYPASS = window.location.search.includes('admin=true');
