@@ -212,7 +212,36 @@ section {
   color: #6b7280;
 }
 
+/* =========================================
+   CARDS (SERVICES + TEAM)
+========================================= */
+.card,
+.service-card {
+  height: 100%;
+  padding: 25px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  transition: 0.3s;
+  text-align: center;
+}
 
+.card:hover,
+.service-card:hover {
+  transform: translateY(-6px);
+}
+
+.team-card {
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.team-card {
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.3s ease;
+  background: #fff;
+}
 
 .team-card:hover {
   transform: translateY(-10px);
