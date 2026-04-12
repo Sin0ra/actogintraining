@@ -65,6 +65,7 @@ collections:
         fields:
           - { label: "Page Title", name: "title", widget: "string" }
           - { label: "Main Heading", name: "heading", widget: "string" }
+          - { label: "Intro Text", name: "intro", widget: "text" }
           - { label: "Main Content", name: "content", widget: "text" }
 
       # ---------------------
