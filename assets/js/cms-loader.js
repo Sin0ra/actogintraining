@@ -1,103 +1,128 @@
+/**
+ * CMS LOADER SCRIPT
+ * This script dynamically loads JSON content into your HTML pages
+ * using data attributes like: data-cms="title"
+ */
+
+/**
+ * MAIN FUNCTION: Loads a specific page JSON file
+ * @param {string} pageName - name of the JSON file (without .json)
+ */
 async function loadPage(pageName) {
+
   try {
-    const res = await fetch(`/content/${pageName}.json`);
-    if (!res.ok) throw new Error(`Failed to load ${pageName}.json`);
+    // ===============================
+    // 1. FETCH JSON FILE
+    // ===============================
+    // Using relative path so it works locally and online
+    const response = await fetch(`./content/${pageName}.json`);
 
-    const data = await res.json();
+    // If file is not found or server error
+    if (!response.ok) {
+      throw new Error(`Could not load: ${pageName}.json`);
+    }
 
-    // =========================
-    // BASIC TEXT FIELDS
-    // =========================
-    document.querySelectorAll("[data-cms]").forEach(el => {
+    // Convert response into JSON
+    const data = await response.json();
+
+
+    // ===============================
+    // 2. LOAD SIMPLE TEXT CONTENT
+    // ===============================
+    // Finds all elements with data-cms attribute
+    const elements = document.querySelectorAll("[data-cms]");
+
+    elements.forEach(el => {
       const key = el.getAttribute("data-cms");
-      if (data[key] !== undefined) {
+
+      // Only update if key exists in JSON
+      if (data[key] !== undefined && data[key] !== null) {
         el.textContent = data[key];
       }
     });
 
-    
-// =========================
-// SERVICES SECTION
-// =========================
-if (Array.isArray(data.services) && document.getElementById("services-container")) {
-  const container = document.getElementById("services-container");
 
-  const serviceIds = [
-    "training-services",
-    "construction",
-    "accommodation",
-    "catering"
-  ];
+    // ===============================
+    // 3. LOAD SERVICES (ARRAY)
+    // ===============================
+    // Example JSON:
+    // "services": [{ "title": "", "description": "" }]
+    if (Array.isArray(data.services)) {
 
-  container.innerHTML = data.services.map((service, index) => {
-    const id = serviceIds[index] || `service-${index}`;
-    const collapseId = `serviceCollapse${index}`;
+      const container = document.getElementById("services-container");
 
-    return `
-      <div class="col-md-6 col-lg-3" id="${id}">
-        <div class="service-card p-4 h-100 text-center">
-
-          <h5 class="fw-semibold">${service.title || ""}</h5>
-          <p>${service.description || ""}</p>
-
-          ${service.button_text ? `
-            <button class="btn toggle-btn mt-2"
-              data-bs-toggle="collapse"
-              data-bs-target="#${collapseId}"
-              data-btn="${service.button_text}">
-              ${service.button_text}
-            </button>
-          ` : ""}
-
-          <div class="collapse mt-3" id="${collapseId}">
-            <div class="card card-body">
-              ${service.modal_content || ""}
+      if (container) {
+        container.innerHTML = data.services.map(service => `
+          <div class="col-md-6 col-lg-3">
+            <div class="service-card p-4 h-100 text-center">
+              <h5>${service.title || ""}</h5>
+              <p>${service.description || ""}</p>
             </div>
           </div>
-
-        </div>
-      </div>
-    `;
-  }).join('');
-}
-
-    // Toggle Read More / Read Less
-document.querySelectorAll(".collapse").forEach(collapse => {
-
-  collapse.addEventListener("shown.bs.collapse", function () {
-    const btn = document.querySelector(`[data-bs-target="#${collapse.id}"]`);
-    if (btn) btn.textContent = "Read Less";
-  });
-
-  collapse.addEventListener("hidden.bs.collapse", function () {
-    const btn = document.querySelector(`[data-bs-target="#${collapse.id}"]`);
-    if (btn) btn.textContent = "Read More";
-  });
-
-});
-
-    // =========================
-    // COURSES SECTION
-    // =========================
-    if (Array.isArray(data.courses) && document.getElementById("courses-container")) {
-      const container = document.getElementById("courses-container");
-      container.innerHTML = data.courses.map(course => `
-        <div class="col-md-4">
-          <div class="course-card h-100">
-            <h5>${course.course_name || ""}</h5>
-            <p>${course.description || ""}</p>
-            <ul class="list-unstyled mt-3">
-              <li><strong>Duration:</strong> ${course.duration || "-"}</li>
-              <li><strong>Price:</strong> ${course.price || "-"}</li>
-              <li><strong>Certification:</strong> ${course.certification || "-"}</li>
-            </ul>
-          </div>
-        </div>
-      `).join('');
+        `).join('');
+      }
     }
 
-    function fixPath(path) {
-  if (!path) return '';
-  return path.replace(/^\/+/, '');
-}
+
+    // ===============================
+    // 4. LOAD COURSES (ARRAY)
+    // ===============================
+    // Example JSON:
+    // "courses": [{ "course_name": "", "description": "" }]
+    if (Array.isArray(data.courses)) {
+
+      const container = document.getElementById("courses-container");
+
+      if (container) {
+        container.innerHTML = data.courses.map(course => `
+          <div class="col-md-4">
+            <div class="course-card p-3">
+              <h5>${course.course_name || ""}</h5>
+              <p>${course.description || ""}</p>
+            </div>
+          </div>
+        `).join('');
+      }
+    }
+
+
+    // ===============================
+    // 5. LOAD GENERIC LISTS (FLEXIBLE)
+    // ===============================
+    // This allows you to reuse CMS for other sections later
+    // Example:
+    // "testimonials": [{ "name": "", "message": "" }]
+    Object.keys(data).forEach(key => {
+
+      // Skip already handled sections
+      if (["services", "courses"].includes(key)) return;
+
+      if (Array.isArray(data[key])) {
+
+        const container = document.getElementById(`${key}-container`);
+
+        if (container) {
+          container.innerHTML = data[key].map(item => `
+            <div class="cms-item">
+              ${Object.values(item).map(val => `<p>${val}</p>`).join('')}
+            </div>
+          `).join('');
+        }
+      }
+    });
+
+
+    // ===============================
+    // 6. SUCCESS LOG (DEBUGGING)
+    // ===============================
+    console.log(`✅ CMS Loaded: ${pageName}.json`);
+
+  } catch (error) {
+
+    // ===============================
+    // 7. ERROR HANDLING
+    // ===============================
+    console.error("❌ CMS ERROR:", error);
+
   }
+}
