@@ -57,6 +57,15 @@ async function loadPage(pageName) {
     });
 
 
+    function openServiceModal(index) {
+  const service = window._servicesData[index];
+
+  if (!service) return;
+
+  alert(service.modal_content || "No content available");
+}
+
+
     // ===============================
     // 4. SERVICES (WITH BUTTON FIX)
     // ===============================
