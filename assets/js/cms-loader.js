@@ -102,11 +102,17 @@ async function loadPage(pageName) {
   }
 }
 
-// GLOBAL FUNCTION (FIXED)
+// GLOBAL FUNCTION (Bootstrap modal version)
 window.openServiceModal = function(index) {
   const service = window._servicesData[index];
 
   if (!service) return;
 
-  alert(service.modal_content || "No content available");
+  // Set modal content
+  document.getElementById("serviceModalTitle").innerText = service.title;
+  document.getElementById("serviceModalContent").innerText = service.modal_content;
+
+  // Show modal
+  const modal = new bootstrap.Modal(document.getElementById('serviceModal'));
+  modal.show();
 };
