@@ -1,5 +1,5 @@
 /**
- * CMS LOADER (CLEAN + SMART VERSION)
+ * CMS LOADER (UPDATED - EXPANDABLE SERVICES VERSION)
  */
 
 async function loadPage(pageName) {
@@ -35,14 +35,13 @@ async function loadPage(pageName) {
       if (!isEmpty(value)) {
         el.textContent = value;
       } else {
-        // Hide empty elements
         el.style.display = "none";
       }
     });
 
 
     // ===============================
-    // 3. HANDLE BUTTONS (TEXT + LINK)
+    // 3. HANDLE BUTTON LINKS (HERO ETC)
     // ===============================
     document.querySelectorAll("[data-cms-link]").forEach(el => {
 
@@ -58,7 +57,7 @@ async function loadPage(pageName) {
 
 
     // ===============================
-    // 4. SERVICES (WITH BUTTON FIX)
+    // 4. SERVICES (UPDATED - EXPANDABLE)
     // ===============================
     if (Array.isArray(data.services)) {
 
@@ -72,15 +71,26 @@ async function loadPage(pageName) {
           return `
             <div class="col-md-6 col-lg-3">
               <div class="service-card p-4 h-100 text-center">
-                
+
                 <h5>${service.title || ""}</h5>
                 <p>${service.description || ""}</p>
 
                 ${
                   showButton
-                    ? `<button class="btn btn-primary mt-2" onclick="openServiceModal(${index})">
+                    ? `
+                      <!-- READ MORE BUTTON (NO onclick, CMS SAFE) -->
+                      <button class="btn btn-primary mt-2 read-more-btn"
+                              data-index="${index}">
                         ${service.button_text}
-                       </button>`
+                      </button>
+
+                      <!-- EXPANDABLE CONTENT -->
+                      <div id="service-extra-${index}" class="collapse mt-3">
+                        <div class="card card-body border-0 shadow-sm">
+                          ${service.modal_content || "No content available"}
+                        </div>
+                      </div>
+                    `
                     : ""
                 }
 
@@ -90,29 +100,40 @@ async function loadPage(pageName) {
         }).join('');
       }
 
-      // Save services globally for modal use
+      // Save services globally (still useful if needed later)
       window._servicesData = data.services;
     }
 
 
-    console.log(" CMS Loaded");
+    console.log("✅ CMS Loaded");
 
   } catch (err) {
     console.error("❌ CMS ERROR:", err);
   }
 }
 
-// GLOBAL FUNCTION (Bootstrap modal version)
-window.openServiceModal = function(index) {
-  const service = window._servicesData[index];
 
-  if (!service) return;
+// ======================================
+// 5. GLOBAL CLICK HANDLER (VERY IMPORTANT)
+// ======================================
+document.addEventListener("click", function(e) {
 
-  // Set modal content
-  document.getElementById("serviceModalTitle").innerText = service.title;
-  document.getElementById("serviceModalContent").innerText = service.modal_content;
+  // Only trigger if it's a "Read More" button
+  if (e.target.classList.contains("read-more-btn")) {
 
-  // Show modal
-  const modal = new bootstrap.Modal(document.getElementById('serviceModal'));
-  modal.show();
-};
+    const index = e.target.getAttribute("data-index");
+    const element = document.getElementById(`service-extra-${index}`);
+
+    if (!element) return;
+
+    const isOpen = element.classList.contains("show");
+
+    // Toggle Bootstrap collapse
+    new bootstrap.Collapse(element, {
+      toggle: true
+    });
+
+    // Change button text dynamically
+    e.target.innerText = isOpen ? "Read More" : "Show Less";
+  }
+});
