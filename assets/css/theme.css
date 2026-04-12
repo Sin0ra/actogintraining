@@ -132,15 +132,15 @@ h1, h2, h3, h4, h5 {
 
 /* Fix hamburger icon visibility */
 .navbar-toggler-icon {
-  background-image: none; /* remove broken SVG */
+  background-image: none;
 }
 
 /* Use Bootstrap icon instead */
 .navbar-toggler::before {
-  content: "\f479"; /* Bootstrap icon: list */
+  content: "\f479";
   font-family: "bootstrap-icons";
   font-size: 1.5rem;
-  color: #1a1a1a; /* visible on white navbar */
+  color: #1a1a1a;
 }
 
 /* =========================================
@@ -153,27 +153,23 @@ h1, h2, h3, h4, h5 {
   justify-content: center;
   padding: 80px 20px;
 
-  /* Animated gradient background */
   background: linear-gradient(270deg,#1b5e20,#2e7d32,#43a047,#2e7d32);
   background-size: 600% 600%;
   animation: heroGradientMove 12s ease infinite;
 }
 
-/* Hero animation */
 @keyframes heroGradientMove {
   0% {background-position:0% 50%;}
   50% {background-position:100% 50%;}
   100% {background-position:0% 50%;}
 }
 
-/* Hero text */
 .hero-content {
   max-width: 800px;
   margin: auto;
   text-align: center;
 }
 
-/* Logo animation */
 .hero-logo {
   width: clamp(150px, 20vw, 260px);
   animation: floatLogo 4s ease-in-out infinite;
@@ -183,14 +179,12 @@ h1, h2, h3, h4, h5 {
   50% { transform: translateY(-8px); }
 }
 
-/* Hero buttons */
 .hero-quick-links .btn {
   margin: 6px;
   padding: 10px 20px;
   border-radius: 8px;
   color: #fff;
 
-  /* Gradient animation */
   background: linear-gradient(270deg,#1b5e20,#2e7d32,#43a047);
   background-size: 400% 400%;
   animation: gradientMove 6s ease infinite;
@@ -198,12 +192,10 @@ h1, h2, h3, h4, h5 {
   transition: 0.3s;
 }
 
-/* Hover */
 .hero-quick-links .btn:hover {
   transform: translateY(-4px);
 }
 
-/* Button animation */
 @keyframes gradientMove {
   50% { background-position: 100% 50%; }
 }
@@ -215,7 +207,6 @@ section {
   padding: 70px 0;
 }
 
-/* Light section override */
 .section-light {
   background: #ffffff !important;
   color: #6b7280;
@@ -235,13 +226,11 @@ section {
   text-align: center;
 }
 
-/* Hover */
 .card:hover,
 .service-card:hover {
   transform: translateY(-6px);
 }
 
-/* Team card */
 .team-card {
   border-radius: 12px;
   overflow: hidden;
@@ -257,37 +246,9 @@ section {
   padding: 80px 20px;
 }
 
-/* CTA buttons */
 .cta-section .btn {
   border-radius: 8px;
   padding: 14px 30px;
-}
-
-/* =========================================
-   GALLERY
-========================================= */
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 20px;
-}
-
-/* Gallery card */
-.gallery-card {
-  border-radius: 18px;
-  overflow: hidden;
-  transition: 0.4s;
-}
-
-.gallery-card img {
-  width: 100%;
-  height: 280px;
-  object-fit: cover;
-}
-
-/* Hover effect */
-.gallery-card:hover {
-  transform: translateY(-8px);
 }
 
 /* =========================================
@@ -299,7 +260,6 @@ section {
   padding: 60px 0 25px;
 }
 
-/* Footer links */
 .footer-link {
   color: #cfe8d6;
   display: block;
