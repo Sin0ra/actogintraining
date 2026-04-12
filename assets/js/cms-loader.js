@@ -57,15 +57,6 @@ async function loadPage(pageName) {
     });
 
 
-    function openServiceModal(index) {
-  const service = window._servicesData[index];
-
-  if (!service) return;
-
-  alert(service.modal_content || "No content available");
-}
-
-
     // ===============================
     // 4. SERVICES (WITH BUTTON FIX)
     // ===============================
@@ -104,9 +95,18 @@ async function loadPage(pageName) {
     }
 
 
-    console.log("✅ CMS Loaded");
+    console.log(" CMS Loaded");
 
   } catch (err) {
     console.error("❌ CMS ERROR:", err);
   }
 }
+
+// GLOBAL FUNCTION (FIXED)
+window.openServiceModal = function(index) {
+  const service = window._servicesData[index];
+
+  if (!service) return;
+
+  alert(service.modal_content || "No content available");
+};
