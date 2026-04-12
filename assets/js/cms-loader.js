@@ -100,3 +100,5 @@ document.querySelectorAll(".collapse").forEach(collapse => {
   if (!path) return '';
   return path.replace(/^\/+/, '');
 }
+  }
+loadPage("about");
