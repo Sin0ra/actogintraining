@@ -70,6 +70,33 @@ async function loadPage(pageName) {
     }
 
     // ---------------------------
+// Render Team Members (CMS)
+if (Array.isArray(data.team)) {
+  const teamContainer = document.getElementById("team-container");
+  if (teamContainer) {
+    teamContainer.innerHTML = data.team.map(member => {
+      const name = member.name || "No name";
+      const position = member.position || "";
+      const image = member.image || "assets/images/uploads/default-avatar.png";
+      const bio = member.bio || "";
+
+      return `
+        <div class="col-md-4 mb-4">
+          <div class="team-card shadow-sm h-100">
+            <img src="${image}" alt="${name}" class="team-img rounded-top">
+            <div class="team-content p-3">
+              <h5 class="fw-bold mb-1">${name}</h5>
+              <small class="text-muted">${position}</small>
+              <p class="mt-2 text-muted mb-0">${bio}</p>
+            </div>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+}
+
+    // ---------------------------
     // Render Courses (CMS)
     // ---------------------------
     if (Array.isArray(data.courses)) {
