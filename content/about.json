@@ -1,5 +1,20 @@
 {
   "title": "About Actogin Training",
   "heading": "About Actogin Training",
-  "content": "Actogin Group Investment is a dynamic and diversified company committed to delivering\nprofessional, reliable, and high-quality services across multiple industries. With a strong focus on\nexcellence, compliance, and client satisfaction, we proudly serve government entities, corporate\norganizations, educational institutions, and private clients. At Actogin Group Investment, integrity,\ninnovation, and service excellence define our approach. We are committed to building long-term\npartnerships by consistently delivering solutions that meet the evolving needs of our clients and\ncommunities."
+  "intro": "Learn more about who we are and our mission.",
+  "content": "Actogin Group Investment is a dynamic and diversified company...",
+  "team": [
+    {
+      "name": "John Doe",
+      "position": "CEO",
+      "image": "assets/images/uploads/john_doe.jpg",
+      "bio": "John has 20 years of experience in professional training and investments."
+    },
+    {
+      "name": "Jane Smith",
+      "position": "COO",
+      "image": "assets/images/uploads/jane_smith.jpg",
+      "bio": "Jane leads operations with a focus on excellence and innovation."
+    }
+  ]
 }
