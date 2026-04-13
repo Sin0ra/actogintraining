@@ -1,5 +1,5 @@
 /**
- * CMS LOADER (FULL VERSION WITH COURSES)
+ * CMS LOADER (FULL VERSION – COURSES + SERVICES + READ MORE)
  */
 
 async function loadPage(pageName) {
@@ -48,7 +48,7 @@ async function loadPage(pageName) {
     });
 
     // ===============================
-    // 4. SERVICES (EXPANDABLE)
+    // 4. SERVICES RENDERING (CMS)
     // ===============================
     if (Array.isArray(data.services)) {
       const container = document.getElementById("services-container");
@@ -56,17 +56,17 @@ async function loadPage(pageName) {
         container.innerHTML = data.services.map((service, index) => {
           const showButton = !isEmpty(service.button_text);
           return `
-            <div class="col-md-6 col-lg-3">
+            <div class="col-md-6 col-lg-3 mb-4">
               <div class="service-card p-4 h-100 text-center">
                 <h5>${service.title || ""}</h5>
                 <p>${service.description || ""}</p>
                 ${
                   showButton
                     ? `
-                      <button class="btn btn-primary mt-2 read-more-btn" data-index="${index}">
+                      <button class="read-more-btn mt-3" data-index="${index}">
                         ${service.button_text}
                       </button>
-                      <div id="service-extra-${index}" class="collapse mt-3">
+                      <div id="service-extra-${index}" class="collapse mt-2">
                         <div class="card card-body border-0 shadow-sm">
                           ${service.modal_content || "No content available"}
                         </div>
@@ -83,7 +83,7 @@ async function loadPage(pageName) {
     }
 
     // ===============================
-    // 5. COURSES RENDERING
+    // 5. COURSES RENDERING (CMS)
     // ===============================
     if (Array.isArray(data.courses)) {
       const container = document.getElementById("courses-container");
@@ -111,14 +111,13 @@ async function loadPage(pageName) {
     }
 
     console.log("✅ CMS Loaded");
-
   } catch (err) {
     console.error("❌ CMS ERROR:", err);
   }
 }
 
 // ======================================
-// 6. GLOBAL CLICK HANDLER FOR SERVICES
+// 6. GLOBAL CLICK HANDLER FOR READ MORE BUTTONS
 // ======================================
 document.addEventListener("click", function(e) {
   if (e.target.classList.contains("read-more-btn")) {
@@ -127,7 +126,11 @@ document.addEventListener("click", function(e) {
     if (!element) return;
 
     const isOpen = element.classList.contains("show");
+
+    // Toggle collapse using Bootstrap
     new bootstrap.Collapse(element, { toggle: true });
+
+    // Swap text dynamically
     e.target.innerText = isOpen ? "Read More" : "Show Less";
   }
 });
