@@ -70,14 +70,16 @@ async function loadPage(pageName) {
     }
 
     // ---------------------------
-// Render Team Members (CMS)
+// Render Team Members (CMS with editable images)
 if (Array.isArray(data.team)) {
   const teamContainer = document.getElementById("team-container");
   if (teamContainer) {
     teamContainer.innerHTML = data.team.map(member => {
       const name = member.name || "No name";
       const position = member.position || "";
-      const image = member.image || "assets/images/uploads/default-avatar.png";
+      const image = member.image && member.image.trim() !== "" 
+                      ? member.image 
+                      : "assets/images/uploads/default-avatar.png"; // fallback
       const bio = member.bio || "";
 
       return `
@@ -95,7 +97,6 @@ if (Array.isArray(data.team)) {
     }).join('');
   }
 }
-
     // ---------------------------
     // Render Courses (CMS)
     // ---------------------------
