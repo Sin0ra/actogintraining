@@ -1,5 +1,6 @@
 /**
- * CMS LOADER (FULL VERSION – COURSES + SERVICES + READ MORE)
+ * CMS + INTERACTIONS LOADER
+ * Handles: CMS content, services/courses rendering, read-more buttons, hero buttons smooth scroll
  */
 
 async function loadPage(pageName) {
@@ -9,47 +10,33 @@ async function loadPage(pageName) {
 
     const data = await res.json();
 
-    // ===============================
-    // 1. HELPER: CHECK IF VALUE IS EMPTY
-    // ===============================
     function isEmpty(value) {
-      return (
-        value === null ||
-        value === "" ||
-        value === "(Developer section)" ||
-        value === undefined
-      );
+      return value === null || value === "" || value === "(Developer section)" || value === undefined;
     }
 
-    // ===============================
-    // 2. LOAD TEXT CONTENT
-    // ===============================
+    // ---------------------------
+    // Load text content
+    // ---------------------------
     document.querySelectorAll("[data-cms]").forEach(el => {
       const key = el.getAttribute("data-cms");
       const value = data[key];
-      if (!isEmpty(value)) {
-        el.textContent = value;
-      } else {
-        el.style.display = "none";
-      }
+      if (!isEmpty(value)) el.textContent = value;
+      else el.style.display = "none";
     });
 
-    // ===============================
-    // 3. HANDLE BUTTON LINKS
-    // ===============================
+    // ---------------------------
+    // Handle link content
+    // ---------------------------
     document.querySelectorAll("[data-cms-link]").forEach(el => {
       const key = el.getAttribute("data-cms-link");
       const value = data[key];
-      if (!isEmpty(value)) {
-        el.href = value;
-      } else {
-        el.style.display = "none";
-      }
+      if (!isEmpty(value)) el.href = value;
+      else el.style.display = "none";
     });
 
-    // ===============================
-    // 4. SERVICES RENDERING (CMS)
-    // ===============================
+    // ---------------------------
+    // Render Services (CMS)
+    // ---------------------------
     if (Array.isArray(data.services)) {
       const container = document.getElementById("services-container");
       if (container) {
@@ -82,9 +69,9 @@ async function loadPage(pageName) {
       window._servicesData = data.services;
     }
 
-    // ===============================
-    // 5. COURSES RENDERING (CMS)
-    // ===============================
+    // ---------------------------
+    // Render Courses (CMS)
+    // ---------------------------
     if (Array.isArray(data.courses)) {
       const container = document.getElementById("courses-container");
       if (container) {
@@ -116,9 +103,9 @@ async function loadPage(pageName) {
   }
 }
 
-// ======================================
-// 6. GLOBAL CLICK HANDLER FOR READ MORE BUTTONS
-// ======================================
+// ---------------------------
+// Global Click: Read More Buttons
+// ---------------------------
 document.addEventListener("click", function(e) {
   if (e.target.classList.contains("read-more-btn")) {
     const index = e.target.getAttribute("data-index");
@@ -133,4 +120,18 @@ document.addEventListener("click", function(e) {
     // Swap text dynamically
     e.target.innerText = isOpen ? "Read More" : "Show Less";
   }
+});
+
+// ---------------------------
+// Hero Buttons Smooth Scroll
+// ---------------------------
+document.querySelectorAll(".hero-quick-links .btn").forEach(button => {
+  button.addEventListener("click", function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href").substring(1);
+    const targetEl = document.getElementById(targetId);
+    if (targetEl) {
+      targetEl.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
 });
