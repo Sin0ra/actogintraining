@@ -8,6 +8,13 @@
       "duration": "6 Months",
       "price": "R3,500",
       "certification": "Accredited Certificate"
+    },
+    {
+      "course_name": "Electronic ",
+      "duration": "1year",
+      "description": "Short course",
+      "price": "35k",
+      "certification": "Yes"
     }
   ]
 }
