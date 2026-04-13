@@ -112,6 +112,35 @@ async function loadPage(pageName) {
   }
 }
 
+// ===============================
+//  COURSES RENDERING
+// ===============================
+if (Array.isArray(data.courses)) {
+  const container = document.getElementById("courses-container");
+
+  if (container) {
+    container.innerHTML = data.courses.map(course => {
+      const name = course.course_name || "No title";
+      const desc = course.description || "No description";
+      const duration = course.duration || "N/A";
+      const price = course.price || "Contact us";
+      const cert = course.certification || "N/A";
+
+      return `
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="course-card h-100">
+            <h5>${name}</h5>
+            <p>${desc}</p>
+            <p><strong>Duration:</strong> ${duration}</p>
+            <p><strong>Price:</strong> ${price}</p>
+            <p><strong>Certification:</strong> ${cert}</p>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+}
+
 
 // ======================================
 // 5. GLOBAL CLICK HANDLER (VERY IMPORTANT)
