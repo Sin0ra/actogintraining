@@ -2,18 +2,12 @@ backend:
   name: git-gateway
   branch: main
 
-# Enable this for local development
 local_backend: true
 
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
 collections:
-
-
-  # =========================
-  # WEBSITE PAGES
-  # =========================
   - name: "pages"
     label: "Website Pages"
     files:
@@ -28,13 +22,10 @@ collections:
           - { label: "Page Title", name: "title", widget: "string" }
           - { label: "Main Heading", name: "heading", widget: "string" }
           - { label: "Hero Paragraph", name: "intro", widget: "text" }
-
           - { label: "CTA Button 1 Text", name: "cta_btn1_text", widget: "string", required: false }
           - { label: "CTA Button 1 Link", name: "cta_btn1_link", widget: "string", required: false }
-
           - { label: "CTA Button 2 Text", name: "cta_btn2_text", widget: "string", required: false }
           - { label: "CTA Button 2 Link", name: "cta_btn2_link", widget: "string", required: false }
-
           - label: "Services"
             name: "services"
             widget: "list"
@@ -45,7 +36,6 @@ collections:
               - { label: "Service Description", name: "description", widget: "text" }
               - { label: "Button Text", name: "button_text", widget: "string", required: false }
               - { label: "Popup / Modal Content", name: "modal_content", widget: "text", required: false }
-
           - label: "Why Features"
             name: "why_features"
             widget: "list"
@@ -56,29 +46,27 @@ collections:
               - { label: "Feature Title", name: "title", widget: "string" }
               - { label: "Feature Description", name: "description", widget: "text" }
 
-
-              # ---------------------
-# ABOUT PAGE
-# ---------------------
-- label: "About Page"
-  name: "about"
-  file: "content/about.json"
-  fields:
-    - { label: "Page Title", name: "title", widget: "string" }
-    - { label: "Main Heading", name: "heading", widget: "string" }
-    - { label: "Intro Text", name: "intro", widget: "text" }
-    - { label: "Main Content", name: "content", widget: "text" }
-    - { label: "Main Image", name: "about_main_image", widget: "image", required: false }
-    - label: "Team Members"
-      name: "team"
-      widget: "list"
-      summary: "{{fields.name}}"
-      fields:
-        - { label: "Name", name: "name", widget: "string" }
-        - { label: "Position", name: "position", widget: "string" }
-        - { label: "Image", name: "image", widget: "image", required: false }
-        - { label: "Bio", name: "bio", widget: "text" }
-
+      # ---------------------
+      # ABOUT PAGE
+      # ---------------------
+      - label: "About Page"
+        name: "about"
+        file: "content/about.json"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Main Heading", name: "heading", widget: "string" }
+          - { label: "Intro Text", name: "intro", widget: "text" }
+          - { label: "Main Content", name: "content", widget: "text" }
+          - { label: "Main Image", name: "about_main_image", widget: "image", required: false }
+          - label: "Team Members"
+            name: "team"
+            widget: "list"
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Position", name: "position", widget: "string" }
+              - { label: "Image", name: "image", widget: "image", required: false }
+              - { label: "Bio", name: "bio", widget: "text" }
 
       # ---------------------
       # WHY CHOOSE US PAGE
@@ -100,7 +88,6 @@ collections:
         fields:
           - { label: "Page Title", name: "title", widget: "string" }
           - { label: "Main Intro Text", name: "content", widget: "text" }
-
           - label: "Courses"
             name: "courses"
             widget: "list"
@@ -123,5 +110,3 @@ collections:
           - { label: "Phone", name: "phone", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Address", name: "address", widget: "text" }
-
-
