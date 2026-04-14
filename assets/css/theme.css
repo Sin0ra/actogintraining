@@ -259,6 +259,11 @@ section {
   text-align: center;
 }
 
+#galleryModalImg {
+  max-height: 80vh;
+  object-fit: contain;
+}
+
 /* ===== READ MORE BUTTONS ===== */
 .read-more-btn {
   background: linear-gradient(135deg, #22c55e, #16a34a); /* Green theme */
