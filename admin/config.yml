@@ -111,22 +111,24 @@ collections:
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Address", name: "address", widget: "text" }
 
-
-          - label: "Gallery Page"
-  name: "gallery"
-  file: "content/gallery.json"
-  fields:
-    - { label: "Page Title", name: "title", widget: "string" }
-    - label: "Gallery Sections"
-      name: "sections"
-      widget: "list"
-      summary: "{{fields.occasion}}"
-      fields:
-        - { label: "Occasion Name", name: "occasion", widget: "string" }
-        - label: "Images"
-          name: "images"
-          widget: "list"
-          summary: "Image {{fields.index}}"
-          fields:
-            - { label: "Image File", name: "file", widget: "image" }
-            - { label: "Alt Text", name: "alt", widget: "string", required: false }
+      # ---------------------
+      # GALLERY PAGE
+      # ---------------------
+      - label: "Gallery Page"
+        name: "gallery"
+        file: "content/gallery.json"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - label: "Gallery Sections"
+            name: "sections"
+            widget: "list"
+            summary: "{{fields.occasion}}"
+            fields:
+              - { label: "Occasion Name", name: "occasion", widget: "string" }
+              - label: "Images"
+                name: "images"
+                widget: "list"
+                summary: "Image {{fields.index}}"
+                fields:
+                  - { label: "Image File", name: "file", widget: "image" }
+                  - { label: "Alt Text", name: "alt", widget: "string", required: false }
