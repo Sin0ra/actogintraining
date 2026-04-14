@@ -2,16 +2,11 @@
   "title": "Gallery",
   "sections": [
     {
-      "occasion": "Weddings",
+      "occasion": "Fun and games",
       "images": [
-        { "file": "assets/images/uploads/wedding1.jpg", "alt": "Wedding Image 1" },
-        { "file": "assets/images/uploads/wedding2.jpg", "alt": "Wedding Image 2" }
-      ]
-    },
-    {
-      "occasion": "Birthdays",
-      "images": [
-        { "file": "assets/images/uploads/birthday1.jpg", "alt": "Birthday Party" }
+        {
+          "file": "/assets/images/uploads/img-20260331-wa0030.png"
+        }
       ]
     }
   ]
