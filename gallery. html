@@ -23,6 +23,20 @@
     </div>
   </section>
 
+<!-- Gallery Lightbox Modal -->
+<div class="modal fade" id="galleryModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content border-0 bg-transparent">
+      <div class="modal-body p-0">
+        <img src="" id="galleryModalImg" class="img-fluid rounded" alt="Gallery Image">
+      </div>
+      <div class="modal-footer border-0 justify-content-center">
+        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
   <!-- Footer -->
   <!-- ... copy your existing footer ... -->
 
