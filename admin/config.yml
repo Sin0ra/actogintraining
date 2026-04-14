@@ -56,17 +56,29 @@ collections:
               - { label: "Feature Title", name: "title", widget: "string" }
               - { label: "Feature Description", name: "description", widget: "text" }
 
-      # ---------------------
-      # ABOUT PAGE
-      # ---------------------
-      - label: "About Page"
-        name: "about"
-        file: "content/about.json"
-        fields:
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Main Heading", name: "heading", widget: "string" }
-          - { label: "Intro Text", name: "intro", widget: "text" }
-          - { label: "Main Content", name: "content", widget: "text" }
+
+              # ---------------------
+# ABOUT PAGE
+# ---------------------
+- label: "About Page"
+  name: "about"
+  file: "content/about.json"
+  fields:
+    - { label: "Page Title", name: "title", widget: "string" }
+    - { label: "Main Heading", name: "heading", widget: "string" }
+    - { label: "Intro Text", name: "intro", widget: "text" }
+    - { label: "Main Content", name: "content", widget: "text" }
+    - { label: "Main Image", name: "about_main_image", widget: "image", required: false }
+    - label: "Team Members"
+      name: "team"
+      widget: "list"
+      summary: "{{fields.name}}"
+      fields:
+        - { label: "Name", name: "name", widget: "string" }
+        - { label: "Position", name: "position", widget: "string" }
+        - { label: "Image", name: "image", widget: "image", required: false }
+        - { label: "Bio", name: "bio", widget: "text" }
+
 
       # ---------------------
       # WHY CHOOSE US PAGE
