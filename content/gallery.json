@@ -1,28 +1,18 @@
 {
-  "images": [
+  "title": "Gallery",
+  "sections": [
     {
-      "image": "assets/images/uploads/img-20260331-wa0061.png"
+      "occasion": "Weddings",
+      "images": [
+        { "file": "assets/images/uploads/wedding1.jpg", "alt": "Wedding Image 1" },
+        { "file": "assets/images/uploads/wedding2.jpg", "alt": "Wedding Image 2" }
+      ]
     },
     {
-      "image": "assets/images/uploads/img-20260331-wa0059.png"
-    },
-    {
-      "image": "assets/images/uploads/img-20260331-wa0030.png"
-    },
-    {
-      "image": "assets/images/uploads/image-1.jpg"
-    }
-  ],
-  "team": [
-    {
-      "name": "Mr Khumalo",
-      "role": "CEO",
-      "image": "assets/images/uploads/img-20260331-wa0035.png"
-    },
-    {
-      "name": "Mrs Khumalo",
-      "role": "Chief Director",
-      "image": "assets/images/uploads/img-20260331-wa0046.png"
+      "occasion": "Birthdays",
+      "images": [
+        { "file": "assets/images/uploads/birthday1.jpg", "alt": "Birthday Party" }
+      ]
     }
   ]
 }
