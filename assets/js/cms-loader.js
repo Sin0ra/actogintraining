@@ -70,15 +70,20 @@ async function loadPage(pageName) {
     }
 
     // Render Gallery
+if (// Render Gallery
 if (Array.isArray(data.sections)) {
   const galleryContainer = document.getElementById("gallery-container");
   if (galleryContainer) {
-    galleryContainer.innerHTML = data.sections.map((section, sIndex) => {
+    galleryContainer.innerHTML = data.sections.map((section) => {
       const imagesHtml = Array.isArray(section.images)
         ? section.images.map(img => `
             <div class="col-md-4 mb-4">
               <div class="card h-100 shadow-sm">
-                <img src="${img.file}" alt="${img.alt || section.occasion}" class="img-fluid rounded">
+                <img src="${img.file}" 
+                     alt="${img.alt || section.occasion}" 
+                     class="img-fluid rounded gallery-img"
+                     data-bs-toggle="modal"
+                     data-bs-target="#galleryModal">
               </div>
             </div>
           `).join('')
@@ -93,6 +98,17 @@ if (Array.isArray(data.sections)) {
       `;
     }).join('');
   }
+
+  // ---------------------------
+  // Lightbox click handler
+  // ---------------------------
+  document.querySelectorAll(".gallery-img").forEach(img => {
+    img.addEventListener("click", function() {
+      const modalImg = document.getElementById("galleryModalImg");
+      modalImg.src = this.src;
+      modalImg.alt = this.alt;
+    });
+  });
 }
 
     // ---------------------------
