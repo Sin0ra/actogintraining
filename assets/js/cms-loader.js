@@ -70,7 +70,6 @@ async function loadPage(pageName) {
     }
 
     // Render Gallery
-if (// Render Gallery
 if (Array.isArray(data.sections)) {
   const galleryContainer = document.getElementById("gallery-container");
   if (galleryContainer) {
