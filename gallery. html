@@ -23,6 +23,15 @@
     </div>
   </section>
 
+
+<script>
+const currentPage = location.pathname.split("/").pop();
+document.querySelectorAll(".navbar-nav .nav-link").forEach(link => {
+  if(link.getAttribute("href") === currentPage){
+    link.classList.add("active"); // Bootstrap active
+  }
+});
+</script>
 <!-- Gallery Lightbox Modal -->
 <div class="modal fade" id="galleryModal" tabindex="-1">
   <div class="modal-dialog modal-dialog-centered modal-lg">
