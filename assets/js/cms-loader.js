@@ -69,6 +69,32 @@ async function loadPage(pageName) {
       window._servicesData = data.services;
     }
 
+    // Render Gallery
+if (Array.isArray(data.sections)) {
+  const galleryContainer = document.getElementById("gallery-container");
+  if (galleryContainer) {
+    galleryContainer.innerHTML = data.sections.map((section, sIndex) => {
+      const imagesHtml = Array.isArray(section.images)
+        ? section.images.map(img => `
+            <div class="col-md-4 mb-4">
+              <div class="card h-100 shadow-sm">
+                <img src="${img.file}" alt="${img.alt || section.occasion}" class="img-fluid rounded">
+              </div>
+            </div>
+          `).join('')
+        : '';
+      return `
+        <div class="gallery-section mb-5">
+          <h3 class="fw-semibold mb-4">${section.occasion}</h3>
+          <div class="row g-3">
+            ${imagesHtml}
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+}
+
     // ---------------------------
 // Render Team Members (CMS with editable images)
 if (Array.isArray(data.team)) {
