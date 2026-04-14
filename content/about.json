@@ -4,24 +4,5 @@
   "intro": "Learn more about who we are and our mission.",
   "content": "Actogin Group Investment is a dynamic and diversified company dedicated to trade certification and skills development. We focus on empowering individuals with the knowledge, training, and tools they need to succeed in their careers.",
   "about_main_image": "assets/images/uploads/act_logo.png",
-  "team": [
-    {
-      "name": "John Doe",
-      "position": "CEO",
-      "image": "assets/images/uploads/john_doe.jpg",
-      "bio": "John has 20 years of experience in professional training and investments."
-    },
-    {
-      "name": "Jane Smith",
-      "position": "COO",
-      "image": "assets/images/uploads/jane_smith.jpg",
-      "bio": "Jane leads operations with a focus on excellence and innovation."
-    },
-    {
-      "name": "Mark Wilson",
-      "position": "Lead Trainer",
-      "image": "assets/images/uploads/mark_wilson.jpg",
-      "bio": "Mark specializes in technical training and mentoring our students to achieve their goals."
-    }
-  ]
+  "team": []
 }
