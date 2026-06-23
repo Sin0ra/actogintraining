@@ -174,9 +174,11 @@ if (Array.isArray(data.team)) {
                 ${position}
               </p>
 
-              <p class="team-bio">
-                ${bio}
+              ${bio ? `
+             <p class="team-bio">
+              ${bio}
               </p>
+              ` : ''}
 
               <div class="team-socials">
 
