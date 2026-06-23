@@ -112,32 +112,98 @@ if (Array.isArray(data.sections)) {
     });
   });
 }
-    // ---------------------------
-// Render Team Members (CMS with editable images)
+// ---------------------------
+// Render Team Members
 if (Array.isArray(data.team)) {
-  const teamContainer = document.getElementById("team-container");
-  if (teamContainer) {
-    teamContainer.innerHTML = data.team.map(member => {
-      const name = member.name || "No name";
-      const position = member.position || "";
-      const image = member.image && member.image.trim() !== "" 
-                      ? member.image 
-                      : "assets/images/uploads/default-avatar.png"; // fallback
-      const bio = member.bio || "";
 
-      return `
-        <div class="col-md-4 mb-4">
-          <div class="team-card shadow-sm h-100">
-            <img src="${image}" alt="${name}" class="team-img rounded-top">
-            <div class="team-content p-3">
-              <h5 class="fw-bold mb-1">${name}</h5>
-              <small class="text-muted">${position}</small>
-              <p class="mt-2 text-muted mb-0">${bio}</p>
-            </div>
-          </div>
+  const teamContainer =
+    document.getElementById("team-container");
+
+  if (teamContainer) {
+
+    if (data.team.length === 0) {
+
+      teamContainer.innerHTML = `
+        <div class="text-center w-100">
+          <p>No team members added yet.</p>
         </div>
       `;
-    }).join('');
+
+    } else {
+
+      teamContainer.innerHTML =
+        data.team.map(member => {
+
+          const name =
+            member.name || "No Name";
+
+          const position =
+            member.position || "";
+
+          const bio =
+            member.bio || "";
+
+          const image =
+            member.image && member.image.trim() !== ""
+              ? member.image
+              : "assets/images/uploads/default-avatar.png";
+
+          const linkedin =
+            member.linkedin || "";
+
+          const whatsapp =
+            member.whatsapp || "";
+
+          const email =
+            member.email || "";
+
+          return `
+
+            <div class="team-card">
+
+              <img
+                src="${image}"
+                alt="${name}"
+                class="team-photo">
+
+              <h4 class="team-name">
+                ${name}
+              </h4>
+
+              <p class="team-position">
+                ${position}
+              </p>
+
+              <p class="team-bio">
+                ${bio}
+              </p>
+
+              <div class="team-socials">
+
+                ${linkedin ?
+                `<a href="${linkedin}" target="_blank">
+                    <i class="bi bi-linkedin"></i>
+                 </a>` : ""}
+
+                ${whatsapp ?
+                `<a href="${whatsapp}" target="_blank">
+                    <i class="bi bi-whatsapp"></i>
+                 </a>` : ""}
+
+                ${email ?
+                `<a href="mailto:${email}">
+                    <i class="bi bi-envelope-fill"></i>
+                 </a>` : ""}
+
+              </div>
+
+            </div>
+
+          `;
+
+        }).join("");
+
+    }
   }
 }
     // ---------------------------
