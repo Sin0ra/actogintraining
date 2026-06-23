@@ -167,6 +167,74 @@
   loadPage("about");
 </script>
 
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  let currentIndex = 0;
+
+  function moveCarousel() {
+
+    const track = document.querySelector(".team-track");
+    const cards = document.querySelectorAll(".team-card");
+
+    if (!track || cards.length === 0) return;
+
+    const cardWidth = cards[0].offsetWidth + 24;
+
+    track.style.transform =
+      `translateX(-${currentIndex * cardWidth}px)`;
+  }
+
+  document.querySelector(".next-btn")
+    ?.addEventListener("click", () => {
+
+      const cards =
+        document.querySelectorAll(".team-card");
+
+      currentIndex++;
+
+      if (currentIndex >= cards.length) {
+        currentIndex = 0;
+      }
+
+      moveCarousel();
+    });
+
+  document.querySelector(".prev-btn")
+    ?.addEventListener("click", () => {
+
+      const cards =
+        document.querySelectorAll(".team-card");
+
+      currentIndex--;
+
+      if (currentIndex < 0) {
+        currentIndex = cards.length - 1;
+      }
+
+      moveCarousel();
+    });
+
+  setInterval(() => {
+
+    const cards =
+      document.querySelectorAll(".team-card");
+
+    if (cards.length <= 1) return;
+
+    currentIndex++;
+
+    if (currentIndex >= cards.length) {
+      currentIndex = 0;
+    }
+
+    moveCarousel();
+
+  }, 5000);
+
+});
+</script>
+
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 
