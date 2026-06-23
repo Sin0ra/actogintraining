@@ -231,32 +231,141 @@ section {
   transform: translateY(-6px);
 }
 
-.team-card {
-  border-radius: 12px;
-  overflow: hidden;
+/* =========================================
+   MODERN TEAM CAROUSEL
+========================================= */
+
+.team-section{
+  overflow:hidden;
 }
 
-.team-card {
-  border-radius: 15px;
-  overflow: hidden;
-  transition: 0.3s ease;
-  background: #fff;
+.team-carousel-wrapper{
+  display:flex;
+  align-items:center;
+  position:relative;
 }
 
-.team-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+.team-carousel{
+  width:100%;
+  overflow:hidden;
 }
 
-.team-img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
+.team-track{
+  display:flex;
+  gap:24px;
+  transition:transform .5s ease;
 }
 
-.team-content {
-  padding: 15px;
-  text-align: center;
+.team-card{
+  min-width:320px;
+  max-width:320px;
+  background:#fff;
+  border-radius:20px;
+  padding:30px 20px;
+  text-align:center;
+  box-shadow:0 8px 25px rgba(0,0,0,.08);
+  transition:all .35s ease;
+}
+
+.team-card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.team-photo{
+  width:160px;
+  height:160px;
+  border-radius:50%;
+  object-fit:cover;
+  display:block;
+  margin:0 auto;
+  border:5px solid #00CC00;
+}
+
+.team-name{
+  margin-top:20px;
+  font-size:1.3rem;
+  font-weight:700;
+  color:#1a1a1a;
+}
+
+.team-position{
+  color:#00CC00;
+  font-weight:600;
+  margin-bottom:15px;
+}
+
+.team-bio{
+  color:#666;
+  font-size:.95rem;
+  line-height:1.5;
+}
+
+.team-socials{
+  margin-top:15px;
+}
+
+.team-socials a{
+  color:#00CC00;
+  font-size:22px;
+  margin:0 8px;
+  transition:.3s;
+}
+
+.team-socials a:hover{
+  transform:scale(1.2);
+  color:#008f00;
+}
+
+.carousel-btn{
+  width:50px;
+  height:50px;
+  border:none;
+  border-radius:50%;
+  background:#00CC00;
+  color:#fff;
+  font-size:22px;
+  cursor:pointer;
+  z-index:10;
+  transition:.3s;
+}
+
+.carousel-btn:hover{
+  background:#009900;
+}
+
+.prev-btn{
+  margin-right:12px;
+}
+
+.next-btn{
+  margin-left:12px;
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+  .team-card{
+    min-width:280px;
+    max-width:280px;
+  }
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+  .team-card{
+    min-width:100%;
+    max-width:100%;
+  }
+
+  .carousel-btn{
+    display:none;
+  }
+
 }
 
 #galleryModalImg {
@@ -368,3 +477,4 @@ section {
     text-align: center;
   }
 }
+
