@@ -164,6 +164,236 @@
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script src="/assets/js/cms-loader.js"></script>
 <script>
+  loadPage("about").then(() => {
+
+  const track = document.querySelector(".team-track");
+  if (!track) return;
+
+  // trigger re-init after CMS loads
+  track.style.transform = "translateX(0px)";
+
+});
+</script>
+
+  
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+  const track = document.querySelector(".team-track");
+  const cards = document.querySelectorAll(".team-card");
+
+  if (!track || cards.length === 0) return;
+
+  let index = 0;
+
+  const cardWidth = () =>
+    cards[0].offsetWidth + 24;
+
+  // 🔁 DUPLICATE CARDS (this creates infinite loop)
+  track.innerHTML += track.innerHTML;
+
+  function move() {
+    track.style.transition = "transform 0.5s ease";
+    track.style.transform =
+      `translateX(-${index * cardWidth()}px)`;
+  }
+
+  function resetLoop() {
+    const total = cards.length;
+
+    // when reaching original set
+    if (index >= total) {
+      setTimeout(() => {
+        track.style.transition = "none";
+        index = 0;
+        track.style.transform = `translateX(0px)`;
+      }, 500);
+    }
+  }
+
+  // 👉 NEXT BUTTON
+  document.querySelector(".next-btn")?.addEventListener("click", () => {
+    index++;
+    move();
+    resetLoop();
+  });
+
+  // 👈 PREV BUTTON
+  document.querySelector(".prev-btn")?.addEventListener("click", () => {
+    if (index <= 0) {
+      index = cards.length;
+      track.style.transition = "none";
+      track.style.transform =
+        `translateX(-${index * cardWidth()}px)`;
+    }
+    index--;
+    move();
+  });
+
+  // 🔄 AUTO LOOP
+  setInterval(() => {
+    index++;
+    move();
+    resetLoop();
+  }, 4000);
+
+});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="collapse navbar-collapse d-none d-lg-flex">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="courses.html">Courses & Programs</a></li>
+        <li class="nav-item"><a class="nav-link" href="choosing.html">Why Choose Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+      </ul>
+
+      <a href="contact.html" class="btn btn-dark btn-contact">Contact Us</a>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Offcanvas -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title fw-semibold">Actogin Training</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+      <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+      <li class="nav-item"><a class="nav-link" href="courses.html">Courses & Programs</a></li>
+      <li class="nav-item"><a class="nav-link" href="choosing.html">Why Choose Us</a></li>
+      <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+      <li class="mt-3">
+  <a href="contact.html" class="btn w-100" style="background-color:#22c55e; color:#fff;">Contact Us</a>
+</li>
+    </ul>
+  </div>
+</div>
+
+  <!-- Content -->
+<main class="container my-5">
+
+  <section class="py-5">
+    <div class="container">
+
+      <h1 data-cms="heading" class="fw-bold mb-3"></h1>
+
+      <p data-cms="intro" class="lead text-muted mb-4"></p>
+
+      <div class="row">
+        <div class="col-lg-8">
+          <div data-cms="content" class="about-content"></div>
+        </div>
+
+        <div class="col-lg-4">
+          <img src="assets/images/uploads/act logo.png" 
+               class="img-fluid rounded shadow" 
+               alt="About Actogin">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+<section class="team-section py-5 bg-light" id="team">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Meet Our Team</h2>
+            <p class="text-muted">
+                The people behind our success
+            </p>
+        </div>
+
+        <div class="team-carousel-wrapper">
+
+            <button class="carousel-btn prev-btn">
+                <i class="bi bi-chevron-left"></i>
+            </button>
+
+            <div class="team-carousel">
+                <div id="team-container" class="team-track"></div>
+            </div>
+
+            <button class="carousel-btn next-btn">
+                <i class="bi bi-chevron-right"></i>
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+  <!-- Footer -->
+<footer class="footer-section">
+  <div class="container">
+    <div class="row text-center text-md-start">
+      <div class="col-md-4 mb-4">
+        <h5 class="fw-bold" style="color: #ffffff;">Actogin Group Investments</h5>
+        <p class="mt-3" style="color: #ffffff;">Your pathway to trade certification and skills development.</p>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h6 class="fw-bold" style="color: #ffffff;">Quick Links</h6>
+        <ul class="list-unstyled">
+          <li><a href="courses.html" style="color: #ffffff;">Courses</a></li>
+          <li><a href="choosing.html" style="color: #ffffff;">Why Choose Us</a></li>
+          <li><a href="contact.html" style="color: #ffffff;">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 mb-4">
+        <h6 class="fw-bold" style="color: #ffffff;">Contact Info</h6>
+        <p class="mt-3 mb-2" style="color: #ffffff;"><i class="bi bi-geo-alt"></i> 84 Currie Street, Quigney, East London, 5201, South Africa</p>
+        <p style="color: #ffffff;"><i class="bi bi-telephone"></i> 064 959 0303</p>
+      </div>
+    </div>
+    <hr class="border-light opacity-25">
+    <div class="text-center small" style="color: #ffffff;">© 2026 Actogin Training and Assessment Centre. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<!-- Floating Chat -->
+<a href="https://wa.me/27649590303" 
+   class="chat-btn" 
+   target="_blank">
+   <i class="bi bi-whatsapp"></i>
+</a>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="/assets/js/cms-loader.js"></script>
+<script>
   loadPage("about");
 </script>
 
