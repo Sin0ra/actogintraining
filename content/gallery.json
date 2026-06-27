@@ -19,12 +19,12 @@
       "occasion": "Our staff",
       "images": [
         {
-          "file": "/assets/images/uploads/img-20260331-wa0047.png",
-          "alt": "Ongeziwe Nzimela ( Assistant chef) "
-        },
-        {
           "file": "/assets/images/uploads/img-20260331-wa0043.png",
           "alt": "Khaya Mtwa (Head chef) "
+        },
+        {
+          "file": "/assets/images/uploads/img-20260331-wa0047.png",
+          "alt": "Ongeziwe Nzimela ( Assistant chef) "
         },
         {
           "file": "/assets/images/uploads/img-20260331-wa0033.png",
@@ -37,6 +37,10 @@
         {
           "file": "/assets/images/uploads/img-20260331-wa0039.png",
           "alt": "Sandile Dyele (Operater)"
+        },
+        {
+          "file": "/assets/images/uploads/img-20260331-wa0042.png",
+          "alt": "Anele Fetile (Driver) "
         }
       ]
     }
