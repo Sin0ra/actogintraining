@@ -10,6 +10,12 @@
       "position": "CEO",
       "image": "/assets/images/uploads/img-20260331-wa0035.png",
       "bio": "Meet our CEO. "
+    },
+    {
+      "position": "Operations Manager ",
+      "bio": "Meet our Operations Manager. ",
+      "name": "Mrs Khumalo",
+      "image": "/assets/images/uploads/img-20260331-wa0046.png"
     }
   ]
 }
