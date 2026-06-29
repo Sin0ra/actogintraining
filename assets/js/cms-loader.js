@@ -112,102 +112,69 @@ if (Array.isArray(data.sections)) {
     });
   });
 }
+// --------------------------
+    // Render Team Members (3 at a time)
 // ---------------------------
-// Render Team Members
 if (Array.isArray(data.team)) {
 
-  const teamContainer =
-    document.getElementById("team-container");
+  const teamContainer = document.getElementById("team-container");
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
 
   if (teamContainer) {
 
-    if (data.team.length === 0) {
+    const members = data.team;
+    const perPage = 3;
+    let currentPage = 0;
 
-      teamContainer.innerHTML = `
-        <div class="text-center w-100">
-          <p>No team members added yet.</p>
+    const totalPages = Math.ceil(members.length / perPage);
+
+    function renderPage() {
+      const start = currentPage * perPage;
+      const end = start + perPage;
+
+      const visibleMembers = members.slice(start, end);
+
+      teamContainer.innerHTML = visibleMembers.map(member => `
+        <div class="team-card">
+          <div class="team-img">
+            <img src="${member.image}" alt="${member.name}">
+          </div>
+          <div class="team-info">
+            <h5>${member.name}</h5>
+            <p class="position">${member.position}</p>
+            <p class="bio">${member.bio || ""}</p>
+          </div>
         </div>
-      `;
+      `).join("");
+    }
 
-    } else {
+    // initial render
+    renderPage();
 
-      teamContainer.innerHTML =
-        data.team.map(member => {
+    // next button
+    if (nextBtn) {
+      nextBtn.addEventListener("click", () => {
+        if (currentPage < totalPages - 1) {
+          currentPage++;
+          renderPage();
+        }
+      });
+    }
 
-          const name =
-            member.name || "No Name";
-
-          const position =
-            member.position || "";
-
-          const bio =
-            member.bio || "";
-
-          const image =
-            member.image && member.image.trim() !== ""
-              ? member.image
-              : "assets/images/uploads/default-avatar.png";
-
-          const linkedin =
-            member.linkedin || "";
-
-          const whatsapp =
-            member.whatsapp || "";
-
-          const email =
-            member.email || "";
-
-          return `
-
-            <div class="team-card">
-
-              <img
-                src="${image}"
-                alt="${name}"
-                class="team-photo">
-
-              <h4 class="team-name">
-                ${name}
-              </h4>
-
-              <p class="team-position">
-                ${position}
-              </p>
-
-              ${bio ? `
-             <p class="team-bio">
-              ${bio}
-              </p>
-              ` : ''}
-
-              <div class="team-socials">
-
-                ${linkedin ?
-                `<a href="${linkedin}" target="_blank">
-                    <i class="bi bi-linkedin"></i>
-                 </a>` : ""}
-
-                ${whatsapp ?
-                `<a href="${whatsapp}" target="_blank">
-                    <i class="bi bi-whatsapp"></i>
-                 </a>` : ""}
-
-                ${email ?
-                `<a href="mailto:${email}">
-                    <i class="bi bi-envelope-fill"></i>
-                 </a>` : ""}
-
-              </div>
-
-            </div>
-
-          `;
-
-        }).join("");
-
+    // prev button
+    if (prevBtn) {
+      prevBtn.addEventListener("click", () => {
+        if (currentPage > 0) {
+          currentPage--;
+          renderPage();
+        }
+      });
     }
   }
 }
+
+    
     // ---------------------------
     // Render Courses (CMS)
     // ---------------------------
