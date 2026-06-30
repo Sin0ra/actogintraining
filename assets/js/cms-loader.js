@@ -138,7 +138,7 @@ async function loadPage(pageName) {
           teamContainer.innerHTML = visibleMembers.map(member => `
             <div class="team-card">
               <div class="team-img">
-                <img src="${member.image}" alt="${member.name}">
+                <img src="${member.image}" alt="${member.name}" class="team-photo">
               </div>
               <div class="team-info">
                 <h5>${member.name}</h5>
