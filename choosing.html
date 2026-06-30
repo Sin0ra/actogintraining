@@ -42,7 +42,6 @@
 
     section { padding: 3.8rem 1rem; }
 
-    /* Why choose cards */
     .why-card {
       display: flex;
       align-items: flex-start;
@@ -54,6 +53,7 @@
       transition: all .25s ease;
     }
     .why-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-hover); }
+
     .why-icon {
       width: 50px;
       height: 50px;
@@ -66,6 +66,7 @@
       font-size: 1.25rem;
       flex-shrink:0;
     }
+
     .why-card h5 { font-weight:600; margin-bottom:.5rem; }
     .why-card p { font-size:.9rem; margin:0; }
 
@@ -74,7 +75,22 @@
     footer a { color: #cbd5f5; font-size:.88rem; text-decoration: none; }
     .footer-bottom { border-top: 1px solid #334155; margin-top: 1.8rem; padding-top: 1rem; font-size: .8rem; text-align: center; }
 
-    .chat-btn { position: fixed; bottom: 20px; right: 20px; width: 52px; height: 52px; background: #22c55e; color: #fff; border-radius: 50%; display:flex; align-items:center; justify-content:center; font-size:1.3rem; box-shadow:0 10px 20px rgba(0,0,0,.2); z-index:1000; }
+    .chat-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 52px;
+      height: 52px;
+      background: #22c55e;
+      color: #fff;
+      border-radius: 50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:1.3rem;
+      box-shadow:0 10px 20px rgba(0,0,0,.2);
+      z-index:1000;
+    }
 
     @media (max-width: 991px) { section{ padding:3.2rem 1rem; } }
     @media (max-width: 768px) { .container{ max-width:100%; padding-left:1rem; padding-right:1rem; } }
@@ -88,7 +104,8 @@
 <nav class="navbar navbar-expand-lg bg-white border-bottom fixed-top">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center gap-2" href="index.html">
-      <img src="assets/images/uploads/act logo.png" alt="Actogin Logo" class="navbar-logo">Actogin Group
+      <img src="assets/images/uploads/act logo.png" alt="Actogin Logo" class="navbar-logo">
+      Actogin Group
     </a>
 
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu">
@@ -108,7 +125,7 @@
   </div>
 </nav>
 
-<!-- Mobile Offcanvas Menu -->
+<!-- Mobile Menu -->
 <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu">
   <div class="offcanvas-header">
     <h5 class="offcanvas-title fw-semibold">Actogin Training</h5>
@@ -122,13 +139,15 @@
       <li class="nav-item"><a class="nav-link active" href="choosing.html">Why Choose Us</a></li>
       <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
       <li class="mt-3">
-  <a href="contact.html" class="btn w-100" style="background-color:#22c55e; color:#fff;">Contact Us</a>
-</li>
+        <a href="contact.html" class="btn w-100" style="background-color:#22c55e; color:#fff;">
+          Contact Us
+        </a>
+      </li>
     </ul>
   </div>
 </div>
 
-<!-- Hero Section -->
+<!-- Hero -->
 <section class="py-5 bg-light text-center">
   <div class="container">
     <h1 class="fw-bold mb-3">Why Choose Actogin Group</h1>
@@ -140,9 +159,7 @@
   </div>
 </section>
 
-
-<!-- WHY CHOOSE US FEATURES -->
-
+<!-- FEATURES -->
 <section class="py-5">
   <div class="container">
     <div class="row g-4">
@@ -151,10 +168,7 @@
         <div class="card shadow-sm border-0 text-center p-4 h-100">
           <i class="bi bi-award fs-1 text-success"></i>
           <h5 class="mt-3">Industry Experience</h5>
-          <p class="text-muted">
-            Years of hands-on experience delivering quality services and
-            professional training across multiple industries.
-          </p>
+          <p class="text-muted">Years of hands-on experience delivering quality services and professional training.</p>
         </div>
       </div>
 
@@ -162,10 +176,7 @@
         <div class="card shadow-sm border-0 text-center p-4 h-100">
           <i class="bi bi-mortarboard fs-1 text-success"></i>
           <h5 class="mt-3">Certified Trainers</h5>
-          <p class="text-muted">
-            Our instructors are qualified professionals with practical
-            knowledge and industry expertise.
-          </p>
+          <p class="text-muted">Qualified professionals with practical industry knowledge.</p>
         </div>
       </div>
 
@@ -173,10 +184,7 @@
         <div class="card shadow-sm border-0 text-center p-4 h-100">
           <i class="bi bi-lightning fs-1 text-success"></i>
           <h5 class="mt-3">Practical Training</h5>
-          <p class="text-muted">
-            We focus on real-world skills to ensure our students are prepared
-            for employment and business opportunities.
-          </p>
+          <p class="text-muted">Real-world skills for employment and business success.</p>
         </div>
       </div>
 
@@ -184,10 +192,7 @@
         <div class="card shadow-sm border-0 text-center p-4 h-100">
           <i class="bi bi-people fs-1 text-success"></i>
           <h5 class="mt-3">Client Focused</h5>
-          <p class="text-muted">
-            We build long-term relationships with our clients through
-            reliable service and strong support.
-          </p>
+          <p class="text-muted">We build strong, reliable client relationships.</p>
         </div>
       </div>
 
@@ -195,10 +200,7 @@
         <div class="card shadow-sm border-0 text-center p-4 h-100">
           <i class="bi bi-building fs-1 text-success"></i>
           <h5 class="mt-3">Professional Facilities</h5>
-          <p class="text-muted">
-            Our facilities and training environments are designed to provide
-            the best learning experience.
-          </p>
+          <p class="text-muted">Modern learning environments and equipment.</p>
         </div>
       </div>
 
@@ -206,10 +208,7 @@
         <div class="card shadow-sm border-0 text-center p-4 h-100">
           <i class="bi bi-shield-check fs-1 text-success"></i>
           <h5 class="mt-3">Trusted Services</h5>
-          <p class="text-muted">
-            We maintain high standards in training, construction,
-            accommodation, and catering services.
-          </p>
+          <p class="text-muted">High standards across all our services.</p>
         </div>
       </div>
 
@@ -217,8 +216,7 @@
   </div>
 </section>
 
-<!-- COMMITMENT SECTION -->
-
+<!-- COMMITMENT -->
 <section class="py-5">
   <div class="container">
     <div class="row align-items-center">
@@ -226,149 +224,114 @@
       <div class="col-md-6">
         <h2 class="fw-bold">Our Commitment</h2>
         <p class="text-muted">
-          At Actogin Group Investments, we are committed to delivering
-          high-quality services and empowering individuals with the skills
-          they need to succeed. Our mission is to create opportunities,
-          support community development, and maintain the highest
-          professional standards in every service we provide.
+          At Actogin Group Investments, we are committed to delivering high-quality services and empowering individuals with skills for success.
         </p>
 
         <a href="courses.html" class="btn btn-success mt-3">
           View Our Courses
         </a>
-
       </div>
 
       <div class="col-md-6">
-        <img src="assets/images/uploads/ act logo.png"
-             class="img-fluid rounded shadow">
+        <img src="assets/images/uploads/ act logo.png" class="img-fluid rounded shadow">
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- CALL TO ACTION -->
-  
+<!-- CTA -->
 <section class="py-5 bg-success text-white text-center">
   <div class="container">
     <h2 class="fw-bold">Start Your Journey With Us</h2>
-    <p class="mb-4">
-      Join hundreds of students and businesses who trust Actogin
-      Group Investments for professional services and training.
-    </p>
-    <a href="contact.html" class="btn btn-light btn-lg">
-      Contact Us Today
-    </a>
+    <p class="mb-4">Join students and businesses trusting Actogin Group.</p>
+    <a href="contact.html" class="btn btn-light btn-lg">Contact Us Today</a>
   </div>
 </section>
 
-<!-- Content Section -->
+<!-- EXTRA SECTION -->
 <section class="container my-5">
   <div class="row g-4">
+
     <div class="col-md-6">
       <div class="why-card">
-        <div class="why-icon"><i class="bi bi-award"></i></div>
+        <div class="why-icon"><i class="bi bi-award text-success"></i></div>
         <div>
           <h5>Certified Trainers</h5>
-          <p>Our trainers are industry certified with years of hands-on experience.</p>
+          <p>Industry certified professionals.</p>
         </div>
       </div>
     </div>
+
     <div class="col-md-6">
       <div class="why-card">
-        <div class="why-icon"><i class="bi bi-people"></i></div>
+        <div class="why-icon"><i class="bi bi-people text-success"></i></div>
         <div>
           <h5>Practical Learning</h5>
-          <p>We focus on practical skills to ensure job readiness upon course completion.</p>
+          <p>Job-ready skills focus.</p>
         </div>
       </div>
     </div>
+
     <div class="col-md-6">
       <div class="why-card">
-        <div class="why-icon"><i class="bi bi-gear"></i></div>
+        <div class="why-icon"><i class="bi bi-gear text-success"></i></div>
         <div>
           <h5>Modern Facilities</h5>
-          <p>Our training centers are equipped with the latest tools and technology.</p>
+          <p>Updated training tools.</p>
         </div>
       </div>
     </div>
+
     <div class="col-md-6">
       <div class="why-card">
-        <div class="why-icon"><i class="bi bi-journal-check"></i></div>
+        <div class="why-icon"><i class="bi bi-journal-check text-success"></i></div>
         <div>
           <h5>Certification</h5>
-          <p>Receive recognized certification upon completion of your chosen program.</p>
+          <p>Recognized qualifications.</p>
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
-   <!-- Footer -->
+<!-- FOOTER -->
 <footer class="footer-section">
   <div class="container">
     <div class="row text-center text-md-start">
       <div class="col-md-4 mb-4">
-        <h5 class="fw-bold" style="color: #ffffff;">Actogin Group Investments</h5>
-        <p class="mt-3" style="color: #ffffff;">Your pathway to trade certification and skills development.</p>
+        <h5 class="fw-bold text-white">Actogin Group Investments</h5>
+        <p class="text-white">Your pathway to skills development.</p>
       </div>
+
       <div class="col-md-4 mb-4">
-        <h6 class="fw-bold" style="color: #ffffff;">Quick Links</h6>
+        <h6 class="fw-bold text-white">Quick Links</h6>
         <ul class="list-unstyled">
-          <li><a href="courses.html" style="color: #ffffff;">Courses</a></li>
-          <li><a href="choosing.html" style="color: #ffffff;">Why Choose Us</a></li>
-          <li><a href="contact.html" style="color: #ffffff;">Contact Us</a></li>
+          <li><a href="courses.html" class="text-white">Courses</a></li>
+          <li><a href="choosing.html" class="text-white">Why Choose Us</a></li>
+          <li><a href="contact.html" class="text-white">Contact</a></li>
         </ul>
       </div>
+
       <div class="col-md-4 mb-4">
-        <h6 class="fw-bold" style="color: #ffffff;">Contact Info</h6>
-        <p class="mt-3 mb-2" style="color: #ffffff;"><i class="bi bi-geo-alt"></i> 84 Currie Street, Quigney, East London, 5201, South Africa</p>
-        <p style="color: #ffffff;"><i class="bi bi-telephone"></i> 064 959 0303</p>
+        <h6 class="fw-bold text-white">Contact Info</h6>
+        <p class="text-white"><i class="bi bi-geo-alt"></i> East London, South Africa</p>
+        <p class="text-white"><i class="bi bi-telephone"></i> 064 959 0303</p>
       </div>
     </div>
+
     <hr class="border-light opacity-25">
-    <div class="text-center small" style="color: #ffffff;">© 2026 Actogin Training and Assessment Centre. All Rights Reserved.</div>
+    <div class="text-center small text-white">
+      © 2026 Actogin Training and Assessment Centre
+    </div>
   </div>
 </footer>
 
-<!-- Floating Chat -->
-<a href="https://wa.me/27649590303" 
-   class="chat-btn" 
-   target="_blank">
-   <i class="bi bi-whatsapp"></i>
+<!-- CHAT -->
+<a href="https://wa.me/27649590303" class="chat-btn" target="_blank">
+  <i class="bi bi-whatsapp"></i>
 </a>
-
-<script>
-
-const counters = document.querySelectorAll(".counter");
-
-counters.forEach(counter => {
-
-  counter.innerText = "0";
-
-  const updateCounter = () => {
-
-    const target = +counter.getAttribute("data-target");
-    const c = +counter.innerText;
-
-    const increment = target / 200;
-
-    if(c < target){
-      counter.innerText = `${Math.ceil(c + increment)}`;
-      setTimeout(updateCounter, 10);
-    }
-    else{
-      counter.innerText = target;
-    }
-
-  };
-
-  updateCounter();
-
-});
-
-</script>  
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
