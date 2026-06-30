@@ -69,112 +69,108 @@ async function loadPage(pageName) {
       window._servicesData = data.services;
     }
 
-// Render Gallery
-if (Array.isArray(data.sections)) {
-  const galleryContainer = document.getElementById("gallery-container");
-  if (galleryContainer) {
-    galleryContainer.innerHTML = data.sections.map((section) => {
+    // Render Gallery
+    if (Array.isArray(data.sections)) {
+      const galleryContainer = document.getElementById("gallery-container");
+      if (galleryContainer) {
+        galleryContainer.innerHTML = data.sections.map((section) => {
 
-      const imagesHtml = Array.isArray(section.images)
-        ? section.images.map(img => `
-            <div class="col-md-4 mb-4">
-              <div class="card h-100 shadow-sm">
-                <img 
-                  src="${img.file}" 
-                  alt="${img.alt || section.occasion}" 
-                  class="img-fluid rounded gallery-img"
-                  loading="lazy"
-                  decoding="async"
-                  data-bs-toggle="modal"
-                  data-bs-target="#galleryModal">
+          const imagesHtml = Array.isArray(section.images)
+            ? section.images.map(img => `
+                <div class="col-md-4 mb-4">
+                  <div class="card h-100 shadow-sm">
+                    <img 
+                      src="${img.file}" 
+                      alt="${img.alt || section.occasion}" 
+                      class="img-fluid rounded gallery-img"
+                      loading="lazy"
+                      decoding="async"
+                      data-bs-toggle="modal"
+                      data-bs-target="#galleryModal">
+                  </div>
+                </div>
+              `).join('')
+            : '';
+
+          return `
+            <div class="gallery-section mb-5">
+              <h3 class="fw-semibold mb-4">${section.occasion}</h3>
+              <div class="row g-3">
+                ${imagesHtml}
               </div>
             </div>
-          `).join('')
-        : '';
+          `;
+        }).join('');
+      }
 
-      return `
-        <div class="gallery-section mb-5">
-          <h3 class="fw-semibold mb-4">${section.occasion}</h3>
-          <div class="row g-3">
-            ${imagesHtml}
-          </div>
-        </div>
-      `;
-    }).join('');
-  }
+      document.querySelectorAll(".gallery-img").forEach(img => {
+        img.addEventListener("click", function() {
+          const modalImg = document.getElementById("galleryModalImg");
+          modalImg.src = this.src;
+          modalImg.alt = this.alt;
+        });
+      });
+    }
 
-  // Lightbox click handler
-  document.querySelectorAll(".gallery-img").forEach(img => {
-    img.addEventListener("click", function() {
-      const modalImg = document.getElementById("galleryModalImg");
-      modalImg.src = this.src;
-      modalImg.alt = this.alt;
-    });
-  });
-}
-// --------------------------
+    // --------------------------
     // Render Team Members (3 at a time)
-// ---------------------------
-if (Array.isArray(data.team)) {
+    // ---------------------------
+    if (Array.isArray(data.team)) {
 
-  const teamContainer = document.getElementById("team-container");
-  const prevBtn = document.querySelector(".prev-btn");
-  const nextBtn = document.querySelector(".next-btn");
+      const teamContainer = document.getElementById("team-container");
+      const prevBtn = document.querySelector(".prev-btn");
+      const nextBtn = document.querySelector(".next-btn");
 
-  if (teamContainer) {
+      if (teamContainer) {
 
-    const members = data.team;
-    const perPage = 3;
-    let currentPage = 0;
+        const members = data.team;
+        const perPage = 3;
+        let currentPage = 0;
 
-    const totalPages = Math.ceil(members.length / perPage);
+        const totalPages = Math.ceil(members.length / perPage);
 
-    function renderPage() {
-      const start = currentPage * perPage;
-      const end = start + perPage;
+        function renderPage() {
+          const start = currentPage * perPage;
+          const end = start + perPage;
 
-      const visibleMembers = members.slice(start, end);
+          const visibleMembers = members.slice(start, end);
 
-      teamContainer.innerHTML = visibleMembers.map(member => `
-        <div class="team-card">
-          <div class="team-img">
-            <img src="${member.image}" alt="${member.name}">
-          </div>
-          <div class="team-info">
-            <h5>${member.name}</h5>
-            <p class="position">${member.position}</p>
-            <p class="bio">${member.bio || ""}</p>
-          </div>
-        </div>
-      `).join("");
-    }
-
-    // initial render
-    renderPage();
-
-    // next button
-    if (nextBtn) {
-      nextBtn.addEventListener("click", () => {
-        if (currentPage < totalPages - 1) {
-          currentPage++;
-          renderPage();
+          teamContainer.innerHTML = visibleMembers.map(member => `
+            <div class="team-card">
+              <div class="team-img">
+                <img src="${member.image}" alt="${member.name}">
+              </div>
+              <div class="team-info">
+                <h5>${member.name}</h5>
+                <p class="position">${member.position}</p>
+                <p class="bio">${member.bio || ""}</p>
+              </div>
+            </div>
+          `).join("");
         }
-      });
-    }
 
-    // prev button
-    if (prevBtn) {
-      prevBtn.addEventListener("click", () => {
-        if (currentPage > 0) {
-          currentPage--;
-          renderPage();
+        renderPage();
+
+        if (nextBtn) {
+          nextBtn.addEventListener("click", () => {
+            if (currentPage < totalPages - 1) {
+              currentPage++;
+              renderPage();
+            }
+          });
         }
-      });
-    }
-  }
-}
 
-    
+        if (prevBtn) {
+          prevBtn.addEventListener("click", () => {
+            if (currentPage > 0) {
+              currentPage--;
+              renderPage();
+            }
+          });
+        }
+      }
+    }
+
     // ---------------------------
     // Render Courses (CMS)
     // ---------------------------
@@ -220,10 +216,8 @@ document.addEventListener("click", function(e) {
 
     const isOpen = element.classList.contains("show");
 
-    // Toggle collapse using Bootstrap
     new bootstrap.Collapse(element, { toggle: true });
 
-    // Swap text dynamically
     e.target.innerText = isOpen ? "Read More" : "Show Less";
   }
 });
